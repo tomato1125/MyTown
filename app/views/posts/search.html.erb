@@ -1,0 +1,48 @@
+<% form_with(url: search_posts_path, local: true, method: :get, class: "SearchForm") do |form| %>
+  <% form.text_field :keyword, placeholder: "キーワード検索する", class: "SearchForm__content" %>
+  <% form.submit "検索", class: "SearchForm__bottum" %>
+<% end %>
+<div class='SearchResalt'>
+  <% @posts.each do |post| %>
+    <div class='NewPost'>
+      <div class='UserInfomation'>
+        <div class='UserInfomation__userImage'>
+          img
+        </div>
+        <span class='UserInfomation__username'>
+          <a href="/users/<%= post.user.id %>">
+            <%= post.user.name %>
+          </a>
+        </span>
+        <div class='UserInfomation__date'>
+          20200624 00:00:00
+        </div>
+      </div>
+      <div class='PostImage' style="background-image: url(<%= post.image %>);">
+        <div class="more">
+          <ul class="more_list">
+            <li>
+              <%= link_to '詳細', post_path(post.id), method: :get %>
+            </li>
+            <% if user_signed_in? && current_user.id == post.user_id %>
+              <li>
+                <%= link_to '編集', edit_post_path(post.id), method: :get %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <div class='PostDescription'>
+        <%= post.content %>
+      </div>
+      <div class='ReviewBox'>
+        <div class='likeIcon'>
+          <i class="fas fa-thumbs-up"></i>
+        </div>
+        <div class='numberOfView'>
+          <i class="fas fa-eye"></i>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
