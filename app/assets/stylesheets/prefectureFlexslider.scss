@@ -1,0 +1,86 @@
+.pflex-container {
+  background-color: #222222;
+  position: absolute;
+  height: 45vh;
+  width: 85%;
+  display: -webkit-flex;
+  /* Safari */
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.pflex-slide {
+  overflow: hidden;
+  -webkit-flex: 1;
+  /* Safari 6.1+ */
+  -ms-flex: 1;
+  /* IE 10 */
+  flex: 1;
+  cursor: pointer;
+  -webkit-transition: all 400ms ease;
+  -moz-transition: all 400ms ease;
+  -ms-transition: all 400ms ease;
+  -o-transition: all 400ms ease;
+  transition: all 400ms ease;
+}
+.pflex-slide:hover {
+  -webkit-flex-grow: 3;
+  flex-grow: 3;
+}
+
+.pflex-title {
+  color: #f1f1f1;
+  position: relative;
+  font-size: 2.5vh;
+  padding-left: 15px;
+  margin-top: 15px;
+  text-decoration: none;
+  text-align: center;
+  top: 20%;
+}
+
+.prefecture {
+  height: 1vh;
+  padding: 0 5%;
+  margin-top: 3.7vh;
+  font-size: 1.9vh;
+}
+
+.pflex-about {
+  color: #f1f1f1;
+  margin-right: 8px;
+  font-size: 1.1vw;
+}
+
+.pwork {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://cdn.pixabay.com/photo/2020/06/26/13/46/frenkendorf-5342811_960_720.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+@media (max-width: 1000px) {
+
+.prefectureSearch {
+  height: 45vh;
+  border-bottom: none;
+}
+
+.pflex-container {
+  height: 35vh;
+  margin-top: 100px;
+  overflow: hidden;
+}
+.pflex-title {
+  font-size: 1.7vh;
+}
+.prefecture {
+  font-size: 1vh;
+}
+.pflex-about {
+  color: #f1f1f1;
+  margin-right: 10px;
+  font-size: 1vh;
+}
+}

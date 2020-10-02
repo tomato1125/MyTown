@@ -1,0 +1,141 @@
+<div class="myPage", style="background-image: url(<%= asset_path "TopPageImage.jpg" %>);">
+  <div class="myPageMain">
+    <div class="myPageBox">
+      <div class="myPageBoxForm">
+        <div class='myPageBoxInformation'>
+          <div class="myPageBoxInformation-Image">
+            <%= image_tag @user.image.url, class: "image" %>
+          </div>
+          <%# <i class="fas fa-user"></i> %>
+          <span class='myPageBoxInformation-Name'>
+            <%= @name %> さんのマイページ
+          </span>
+          <% if user_signed_in? && current_user.id == @user.id %>
+            <%= link_to '編集', edit_user_registration_path(current_user), method: :get %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <ul class='user-nav-bar'>
+        <li>
+          <a href="#" id="top", class='user-nav active'>
+            TOP
+          </a>
+        </li>
+        <li>
+          <a href="#" id="post", class='user-nav'>
+            POST
+          </a>
+        </li>
+        <li>
+          <a href="#" id="favorite", class='user-nav'>
+            Favorite
+          </a>
+        </li>
+      </ul>
+      <ul class="pages">
+        <li class="page show">
+          <div class="top-page">
+            <div class="top-page__introduce">
+              <span class="top-page-title">
+                introduce
+              </span>
+              <div class="top-page__introduce__sentence">
+                <%= @introduce %>
+              </div>
+            </div>
+            <div class="top-page__status">
+              <span class="top-page-title">
+                status
+              </span>
+              <div class="top-page__status__sentence">
+                <ul class="top-page__status__sentence__contents">
+                  <li class="top-page__status__sentence__contents__content">
+                    出身地： <%= @prefecture %>
+                  </li>
+                  <li class="top-page__status__sentence__contents__content">
+                    ○○フォロー
+                  </li>
+                  <li class="top-page__status__sentence__contents__content">
+                    ○○フォロワー
+                  </li>
+                  <li class="top-page__status__sentence__contents__content">
+                    投稿数:  <%= @posts.length %> 件
+                  </li>
+                  <li class="top-page__status__sentence__contents__content">
+                    お気に入り投稿: <%= @posts.length %> 件
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="page">
+          <% if @posts.length == 0 %>
+            <div class="post-page__sentence">
+              投稿がまだありません。
+            </div>
+          <% else %>
+            <div class="userPostIndex">
+              <div class="userPostIndex__postCount">
+                投稿数:  <%= @posts.length %> 件
+              </div>
+              <% @posts.first(5).each do |post| %>
+                <div class='mypage-NewPost'>
+                  <div class="PostTitle">
+                    <span>~ <%= post.title %> ~</span>
+                    <i class="far fa-clock"></i>
+                    <span class="postTime"><%= time_ago_in_words(post.created_at) %>前</span>
+                  </div>
+                  <div class='userPostImage' style="background-image: url(<%= post.image %>);">
+        
+                    <div class="AreaInfomation">
+                      <div class="UserIcon">
+                        <i class="fas fa-map-marker-alt"></i>
+                      </div>
+                      <div class="AreaName">
+                        <%= post.prefecture.name if post.prefecture_id? %>
+                      </div>
+                    </div>
+                    <div class="favorite">
+                      <i class="far fa-bookmark"></i>
+                    </div>
+                  </div>
+                  <%= link_to '', post_path(post.id), method: :get %>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </li>
+        <li class="page">
+          <div class="top-page__introduce">
+            <%= @introduce %>
+          </div>
+          <div class="top-page__status">
+            <span class="top-page-title">
+              status
+            </span>
+            <ul class="top-page__status__contents">
+              <li class="top-page__status__contents__content">
+                出身地： <%= @prefecture %>
+              </li>
+              <li class="top-page__status__contents__content">
+                ○○フォロー
+              </li>
+              <li class="top-page__status__contents__content">
+                ○○フォロワー
+              </li>
+              <li class="top-page__status__contents__content">
+                投稿数:  <%= @posts.length %> 件
+              </li>
+              <li class="top-page__status__contents__content">
+                お気に入りの投稿: <%= @posts.length %> 件
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

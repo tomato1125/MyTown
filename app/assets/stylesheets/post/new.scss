@@ -1,0 +1,330 @@
+* {
+  box-sizing: border-box;
+}
+
+
+
+.newContents {
+  height: auto;
+  width: auto;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  line-height: 1.5;
+  font-size: 15px;
+  background-image: image-url("NewPostImage2.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  &__message {
+    color: #ffffff;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    height: 50px;
+    margin-left: 50px;
+    padding-top: 100px;
+  }
+}
+
+.labelName {
+  color: #fff;
+}
+
+.form {
+  height: 100%;
+  .formArea {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .inputArea {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      .formSpace {
+        height: auto;
+        width: 60vw;
+        .prefecture {
+          height: 20px;
+          width: auto;
+          padding: 10px 16px 8px;
+          margin-top: 8px;
+          font-size: 15px;
+          line-height: 1.5;
+          color: #fff;
+          &__input {
+            width: auto;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            border-radius: 5px;
+            line-height: 2.5;
+            font-size: 15px;
+            text-align: center;
+            color: #000000;
+          }
+        }
+        .category {
+          height: 20px;
+          width: auto;
+          padding: 10px 16px 8px;
+          margin-top: 8px;
+          font-size: 15px;
+          line-height: 1.5;
+          color: #fff;
+          &__input {
+            width: auto;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            border-radius: 5px;
+            line-height: 2.5;
+            font-size: 15px;
+            text-align: center;
+            color: #000000;
+          }
+        }
+        .title {
+          height: 20px;
+          width: auto;
+          padding: 10px 16px 8px;
+          margin-top: 8px;
+          &__input {
+            font-size: 18px;
+            height: auto;
+            width: 30vw;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            color: #000000;
+            line-height: 1.5;
+            font-size: 15px;
+            margin-left: 20px;
+          }
+        }
+        .image {
+          height: auto;
+          width: auto;
+          padding: 10px 16px 8px;
+          margin-top: 8px;
+          display: flex;
+          .imageInput {
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            width: auto;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            line-height: 1.5;
+            font-size: 15px;
+            margin-left: 10px;
+          }
+        }
+        .content {
+          display: flex;
+          height: auto;
+          width: auto;
+          padding: 0 16px 8px;
+          margin-top: 5px;
+          &__input {
+            height: 15vh;
+            width: 30vw;
+            border-radius: 5px;
+            color: #000000;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            line-height: 1.5;
+            font-size: 20px;
+            margin-left: 0px;
+          }
+        }
+      }
+      .googleMap {
+        padding-top: 100px;
+        display: flex;
+        flex-direction: column;
+        .mapName {
+          color: #ffffff;
+          font-size: 20px;
+          font-weight: bold;
+          margin-bottom: 15px;
+        }
+        .addressArea {
+          &__label {
+            color: #ffffff;
+          }
+          &__input {
+            width: 20vw;
+          }
+          &__btn {
+            width: 50px;
+          }
+        }
+        .localeArea {
+          &__label {
+            color: #ffffff;
+          }
+          &__input {
+            width: 20vw;
+          }
+        }
+      }
+    }
+  }
+  .send {
+    margin-top: 30px;
+    &__btn {
+      height: 50px;
+      width: 300px;
+      margin: 50px 0;
+      border-radius: 20px;
+      background-color: #87CEFA;
+      border: none;
+      box-shadow: 0 0 8px gray;
+      color: #ffffff;
+      line-height: 1.5;
+      font-size: 25px;
+      font-weight: bold;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all  0.3s ease;
+    }
+    :hover {
+      background-color: #00BFFF;
+    }
+  }
+}
+#map{
+  height: 80vh;
+  width: 50vw;
+}
+
+@media screen and (max-width: 1300px) {
+  .newContents {
+    height: auto;
+    width: auto;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    line-height: 1.5;
+    font-size: 15px;
+    overflow: hidden;
+    &__message {
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+
+      font-size: 30px;
+      font-weight: bold;
+      height: 50px;
+    }
+  }
+  .newContents__container {
+    margin-top: 50px;
+    height: auto;
+  }
+  .inputArea {
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .formSpace {
+    padding-left: 100px;
+  }
+
+  .googleMap {
+    height: 70vh;
+    width: 150vw;
+    padding: 0;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #map{
+    height: 50vh;
+    width: 100vw;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  .newContents {
+    height: auto;
+    width: auto;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    line-height: 1.5;
+    font-size: 15px;
+    overflow: hidden;
+    background-color: #222222;
+    &__message {
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      font-size: 30px;
+      font-weight: bold;
+      height: 50px;
+    }
+  }
+  .newContents__container {
+    margin-top: 50px;
+    height: auto;
+  }
+  .inputArea {
+    height: auto;
+    // flex-direction: column;
+  }
+
+  .googleMap {
+    height: 100%;
+    width: 150vw;
+    padding: 0;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #map{
+    height: 80vh;
+    width: 100vw;
+  }
+}
+
+
+.prevImageBox {
+  display: block;
+  width: 30vw;
+  margin: 0 15px 10px 0;
+  padding-left: 45px;
+  .upper-box {
+    height: 100%;
+    width: 100%;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .lower-box {
+    display: flex;
+    text-align: center;
+    .delete-box {
+      color: #00b0ff;
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      border: 1px solid #eee;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      .delete-btn {
+        background-color: #f5f5f5;
+        line-height: 40px;
+        width: 60px;
+      }
+    }
+  }
+}

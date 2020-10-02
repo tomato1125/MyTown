@@ -1,0 +1,84 @@
+.CommentArea {
+  margin: 0 auto;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+  background-color: rgba($color: #000000, $alpha: 0.40);
+  box-sizing: border-box;
+}
+
+.CommentForm {
+  display: flex;
+  justify-content: center;
+  &__input {
+    height: 10vh;
+    width: 30vw;
+    padding: 10px;
+    border-radius: 5px;
+    color: #000000;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    line-height: 1.5;
+    font-size: 1.5vh;
+  }
+  &__btn {
+    display: block;
+    margin: 3vh auto;
+    height: 5vh;
+    width: 20vw;
+    border-radius: 20px;
+    background-color: #87CEFA;
+    border: none;
+    box-shadow: 0 0 8px gray;
+    color: #ffffff;
+    line-height: 1.5;
+    font-size: 2vh;
+    font-weight: bold;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all  0.3s ease;
+  }
+  .CommentForm__btn:hover {
+    background-color: #00BFFF;
+  }
+}
+
+.CommentArea h3 {
+  margin: 0 0 20px;
+  text-align: center;
+  font-weight: normal;
+  font-size: 20px;
+  color: #000000;
+}
+
+.comments {
+  padding: 5px;
+  width: 40vw;
+  margin: 0 auto;
+}
+
+.CommentArea h4 {
+  text-align: center;
+  font-weight: normal;
+  font-size: 20px;
+  color: #000000;
+}
+
+.CommentAvater {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.CommentArea p {
+  font-size: 2vh;
+  margin-bottom: 3vh;
+}
+
+.comments a {
+  color: #57C3E9;
+}
+
+.comments a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,314 @@
+* {
+  box-sizing: border-box;
+}
+
+.MainSpace {
+  color: #000000;
+  height: 100%;
+  width: 100%;
+}
+
+
+.SearchSection {
+  background-color: #222222;
+  color: #ffffff;
+  height: 50vh;
+  width: 100%;
+  padding-top: 10vh;
+}
+.SearchBackgroundImage {
+  display: flex;
+  // justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 400px;
+  width: 100%;
+}
+
+.ApplicationKeyword {
+  font-size: 30px;
+  margin-top: 30px;
+}
+
+.ApplicationIntroduce {
+  font-size: 13px;
+}
+
+.SearchHeading {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 40px;
+}
+
+.SearchForm {
+  &__FormBox {
+    width: 100%;
+    height: 30px;
+  }
+  &__content {
+    width: 600px;
+    height: 30px;
+    color: #000000;
+    border-radius: 5px;
+    border-color: #008BBB;
+  }
+  &__bottum {
+    margin-left: 5px;
+    height: 30px;
+    width: 80px;
+    color: #000000;
+    background-color: #FFFAFA;
+    border-radius: 10px;
+  }
+}
+
+.categorySection {
+  display: flex;
+  justify-content: center;
+  background-color: #222222;
+  .categoryHeading {
+    font-size: 30px;
+    height: 100px;
+    color: #FFFFFF;
+    margin: 0 0 0 0;
+    padding: 25px 0;
+  }
+}
+.categorySearch {
+  width: 100vw;
+  height: 70vh;
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  background-color: #222222;
+  flex-direction: column;
+  a {
+    text-decoration: none;
+  }
+}
+
+
+
+.prefectureSection {
+  background-color: #222222;
+  height: 200px;
+  display: flex;
+  padding-top: 30px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  list-style: none;
+  .prefectureHeading {
+    font-size: 30px;
+    height: 100px;
+    color: #FFFFFF;
+    margin: 0 0 0 0;
+    padding: 25px 0;
+  }
+}
+.prefectureSearch {
+  width: 100vw;
+  height: 70vh;
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  background-color: #222222;
+  flex-direction: column;
+}
+
+
+
+.NewPostMessage {
+  background-color: #222222;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+  &__heading {
+    margin-top: 20px;
+    font-size: 30px;
+    color: #ffffff;
+    background-color: #222222;
+  }
+}
+
+.PostIndex {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #222222;
+}
+
+.NewPost {
+  height: auto;
+  width: auto;
+  padding: 50px 50px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #4682B4;
+  border-radius: 10px;
+}
+.seeMore {
+  font-size: 17px;
+  color: #4682B4;
+  display: flex;
+  justify-content: center;
+  background-color: #222222;
+  padding-top: 20px;
+  a {
+    text-decoration: none;
+  }
+}
+
+.indexUserInfomation {
+  background-color: #222222;
+  height: auto;
+  width: auto;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  a {
+    color: #4682B4;
+  }
+  &__userAvater {
+    height: 50px;
+    width: auto;
+    font-size: 40px;
+    color: #ffffff;
+    background-color: #222222;
+    // text-align: center;
+    display: inline-block;
+    .avater {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+    }
+  }
+  &__username {
+    width: auto;
+    font-size: 25px;
+    color: #4682B4;
+    margin-left: 5px;
+    display: inline-block;
+    a {
+      display: inline-block;
+    }
+  }
+  &__date {
+    width: auto;
+    font-size: 12px;
+    color: #4682B4;
+    margin-left: 20px;
+    display: inline-block;
+  }
+}
+
+.PostTitle {
+  width: auto;
+  font-size: 20px;
+  background-color: #222222;
+  color: #ffffff;
+}
+.PostImage {
+  border: 1px solid #000000;
+  margin-top: 10px;
+  height: 40%;
+  width: 100%;
+  color: #ffffff;
+  border-radius: 20px;
+  position: relative;
+}
+.PostImage:hover + .PostIndex{
+  border-radius: 10px;
+  border: 1px solid #00BFFF;
+  transition: all  0.3s ease;
+}
+
+.AreaInfomation {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background-color: rgba($color: #000000, $alpha: 0.40);
+  border: #ffffff;
+  border-radius: 20px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3vh;
+  width: 11vw;
+  size: 11px;
+  margin: 5px 0 0 5px;
+}
+.indexFavorite {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: rgba($color: #000000, $alpha: 0.40);
+  border: #ffffff;
+  border-radius: 20px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3vh;
+  width: 4vw;
+  size: 18px;
+  margin: 5px 0 0 5px;
+}
+
+.UserIcon {
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.AreaName {
+  font-size: 15px;
+  margin-left: 6px;
+}
+.PostDescription {
+  height: 70px;
+  width: 600px;
+  border: 1px solid #000000;
+  margin-top: 5px;
+}
+.ReviewBox {
+  height: 30px;
+  width: 200px;
+  margin-top: 7px;
+  display: flex;
+  justify-content: space-around;
+  &__LikeIcon {
+    color: #ffffff;
+    font-size: 20px;
+  }
+  &__NumberOfView {
+    color: #ffffff;
+    font-size: 20px;
+    margin-left: 20px;
+  }
+}
+
+
+div.PostIndex div.PostImage {
+  margin: 20px 0;
+  padding: 30px;
+  position: relative;
+  height: 30vh;
+  color: #fff;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+  a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+}

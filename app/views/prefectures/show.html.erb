@@ -1,0 +1,62 @@
+<div class='NewPostMessage'>
+  <h2 class='NewPostMessage__heading'>
+    <%= @prefecture.name %> の投稿
+  </h2>
+</div>
+<div class="iPostIndex">
+  <% @prefectures.each do |post| %>
+    <div class='NewPost'>
+      <div class='indexUserInfomation'>
+        <div class='indexUserInfomation__userAvater'>
+          <%= image_tag post.user.image.url, class: "avater" %>
+          <%# <i class="fas fa-user-circle"></i> %>
+        </div>
+        <span class='indexUserInfomation__username'>
+          <a href="/users/<%= post.user.id %>">
+            <%= post.user.name %>
+          </a>
+        </span>
+        <div class='indexUserInfomation__date'>
+          <span><%= time_ago_in_words(post.created_at) %>前</span>
+        </div>
+      </div>
+      <div class="PostTitle">
+        <span>~ <%= post.title %> ~</span>
+      </div>
+      <div class='PostImage' style="background-image: url(<%= post.image %>);">
+        <div class="AreaInfomation">
+          <div class="UserIcon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="AreaName">
+            <%= post.prefecture.name if post.prefecture_id? %>
+          </div>
+        </div>
+        <div class="more">
+          <span><%= image_tag 'arrow_top.png' %></span>
+          <ul class="more_list">
+            <li>
+              <%= link_to '詳細', post_path(post.id), method: :get %>
+            </li>
+            <% if user_signed_in? && current_user.id == post.user_id %>
+              <li>
+                <%= link_to '編集', edit_post_path(post.id), method: :get %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <%# <div class='PostDescription'>
+        <%= post.content %>
+      <%# </div> %>
+      <div class='ReviewBox'>
+        <div class='ReviewBox__LikeIcon'>
+          <i class="fas fa-thumbs-up"></i>
+        </div>
+        <div class='ReviewBox__NumberOfView'>
+          <i class="fas fa-eye"></i>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,31 @@
+<div class="accountPage", style="background-image: url(<%= asset_path "TopPageImage.jpg" %>);">
+  <div class="accountMain">
+    <div class="accountPageBox">
+      <h2>ログイン</h2>
+      <div class="accountPageBoxForm">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="formField">
+            <div class='formField__lavel--normal'>
+              <%= f.label :email, "E-Mail" %>
+            </div>
+            <div class='formField__input--normal'>
+              <%= f.text_field :email, autofocus: true, autocomplete: "email", class:"field", placeholder:"PC・携帯どちらでも可" %>
+            </div>
+          </div>
+          <div class="formField">
+            <div class='formField__lavel--normal'>
+              <%= f.label :password, "パスワード" %>
+            </div>
+            <div class='formField__input--normal'>
+              <%= f.password_field :password, class:"field", autocomplete: "current-password", placeholder:"6文字以上で入力してください" %>
+            </div>
+          </div>
+          <div class="actions">
+            <%= f.submit "Log in", class: 'next_btn'%>
+          </div>
+          <%= render "devise/shared/links" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

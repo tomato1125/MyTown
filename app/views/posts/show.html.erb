@@ -1,0 +1,53 @@
+<div class="postShow">
+  <div class='NewPostArea'>
+    <div class="PostTitle">
+      <span>~ <%= @post.title %> ~</span>
+    </div>
+    <div class='postShowImage' style="background-image: url(<%= @post.image %>);">
+      <% if user_signed_in? && current_user.id == @post.user.id %>
+        <div class="AreaInfomation">
+          <div class="UserIcon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="AreaName">
+            <%= @post.prefecture.name if @post.prefecture_id? %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class='PostDescription'>
+      <%= @post.content %>
+    </div>
+    <% if user_signed_in? && current_user.id == @post.user_id %>
+      <%= link_to '編集', edit_post_path(@post.id), method: :get %>
+      <%= link_to '削除', post_path(@post.id), method: :delete %>
+    <% end %>
+  </div>
+  <div class='GoogleMapShow'>
+    <%= render 'showmap', post: @post %>
+  </div>
+</div>
+<div class="CommentArea">
+  <% if current_user %>
+    <div class="CommentForm">
+      <%= form_with(model: [@post, @comment], local: true) do |form| %>
+        <%= form.text_area :text, placeholder: "コメントする", rows: "2", class: "CommentForm__input" %>
+        <%= form.submit "SEND", class: "CommentForm__btn" %>
+      <% end %>
+    </div>
+  <% else %>
+    <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+  <% end %>
+  <div class="comments">
+    <h4>＜コメント一覧＞</h4>
+    <% if @comments %>
+      <% @comments.each do |comment| %>
+        <p>
+          <%= image_tag comment.user.image.url, class: "CommentAvater" %>
+          <strong><%= link_to comment.user.name, "/users/#{comment.user_id}" %>：</strong>
+          <%= comment.text %>
+        </p>
+      <% end %>
+    <% end %>
+  </div>
+</div>

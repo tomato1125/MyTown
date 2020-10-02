@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+.contents.row {
+  background-image: image-url("NewPostImage2.jpg");
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  .createMessage {
+    margin-bottom: 15vh;
+    text-align: center;
+    padding-left: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  .btn {
+    display: block;
+    font-size: 15px;
+  }
+}
