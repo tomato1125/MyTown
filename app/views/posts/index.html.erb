@@ -8,7 +8,12 @@
     </p>
     <p class='SearchHeading'>Keyword
     </p>
-
+    <div class='SearchSpace'>
+      <%= form_with(url: search_posts_path, local: true, method: :get, class: "SearchForm") do |form| %>
+        <%= form.text_field :keyword, placeholder: "キーワード検索する", class: "SearchForm__content" %>
+        <%= form.submit "検索", class: "SearchForm__bottum" %>
+      <% end %>
+    </div>
   </div>
 </div>
 <div class='categorySection'>

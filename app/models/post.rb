@@ -12,4 +12,12 @@ class Post < ApplicationRecord
   accepts_nested_attributes_for :spot, allow_destroy: true
 
   mount_uploader :image, ImageUploader
+
+  def self.search(search)
+    if search != ""
+      Post.where('text LIKE(?)', "%#{search}%")
+    else
+      Post.all
+    end
+  end
 end
