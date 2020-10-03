@@ -1,16 +1,15 @@
 <div class='NewPostMessage'>
   <h2 class='NewPostMessage__heading'>
-    <%= @prefecture.name %> の投稿
+    New Post
   </h2>
 </div>
 <div class="PostIndex">
-  <% @prefectures.each do |post| %>
+  <% @posts.each do |post| %>
     <div class='CategoryNewPost'>
     <%= link_to '', post_path(post.id), class: "showlink", method: :get %>
       <div class='IndexUserInfomation'>
         <div class='IndexUserInfomation__userAvater'>
           <%= image_tag post.user.image.url, class: "avater" %>
-          <%# <i class="fas fa-user-circle"></i> %>
         </div>
         <span class='IndexUserInfomation__username'>
           <a href="/users/<%= post.user.id %>">
@@ -39,4 +38,7 @@
       </div>
     </div>
   <% end %>
+  <div class="showpagenate">
+    <%= paginate @posts %>
+  </div>
 </div>
