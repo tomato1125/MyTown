@@ -1,19 +1,20 @@
 @import "reset";
-@import "bootstrap-sprockets";
-@import "bootstrap";
+@import "category/index";
+@import "category/show";
 @import "comment/comment";
+@import "newpost/index";
 @import "post/index";
 @import "post/new";
 @import "post/show";
 @import "post/success";
 @import "user/accountPage";
 @import "user/mypage";
-@import "category/index";
-@import "category/show";
 @import "prefecture/index";
 @import "prefecture/show";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

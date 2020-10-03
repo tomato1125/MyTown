@@ -164,3 +164,12 @@
   border: 1px solid #000000;
   margin-top: 5px;
 }
+
+.showpagenate {
+  background-color: #222222;
+  display: flex;
+  justify-content: center;
+  .pageselect {
+    background-color: #222222;
+  }
+}

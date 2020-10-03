@@ -10,7 +10,10 @@ function initMap(){ //コールバック関数
     });
   }else{ //'map'というidが無かった場合
     map = new google.maps.Map(document.getElementById('show_map'), { //'show_map'というidを取得してマップを表示
-      center: {lat: gon.lat, lng: gon.lng}, //controllerで定義した変数を緯度・経度の値とする（値はDBに入っている）
+      center: {
+        lat: gon.lat,
+        lng: gon.lng
+      }, //controllerで定義した変数を緯度・経度の値とする（値はDBに入っている）
       zoom: 15, //拡大率（1〜21まで設定可能）
     });
 

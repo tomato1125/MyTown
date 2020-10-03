@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show]
 
   resources :prefectures, only: [:index, :show]
+
+  resources :newposts, only: [:index, :show]
 end

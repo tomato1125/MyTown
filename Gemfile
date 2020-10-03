@@ -65,3 +65,4 @@ gem 'jquery-rails'
 gem 'geocoder'
 gem "gmaps4rails"
 gem "gon"
+gem 'kaminari'
