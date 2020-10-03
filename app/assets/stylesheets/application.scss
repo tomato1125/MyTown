@@ -1,7 +1,6 @@
 @import "reset";
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "category/show";
 @import "comment/comment";
 @import "post/index";
 @import "post/new";
@@ -9,8 +8,10 @@
 @import "post/success";
 @import "user/accountPage";
 @import "user/mypage";
-@import "Flexslider";
-@import "prefectureFlexslider";
+@import "category/index";
+@import "category/show";
+@import "prefecture/index";
+@import "prefecture/show";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 /*
