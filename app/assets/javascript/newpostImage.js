@@ -1,6 +1,6 @@
 $(function(){
   
-  const prevImage = $('.image').next();
+  const prevImage = $('.Image').next();
 
   function buildHTML(id,image) {
     var html = `<div class="prevImageBox">
@@ -19,15 +19,15 @@ $(function(){
   function setLabel(count) {
     //プレビューが5個あったらラベルを隠す
     if (count == 1) { 
-      $('.imageInput').hide();
+      $('.Image_input').hide();
     } else {
       //プレビューが4個以下の場合はラベルを表示
-      $('.imageInput').show();
+      $('.Image_input').show();
     }
   }
   
   //hidden-fielsの値が変更したとき発火
-  $(document).on('change', '.imageInput', function() {
+  $(document).on('change', '.Image_input', function() {
     //hidden-fieldのidの数値のみ取得
     var id = $(this).attr('id');
     //選択したfileのオブジェクトを取得
@@ -45,7 +45,7 @@ $(function(){
       //ラベルの直前のプレビュー群にプレビューを追加
       $(prevImage).append(html);
       //プレビューの数を取得
-      $('.imageInput').hide();
+      $('.Image_input').hide();
       // var count = $('.imageInput').length;
       //countに応じてラベルのwidth・id・forの値を変更
       // setLabel(count);
@@ -62,11 +62,11 @@ $(function(){
     //画像を消去
     $(this).parent().parent().parent().remove();
     //フォームの中身を削除
-    $('.imageInput').val("");
+    $('.Image_input').val("");
     //プレビューの数を取得
     // var count = $('.imageInput').length;
     //countに応じてラベルのwidth・id・forの値を変更
     // setLabel(count);
-    $('.imageInput').show();
+    $('.Image_input').show();
   });
 });

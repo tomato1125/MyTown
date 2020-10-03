@@ -5,8 +5,8 @@ function initMap(){ //コールバック関数
   geocoder = new google.maps.Geocoder() //GoogleMapsAPIジオコーディングサービスにアクセス
   if(document.getElementById('map')){ //'map'というidを取得できたら実行
     map = new google.maps.Map(document.getElementById('map'), { //'map'というidを取得してマップを表示
-      center: {lat: 35.6594666, lng: 139.7005536}, //最初に表示する場所（今回は「渋谷スクランブル交差点」が初期値）
-      zoom: 15, //拡大率（1〜21まで設定可能）
+      center: {lat: 35.6807527, lng: 139.7670716}, //最初に表示する場所（今回は「渋谷スクランブル交差点」が初期値）
+      zoom: 16, //拡大率（1〜21まで設定可能）
     });
   }else{ //'map'というidが無かった場合
     map = new google.maps.Map(document.getElementById('show_map'), { //'show_map'というidを取得してマップを表示
