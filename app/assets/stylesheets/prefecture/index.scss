@@ -72,10 +72,23 @@
 
 //レスポンシブ対応//
 @media (max-width: 700px) {
+  .PrefectureSection {
+    height: 6vh;
+    background-color: #222222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 4vh;
+    .PrefectureHeading {
+      font-size: 3vh;
+      color: #FFFFFF;
+      padding-top: 4vh;
+    }
+  }
 
   .PrefectureSearch {
-    // height: 45vh;
-    border-bottom: none;
+    height: 50vh;
   }
   
   .Prefecture-container {

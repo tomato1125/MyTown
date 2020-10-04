@@ -1,7 +1,7 @@
 .Category-container {
   background-color: #222222;
   position: absolute;
-  height: 40vh;
+  height: 45vh;
   width: 85%;
   /* Safari */
   display: flex;
@@ -95,9 +95,25 @@
 }
 
 @media screen and (max-width: 700px) {
+  .CategorySection {
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    background-color: #222222;
+    align-items: center;
+    padding-top: 4vh;
+    .CategoryHeading {
+      font-size: 3vh;
+      height: auto;
+      color: #FFFFFF;
+      padding-top: 4vh;
+      // margin: 0 0 0 0;
+    }
+  }
+
   .CategorySearch {
     width: 100vw;
-    height: 40vh;
+    height: 50vh;
     font-size: 25px;
     font-weight: bold;
     display: flex;
