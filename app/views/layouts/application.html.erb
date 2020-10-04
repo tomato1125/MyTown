@@ -18,18 +18,18 @@
       <%= render 'layouts/notifications' %>
       <div class="HeaderMenus">
         <div class="HeaderMenus__left">
-          <%= link_to image_tag("myTown4.jpg", class: "logo"), "/" %>
+          <%= link_to image_tag("myTown4.jpg", class: "HeaderLogo"), "/" %>
           <% if user_signed_in? %>
-            <div class="user_nav_menu">
+            <div class="LoginedMenus">
               <span class="LoginUserName">ログイン名: <%= current_user.name %></span>
-              <%= link_to "マイページ", "/users/#{current_user.id}", class:"MenuLink" %>
-              <%= link_to "ログアウト", destroy_user_session_path, class:"MenuLink", method: :delete %>
-              <%= link_to  "投稿する", new_post_path, class: "MenuLink" %>
+              <%= link_to "マイページ", "/users/#{current_user.id}", class:"LoginMenu" %>
+              <%= link_to  "投稿する", new_post_path, class: "LoginMenu" %>
+              <%= link_to "ログアウト", destroy_user_session_path, class:"LoginMenu", method: :delete %>
             </div>
           <% else %>
-            <div class="user_nav_login">
-              <%= link_to "ログイン", new_user_session_path, class: 'LoginLink' %>
-              <%= link_to "新規登録", new_user_registration_path, class: 'LoginLink' %>
+            <div class="BeforeLoginMenus">
+              <%= link_to "ログイン", new_user_session_path, class: 'BeforeLoginMenu' %>
+              <%= link_to "新規登録", new_user_registration_path, class: 'BeforeLoginMenu' %>
             </div>
           <% end %>
         </div>
@@ -37,14 +37,41 @@
           <i class="fas fa-user"></i>
           <i class="fas fa-bell"></i>
         </div>
+        <div class="HanbergerMenu">
+          <div class="bargermenu-btn">
+            <i class="fa fa-bars", id="bargermenu-btn"></i>
+          </div>
+          <div class="bargermenu">
+            <div id="bargermenu-btn" class="bargermenu-closebtn">
+              <i class="far fa-times-circle"></i>
+            </div>
+            <div class="menus">
+              <%= link_to "マイページ", "/users/#{current_user.id}", class:"menu-item" %>
+              <%= link_to  "投稿する", new_post_path, class: "menu-item" %>
+              <%= link_to "ログアウト", destroy_user_session_path, class:"menu-item", method: :delete %>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
-    <%# <%= render 'layouts/notifications' %>
+
     <%= yield %>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmv1pwJDbQBm2zCU5YOV2hNw41U5zjjsU&callback=initMap" async defer></script>
     <script src='//cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js' type='text/javascript'></script>
     <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script>
+      $(function(){
+        $('.bargermenu-btn').on('click', function(){
+          $('.bargermenu').toggleClass('is-active');
+        });
+        $('.bargermenu-closebtn').on('click', function(){
+          $('.bargermenu').toggleClass('is-active');
+        });
+      }());
+    </script>
   </body>
 </html>
+
+

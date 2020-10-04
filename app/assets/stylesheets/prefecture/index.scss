@@ -1,4 +1,4 @@
-.pflex-container {
+.Prefecture-container {
   background-color: #222222;
   position: absolute;
   height: 45vh;
@@ -10,7 +10,7 @@
   flex-direction: column;
 }
 
-.pflex-slide {
+.Prefecture-slide {
   overflow: hidden;
   -webkit-flex: 1;
   /* Safari 6.1+ */
@@ -23,14 +23,27 @@
   -ms-transition: all 400ms ease;
   -o-transition: all 400ms ease;
   transition: all 400ms ease;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://cdn.pixabay.com/photo/2020/06/26/13/46/frenkendorf-5342811_960_720.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
 }
-.pflex-slide:hover {
+.Prefecture-slide:hover {
   -webkit-flex-grow: 3;
   flex-grow: 3;
+  color: #ffffff;
+}
+.Prefecture-slide:hover .Prefecture-title{
+  color: #1E90FF;
+  -webkit-transition: all 800ms ease;
+  -moz-transition: all 800ms ease;
+  -ms-transition: all 800ms ease;
+  -o-transition: all 800ms ease;
+  transition: all 800ms ease;
 }
 
-.pflex-title {
-  color: #f1f1f1;
+.Prefecture-title {
+  color: #ffffff;
   position: relative;
   font-size: 2.5vh;
   padding-left: 15px;
@@ -40,47 +53,45 @@
   top: 20%;
 }
 
-.prefecture {
+.Prefectures {
   height: 1vh;
   padding: 0 5%;
   margin-top: 3.7vh;
   font-size: 1.9vh;
 }
 
-.pflex-about {
+.Prefecture-about {
   color: #f1f1f1;
   margin-right: 8px;
-  font-size: 1.1vw;
+  text-decoration: none;
+}
+.Prefecture-about:hover {
+  text-decoration: none;
+  color: #1E90FF;
 }
 
-.pwork {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://cdn.pixabay.com/photo/2020/06/26/13/46/frenkendorf-5342811_960_720.jpg);
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-}
+//レスポンシブ対応//
+@media (max-width: 700px) {
 
-@media (max-width: 1000px) {
-
-.prefectureSearch {
-  height: 45vh;
-  border-bottom: none;
-}
-
-.pflex-container {
-  height: 35vh;
-  margin-top: 100px;
-  overflow: hidden;
-}
-.pflex-title {
-  font-size: 1.7vh;
-}
-.prefecture {
-  font-size: 1vh;
-}
-.pflex-about {
-  color: #f1f1f1;
-  margin-right: 10px;
-  font-size: 1vh;
-}
+  .PrefectureSearch {
+    // height: 45vh;
+    border-bottom: none;
+  }
+  
+  .Prefecture-container {
+    height: 40vh;
+    margin-top: 2vh;
+    overflow: hidden;
+  }
+  .Prefecture-title {
+    font-size: 1.7vh;
+  }
+  .Prefectures {
+    font-size: 1vh;
+  }
+  .Prefecture-about {
+    color: #f1f1f1;
+    margin-right: 10px;
+    font-size: 1vh;
+  }
 }

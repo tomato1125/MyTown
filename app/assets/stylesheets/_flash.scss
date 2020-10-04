@@ -1,6 +1,7 @@
 .Notification {
   width: 100vw;
   height: 1vh;
+  z-index: 1000;
   .notice {
     background-color: #38AEF0;
     color: #fff;
