@@ -1,82 +1,82 @@
-<div class='MainSpace'>
-</div>
-<div class='SearchSection'>
-  <div class='SearchBackgroundImage' style="background-image: url(<%= asset_path "TopPageImage.jpg" %>);">
-    <p class='ApplicationKeyword'>〜故郷の良さを再発見〜
-    </p>
-    <p class='ApplicationIntroduce'>ここは故郷・今住んでいる場所のお気に入りスポットなどを投稿して共有するためのサイトです
-    </p>
-    <p class='SearchHeading'>Keyword
-    </p>
-    <div class='SearchSpace'>
-      <%= form_with(url: search_posts_path, local: true, method: :get, class: "SearchForm") do |form| %>
-        <%= form.text_field :keyword, placeholder: "キーワード検索する", class: "SearchForm__content" %>
-        <%= form.submit "検索", class: "SearchForm__bottum" %>
-      <% end %>
-    </div>
-  </div>
-</div>
-<div class='categorySection'>
-  <p class='categoryHeading'>Category
-  </p>
-</div>
-<div class='categorySearch'>
-  <%= render partial: "Flexslider" %>
-</div>
-<div class='prefectureSection'>
-  <p class='prefectureHeading'> Prefecture
-  </p>
-</div>
-<div class='prefectureSearch'>
-  <%= render partial: "prefectureFlexslider" %>
-</div>
-
-<div class='PresentLocationSearch'>
-  <div class='PresentLocationSearch__Bottum'>
-  </div>
-</div>
-<div class='NewPostMessage'>
-  <h2 class='NewPostMessage__heading'>
-    New Posts
-  </h2>
-</div>
-<div class='seeMore'>
-  <%= link_to 'See More...', newposts_path %>
-</div>
-<div class="PostIndex">
-  <% @posts.first(5).each do |post| %>
-    <div class='CategoryNewPost'>
-    <%= link_to '', post_path(post.id), class: "showlink", method: :get %>
-      <div class='IndexUserInfomation'>
-        <div class='IndexUserInfomation__userAvater'>
-          <%= image_tag post.user.image.url, class: "avater" %>
-          <%# <i class="fas fa-user-circle"></i> %>
-        </div>
-        <span class='IndexUserInfomation__username'>
-          <a href="/users/<%= post.user.id %>">
-            <%= post.user.name %>
-          </a>
-        </span>
-        <div class='IndexUserInfomation__date'>
-          <span><%= time_ago_in_words(post.created_at) %>前</span>
-        </div>
-      </div>
-      <div class="CategoryPostTitle">
-        <span>~ <%= post.title %> ~</span>
-      </div>
-      <div class='CategoryPostImage' style="background-image: url(<%= post.image %>);">
-        <div class="AreaInfomation">
-          <div class="UserIcon">
-            <i class="fas fa-map-marker-alt"></i>
-          </div>
-          <div class="AreaName">
-            <%= post.prefecture.name if post.prefecture_id? %>
-          </div>
-        </div>
-        <div class="indexFavorite">
-          <i class="far fa-bookmark"></i>
-        </div>
+<div class='MainWrapper'>
+  <div class='SearchSection'>
+    <div class='SearchBackgroundImage' style="background-image: url(<%= asset_path "TopPageImage.jpg" %>);">
+      <h2 class='ApplicationIntroduction1'>〜故郷の良さを再発見〜
+      </h2>
+      <h4 class='ApplicationIntroduction2'>ここは故郷・今住んでいる場所のお気に入りスポットなどを投稿して共有するためのサイトです
+      </h4>
+      <h3 class='SearchHeading'>Keyword
+      </h3>
+      <div class='SearchSpace'>
+        <%= form_with(url: search_posts_path, local: true, method: :get, class: "SearchForm") do |form| %>
+          <%= form.text_field :keyword, placeholder: "キーワード検索する", class: "SearchForm__content" %>
+          <%= form.submit "検索", class: "SearchForm__bottum" %>
+        <% end %>
       </div>
     </div>
-  <% end %>
+  </div>
+  <div class='CategorySection'>
+    <p class='CategoryHeading'>Category
+    </p>
+  </div>
+  <div class='CategorySearch'>
+    <%= render partial: "categories/categoryIndex" %>
+  </div>
+  <div class='PrefectureSection'>
+    <p class='PrefectureHeading'> Prefecture
+    </p>
+  </div>
+  <div class='PrefectureSearch'>
+    <%= render partial: "prefectures/prefectureIndex" %>
+  </div>
+  
+  <div class='PresentLocationSearch'>
+    <div class='PresentLocationSearch__Bottum'>
+    </div>
+  </div>
+  <div class='NewPostMessage'>
+    <h2 class='NewPostMessage__heading'>
+      New Posts
+    </h2>
+  </div>
+  <div class='seeMore'>
+    <%= link_to 'See More...', newposts_path %>
+  </div>
+  <div class="PostIndex">
+    <% @posts.first(5).each do |post| %>
+      <div class='CategoryNewPost'>
+      <%= link_to '', post_path(post.id), class: "showlink", method: :get %>
+        <div class='IndexUserInfomation'>
+          <div class='IndexUserInfomation__userAvater'>
+            <%= image_tag post.user.image.url, class: "avater" %>
+            <%# <i class="fas fa-user-circle"></i> %>
+          </div>
+          <span class='IndexUserInfomation__username'>
+            <a href="/users/<%= post.user.id %>">
+              <%= post.user.name %>
+            </a>
+          </span>
+          <div class='IndexUserInfomation__date'>
+            <span><%= time_ago_in_words(post.created_at) %>前</span>
+          </div>
+        </div>
+        <div class="CategoryPostTitle">
+          <span>~ <%= post.title %> ~</span>
+        </div>
+        <div class='CategoryPostImage' style="background-image: url(<%= post.image %>);">
+          <div class="AreaInfomation">
+            <div class="UserIcon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="AreaName">
+              <%= post.prefecture.name if post.prefecture_id? %>
+            </div>
+          </div>
+          <div class="indexFavorite">
+            <i class="far fa-bookmark"></i>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

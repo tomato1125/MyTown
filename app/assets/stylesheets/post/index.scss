@@ -3,7 +3,7 @@
 }
 
 .MainSpace {
-  color: #000000;
+  color:#222222;
   height: 100%;
   width: 100%;
 }
@@ -13,7 +13,7 @@
   background-color: #222222;
   color: #ffffff;
   height: 50vh;
-  width: 100%;
+  width: 100vw;
   padding-top: 10vh;
 }
 .SearchBackgroundImage {
@@ -21,62 +21,61 @@
   // justify-content: center;
   flex-direction: column;
   align-items: center;
-  height: 400px;
-  width: 100%;
+  height: 40vh;
+  width: 100vw;
 }
 
-.ApplicationKeyword {
-  font-size: 30px;
-  margin-top: 30px;
+.ApplicationIntroduction1 {
+  font-size: 3.5vh;
+  margin-top: 3vh;
 }
 
-.ApplicationIntroduce {
-  font-size: 13px;
+.ApplicationIntroduction2 {
+  font-size: 1.3vh;
 }
 
 .SearchHeading {
-  font-size: 25px;
+  font-size: 3vh;
   font-weight: bold;
-  margin-top: 40px;
+  margin-top: 4vh;
 }
 
 .SearchForm {
-  &__FormBox {
-    width: 100%;
-    height: 30px;
-  }
+  width: auto;
   &__content {
-    width: 600px;
-    height: 30px;
+    width: 40vw;
+    height: 3vh;
     color: #000000;
     border-radius: 5px;
     border-color: #008BBB;
   }
   &__bottum {
-    margin-left: 5px;
-    height: 30px;
-    width: 80px;
+    margin-left: 0.5vw;
+    height: 3vh;
+    width: 10vw;
     color: #000000;
     background-color: #FFFAFA;
     border-radius: 10px;
   }
 }
 
-.categorySection {
+.CategorySection {
   display: flex;
   justify-content: center;
   background-color: #222222;
-  .categoryHeading {
-    font-size: 30px;
-    height: 100px;
+  align-items: center;
+  padding: 2vh 0;
+  .CategoryHeading {
+    font-size: 3vh;
+    height: 6vh;
     color: #FFFFFF;
     margin: 0 0 0 0;
-    padding: 25px 0;
+    // padding: 25px 0;
   }
 }
-.categorySearch {
+.CategorySearch {
   width: 100vw;
-  height: 70vh;
+  height: 50vh;
   font-size: 25px;
   font-weight: bold;
   display: flex;
@@ -88,18 +87,14 @@
   }
 }
 
-
-
-.prefectureSection {
+.PrefectureSection {
   background-color: #222222;
-  height: 200px;
   display: flex;
-  padding-top: 30px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   list-style: none;
-  .prefectureHeading {
+  .PrefectureHeading {
     font-size: 30px;
     height: 100px;
     color: #FFFFFF;
@@ -107,7 +102,7 @@
     padding: 25px 0;
   }
 }
-.prefectureSearch {
+.PrefectureSearch {
   width: 100vw;
   height: 70vh;
   font-size: 25px;
