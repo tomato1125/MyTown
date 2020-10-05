@@ -3,7 +3,7 @@
     <%= @category.name %>
   </h2>
 </div>
-<div class="PostIndex">
+<div class="CategoryPostIndex">
   <% @categories.each do |post| %>
     <div class='CategoryNewPost'>
     <%= link_to '', post_path(post.id), class: "showlink", method: :get %>
@@ -25,15 +25,15 @@
         <span>~ <%= post.title %> ~</span>
       </div>
       <div class='CategoryPostImage' style="background-image: url(<%= post.image %>);">
-        <div class="AreaInfomation">
-          <div class="UserIcon">
+        <div class="CategoryAreaInfomation">
+          <div class="CategoryUserIcon">
             <i class="fas fa-map-marker-alt"></i>
           </div>
-          <div class="AreaName">
+          <div class="CategoryAreaName">
             <%= post.prefecture.name if post.prefecture_id? %>
           </div>
         </div>
-        <div class="indexFavorite">
+        <div class="CategoryIndexFavorite">
           <i class="far fa-bookmark"></i>
         </div>
       </div>

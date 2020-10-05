@@ -31,20 +31,20 @@
   </div>
   
   <div class='NewPostMessage'>
-    <h2 class='NewPostMessage__heading'>
+    <p class='NewPostMessage__heading'>
       New Posts
-    </h2>
+    </p>
   </div>
   <div class='SeeMore'>
     <%= link_to 'See More...', newposts_path %>
   </div>
-  <div class="PostIndex">
+  <div class="ToppagePostIndex">
     <% @posts.first(5).each do |post| %>
-      <div class='CategoryNewPost'>
+      <div class='ToppageNewPost'>
       <%= link_to '', post_path(post.id), class: "showlink", method: :get %>
         <div class='IndexUserInfomation'>
           <div class='IndexUserInfomation__userAvater'>
-            <%= image_tag post.user.image.url, class: "avater" %>
+            <%= image_tag post.user.image.url, class: "Avater" %>
             <%# <i class="fas fa-user-circle"></i> %>
           </div>
           <span class='IndexUserInfomation__username'>
@@ -56,19 +56,19 @@
             <span><%= time_ago_in_words(post.created_at) %>前</span>
           </div>
         </div>
-        <div class="CategoryPostTitle">
+        <div class="ToppagePostTitle">
           <span>~ <%= post.title %> ~</span>
         </div>
-        <div class='CategoryPostImage' style="background-image: url(<%= post.image %>);">
-          <div class="AreaInfomation">
-            <div class="UserIcon">
+        <div class='ToppagePostImage' style="background-image: url(<%= post.image %>);">
+          <div class="ToppageAreaInfomation">
+            <div class="ToppageUserIcon">
               <i class="fas fa-map-marker-alt"></i>
             </div>
-            <div class="AreaName">
+            <div class="ToppageAreaName">
               <%= post.prefecture.name if post.prefecture_id? %>
             </div>
           </div>
-          <div class="indexFavorite">
+          <div class="ToppageIndexFavorite">
             <i class="far fa-bookmark"></i>
           </div>
         </div>
