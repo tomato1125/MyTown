@@ -45,11 +45,18 @@
             <div id="bargermenu-btn" class="bargermenu-closebtn">
               <i class="far fa-times-circle"></i>
             </div>
-            <div class="menus">
-              <%= link_to "マイページ", "/users/#{current_user.id}", class:"menu-item" %>
-              <%= link_to  "投稿する", new_post_path, class: "menu-item" %>
-              <%= link_to "ログアウト", destroy_user_session_path, class:"menu-item", method: :delete %>
-            </div>
+            <% if user_signed_in? %>
+              <div class="menus">
+                <%= link_to "マイページ", "/users/#{current_user.id}", class:"menu-item" %>
+                <%= link_to  "投稿する", new_post_path, class: "menu-item" %>
+                <%= link_to "ログアウト", destroy_user_session_path, class:"menu-item", method: :delete %>
+              </div>
+            <% else %>
+              <div class="menus">
+                <%= link_to "ログイン", new_user_session_path, class: 'menu-item' %>
+                <%= link_to "新規登録", new_user_registration_path, class: 'menu-item' %>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>

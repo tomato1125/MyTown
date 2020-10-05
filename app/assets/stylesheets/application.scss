@@ -41,7 +41,7 @@
   width: 100%;
   height: 10vh;
   background-color: rgba($color: #222222, $alpha: 0.95);
-  z-index: 9999;
+  z-index: 9000;
   &__ber {
     display: flex;
     align-items: center;
@@ -149,14 +149,14 @@
     width: 100%;
     height: 10vh;
     background-color: rgba($color: #222222, $alpha: 0.95);
-    z-index: 9999;
+    z-index: 9000;
   }
   
   .HeaderMenus{ 
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 0px;
+    padding: 0px 0px;
     font-size: 2vh;
     &__left {
       display: flex;
@@ -211,7 +211,7 @@
   //ヘッダーここまで
   .bargermenu-btn{
     position: fixed;
-    top: 3%;
+    top: 2%;
     right: 5%;
     margin-right: 2vw;
     z-index: 1000;
@@ -225,7 +225,7 @@
   }
   .bargermenu-closebtn{
     position: fixed;
-    top: 3%;
+    top: 2%;
     right: 10%;
     margin-right: 2vw;
     z-index: 1000;
