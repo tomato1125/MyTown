@@ -215,19 +215,20 @@ ul.user-nav-bar li .active {
   }
 }
 .mypage-NewPost {
-  height: 50vh;
-  width: 30vw;
-  padding: 20px 20px;
+  height: 60vh;
+  width: 50vw;
+  padding: 50px 50px;
+  margin: 5vh auto;
   display: flex;
   flex-direction: column;
   border: 1px solid #4682B4;
   background-color: rgba($color: #222222, $alpha: 0.90);
   border-radius: 10px;
-  margin: 50px;
   position: relative;
   :hover {
     border-radius: 10px;
     border: 1px solid #00BFFF;
+    background-color: rgba($color: #fff, $alpha: 0.05);
     transition: all  0.3s ease;
   }
   a {
@@ -239,51 +240,20 @@ ul.user-nav-bar li .active {
   }
   .postTime {
     color: #4682B4;
-    font-size: 15px;
+    font-size: 1vh;
     margin-left: 1.5vw;
-  }
-}
-
-.UserInfomation {
-  height: 5vh;
-  width: auto;
-  display: flex;
-  align-items: center;
-  a {
-    color: #4682B4;
-  }
-  &__userImage {
-    height: 5vh;
-    width: 100px;
-    font-size: 1px;
-    color: #ffffff;
-    background-color: #222222;
-    text-align: center;
-  }
-  &__username {
-    width: auto;
-    font-size: 25px;
-    color: #4682B4;
-    margin-left: 5px;
-  }
-  &__date {
-    width: auto;
-    font-size: 12px;
-    color: #4682B4;
-    margin-left: 20px;
   }
 }
 
 .PostTitle {
   width: auto;
-  font-size: 20px;
-  // background-color: #222222;
-  background-color: rgba($color: #222222, $alpha: 0.80);
+  font-size: 2vh;
+  margin: 1.0vh;
   color: #ffffff;
 }
+
 .userPostImage {
   border: 1px solid #000000;
-  margin-top: 10px;
   height: 100%;
   width: 100%;
   color: #ffffff;
@@ -291,38 +261,6 @@ ul.user-nav-bar li .active {
   background-size: cover;
   background-position: center center;
   position: relative;
-  .AreaInfomation {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    background-color: rgba($color: #000000, $alpha: 0.40);
-    border: #ffffff;
-    border-radius: 20px;
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 30px;
-    width: 90px;
-    size: 13px;
-    margin: 5px 0 0 5px;
-  }
-  .favorite {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    background-color: rgba($color: #000000, $alpha: 0.40);
-    border: #ffffff;
-    border-radius: 20px;
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 3vh;
-    width: 4vw;
-    size: 18px;
-    margin: 5px 0 0 5px;
-  }
 }
 
 .AreaInfomation {
@@ -336,18 +274,33 @@ ul.user-nav-bar li .active {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 30px;
-  width: 90px;
-  size: 13px;
+  height: 3vh;
+  width: 7vw;
   margin: 5px 0 0 5px;
 }
 
-.UserIcon {
-  font-size: 20px;
+.AreaIcon {
+  font-size: 2vh;
   color: #ffffff;
 }
 
 .AreaName {
-  font-size: 15px;
+  font-size: 1.5vh;
   margin-left: 6px;
+}
+
+.favorite {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: rgba($color: #000000, $alpha: 0.40);
+  border: #ffffff;
+  border-radius: 20px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3vh;
+  width: 4vw;
+  margin: 5px 0 0 5px;
 }

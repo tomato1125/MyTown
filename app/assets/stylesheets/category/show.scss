@@ -100,6 +100,7 @@
   margin: 1.0vh;
   color: #ffffff;
 }
+
 .CategoryPostImage {
   border: 1px solid #000000;
   height: 100%;
@@ -109,6 +110,7 @@
   position: relative;
   z-index: 1;
 }
+
 .CategoryPostImage:hover + .CategoryPostIndex{
   border-radius: 10px;
   border: 1px solid #00BFFF;
@@ -207,7 +209,6 @@
   }
   
   .IndexUserInfomation {
-    // background-color: #222222;
     height: auto;
     width: auto;
     display: flex;
@@ -221,7 +222,7 @@
       width: auto;
       font-size: 40px;
       color: #ffffff;
-      // background-color: #222222;
+      background-color: #222222;
       display: inline-block;
       .Avater {
         height: 50px;
@@ -252,7 +253,7 @@
   .CategoryPostTitle {
     width: auto;
     font-size: 2vh;
-    // background-color: #222222;
+    background-color: #222222;
     color: #ffffff;
   }
   .CategoryPostImage {
