@@ -127,12 +127,13 @@
 }
 
 .SeeMore {
-  font-size: 17px;
+  font-size: 1.5vh;
+  height: auto;
   color: #4682B4;
   display: flex;
   justify-content: center;
   background-color: #222222;
-  padding-top: 20px;
+  padding-top: 4vh;
   text-decoration: none;
   a {
     text-decoration: none;
@@ -208,7 +209,8 @@
     display: inline-block;
     z-index: 3;
     :hover{
-      color: #00BFFF;
+      text-decoration: none;
+      color: #1E90FF;
       transition: all  0.3s ease;
     }
   }
