@@ -1,6 +1,6 @@
 <div class="accountPage", style="background-image: url(<%= asset_path "TopPageImage.jpg" %>);">
-  <div class="accountMain">
-    <div class="accountPageBox">
+  <div class="LoginMain">
+    <div class="LoginPageBox">
       <h2>ログイン</h2>
       <div class="accountPageBoxForm">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -23,7 +23,8 @@
           <div class="actions">
             <%= f.submit "Log in", class: 'next_btn'%>
           </div>
-          <%= render "devise/shared/links" %>
+          <%= link_to "新規登録画面へ", new_user_registration_path %>
+          <%= link_to "パスワードをお忘れの方", new_user_password_path %>
         <% end %>
       </div>
     </div>

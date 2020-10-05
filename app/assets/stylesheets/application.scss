@@ -66,6 +66,8 @@
   }
 }
 
+
+
 .HeaderLogo {
   height: 7.5vh;
   width: auto;
@@ -81,6 +83,7 @@
 .LoginedMenus {
   width: auto;
   font-size: 2vh;
+  display: flex;
   .LoginMenu:hover {
     color: #00BFFF;
   }
@@ -97,6 +100,7 @@
 .BeforeLoginMenus {
   font-size: 2vh;
   margin-left: 5vw;
+  display: flex;
   .BeforeLoginMenu:hover {
     color: #00BFFF;
   }
@@ -171,6 +175,14 @@
   .HeaderLogo {
     height: 7.5vh;
     width: auto;
+    background-image:("myTown4.jpg");
+    background-color:rgba(255,255,255,0.8);
+    background-blend-mode:lighten;
+  }
+
+  .HeaderLogo {
+    height: 7.5vh;
+    width: auto;
     background-color: rgba($color: #222222, $alpha: 0.95);
     position: relative;
     a{
@@ -200,6 +212,7 @@
   .BeforeLoginMenus {
     font-size: 2vh;
     margin-left: 5vw;
+    display: none;
     .BeforeLoginMenu:hover {
       color: #00BFFF;
     }
