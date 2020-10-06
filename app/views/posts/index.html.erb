@@ -9,9 +9,11 @@
       </h3>
       <div class='SearchSpace'>
         <%= form_with(url: search_posts_path, local: true, method: :get, class: "SearchForm") do |form| %>
-          <%= form.text_field :keyword, placeholder: "キーワード検索する", class: "SearchForm__content" %>
+          <%= form.text_field :keyword, placeholder: "キーワード検索する", id: 'Search_Form', class: "SearchForm__content" %>
           <%= form.submit "検索", class: "SearchForm__bottum" %>
         <% end %>
+      </div>
+      <div id="UserSearchResult">
       </div>
     </div>
   </div>

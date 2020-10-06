@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show, :new, :edit, :create, :update]
 
-  resources :posts do
+  resources :posts, shallow: true do
     collection do
       get 'search'
     end
