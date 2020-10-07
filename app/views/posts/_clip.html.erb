@@ -1,0 +1,6 @@
+<td><%= post.title %></td>
+<% if current_user.cliped_by?(post.id) %>
+  <td><%= link_to 'いいね外す', destroy_clip_path(post), method: :DELETE %> <%= post.clips.count %></td>
+<% else %>
+  <td><%= link_to 'いいねする', create_clip_path(post), method: :POST %> <%= post.clips.count %></td>
+<% end %>
