@@ -37,7 +37,21 @@
     </div>
     <% if user_signed_in? && current_user.id == @post.user_id %>
       <%= link_to '編集', edit_post_path(@post.id), method: :get %>
-      <%= link_to '削除', post_path(@post.id), method: :delete %>
+      <button name="削除する" id="modal-open">投稿を削除</button>
+      <%# モーダルエリア %>
+      <div id="modal-main">
+        <div class="modal-contents">
+          <div class="modal-content">
+            <h3>この投稿を削除しますか？</h3>
+            <br>
+            <h6>（削除すると復元ができませんのでご注意ください）</h6>
+            <div class="DeleteMotalButton">
+              <%= button_to '削除', post_path(@post.id), method: :delete, class: "delete-btn"%>
+            </div>
+            <%= link_to '戻る', class: "return-btn"%>
+          </div>
+        </div>
+      </div>
     <% end %>
     <% if current_user.already_cliped?(@post) %>
       <%= button_to post_clip_path(@post), method: :delete do%>

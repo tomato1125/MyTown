@@ -93,3 +93,102 @@
     font-size: 20px;
   }
 }
+
+//モーダル
+
+#contents {
+  z-index: 0;
+  font-size: 16px;
+}
+
+#modal-open {
+  color: #cc0000;
+  height: 50px;
+  width: 100px;
+}
+/* モーダル コンテンツエリア */
+#modal-main {
+  display: none;
+  // width: 500px;
+  // height: 300px;
+  margin: 0;
+  padding: 2vh 2vh;
+  // background-color: #ffffff;
+  color: #666666;
+  position:fixed;
+  z-index: 2;
+}
+
+.modal-contents {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  .modal-content {
+    box-shadow:10px 10px 10px #222222;
+    width: 500px;
+    height: 300px;
+    font-size: 1.5vh;
+    line-height: 0.3vh;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    h5{
+      font-size: 1.5vh;
+      font-weight: bold;
+    }
+    h6{
+      font-size: 1.5vh;
+      font-weight: bold;
+    }
+  }
+}
+
+.DeleteModalButton {
+  width: 500px;
+  height: 2vh;
+  display: flex;
+  justify-content: center;
+}
+.delete-btn {
+  margin: 1vh 1vh;
+  height: 4vh;
+  width: 300px;
+  margin: 50px 0;
+  border-radius: 20px;
+  background-color: #FF0000;
+  border: none;
+  box-shadow: 0 0 8px gray;
+  color: #ffffff;
+  line-height: 1.5;
+  font-size: 2vh;
+  font-weight: bold;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all  0.3s ease;
+}
+.delete-btn:hover {
+  background-color: rgba($color: #FF0000, $alpha: 0.50);
+  // background-color: #FF3366;
+}
+
+.return-btn:hover {
+  color: #00BFFF;
+  text-decoration: none;
+}
+
+/* モーダル 背景エリア */
+#modal-bg {
+  display:none;
+  width:100%;
+  height:100%;
+  background-color: rgba(0,0,0,0.5);
+  position:fixed;
+  top:0;
+  left:0;
+  z-index: 1;
+}
+//モーダルここまで
