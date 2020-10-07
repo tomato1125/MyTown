@@ -8,6 +8,7 @@ class Post < ApplicationRecord
   belongs_to :category
 
   has_many :clips
+  has_many :cliped_users, through: :clips, source: :user
   has_many :comments
   has_one :spot, dependent: :destroy
 
@@ -15,11 +16,5 @@ class Post < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-  def self.search(search)
-    if search != ""
-      Post.where('content LIKE(?)', "%#{search}%")
-    else
-      Post.all
-    end
-  end
+  
 end
