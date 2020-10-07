@@ -9,10 +9,16 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :introduce, presence: true
   
-  has_many :posts
-  has_many :clips
+  has_many :posts, dependent: :destroy
+  has_many :clips, dependent: :destroy
+  has_many :cliped_posts, through: :clips, source: :post
   has_many :comments
   belongs_to :prefecture
 
   mount_uploader :image, ImageUploader
+
+  def already_cliped?(post)
+    self.clips.exists?(post_id: post.id)
+  end
+  
 end
