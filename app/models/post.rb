@@ -6,6 +6,8 @@ class Post < ApplicationRecord
   belongs_to :user
   belongs_to :prefecture
   belongs_to :category
+
+  has_many :clips
   has_many :comments
   has_one :spot, dependent: :destroy
 

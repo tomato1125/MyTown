@@ -22,6 +22,9 @@
       <%= link_to '編集', edit_post_path(@post.id), method: :get %>
       <%= link_to '削除', post_path(@post.id), method: :delete %>
     <% end %>
+    <tr>
+      <%= render 'clip', post: @post %>
+    </tr>
   </div>
   <div class='GoogleMapShow'>
     <%= render 'showmap', post: @post %>

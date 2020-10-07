@@ -10,6 +10,7 @@ class User < ApplicationRecord
   validates :introduce, presence: true
   
   has_many :posts
+  has_many :clips
   has_many :comments
   belongs_to :prefecture
 

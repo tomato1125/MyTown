@@ -1,0 +1,10 @@
+<% if Clip.find_by(user_id: current_user.id, post_id: post.id) %>
+  <%= link_to "/posts/#{post.id}/likes", method: :delete, remote: true do %>
+    <i class="far fa-heart">star</i>
+  <% end %>
+<% else %>
+  <%= link_to "/posts/#{post.id}/likes", method: :post, remote: true do %>
+    <i class="far fa-heart">star_border</i>
+    <% end %>
+<% end %>
+<%= post.likes.length %>

@@ -4,11 +4,13 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show, :new, :edit, :create, :update]
 
-  resources :posts, shallow: true do
+  resources :posts do
     collection do
       get 'search'
     end
     resources :comments, only: :create
+
+    resources :clips, only: [:create, :destroy]
   end
 
   resources :categories, only: [:index, :show]
