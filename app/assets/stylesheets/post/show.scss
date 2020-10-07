@@ -222,9 +222,12 @@
   // background-color: #FF3366;
 }
 
-.return-btn:hover {
-  color: #00BFFF;
-  text-decoration: none;
+.ReturnBtn {
+  color: #4682B4;
+  cursor: pointer;
+}
+.ReturnBtn:hover {
+  color: #1E90FF;
 }
 
 /* モーダル 背景エリア */
