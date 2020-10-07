@@ -36,15 +36,17 @@
       <%= @post.content %>
     </div>
     <% if user_signed_in? && current_user.id == @post.user_id %>
-      <%= link_to '編集', edit_post_path(@post.id), method: :get %>
-      <button name="削除する" id="modal-open">投稿を削除</button>
+      <div class="Buttons">
+        <%= button_to '編集', edit_post_path(@post.id), method: :get, class: 'edit-btn' %>
+        <button name="削除する" id="modal-open">削除</button>
+      </div>
       <%# モーダルエリア %>
       <div id="modal-main">
         <div class="modal-contents">
           <div class="modal-content">
-            <h3>この投稿を削除しますか？</h3>
+            <h3>投稿を削除しますか？</h3>
             <br>
-            <h6>（削除すると復元ができませんのでご注意ください）</h6>
+            <h6>（削除すると復元ができませんのでご注意ください。）</h6>
             <div class="DeleteMotalButton">
               <%= button_to '削除', post_path(@post.id), method: :delete, class: "delete-btn"%>
             </div>
@@ -63,6 +65,7 @@
       <% end %>
     <% end %>
   </div>
+  <%# グーグルマップ %>
   <div class='GoogleMapShow'>
     <%= render 'showmap', post: @post %>
   </div>

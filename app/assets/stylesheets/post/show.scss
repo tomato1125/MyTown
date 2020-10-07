@@ -101,11 +101,58 @@
   font-size: 16px;
 }
 
-#modal-open {
-  color: #cc0000;
-  height: 50px;
-  width: 100px;
+.Buttons {
+  display: flex;
+  width: 13vw;
+  justify-content: space-around;
+  margin-bottom: 1vh;
 }
+
+.edit-btn {
+  color: #ffffff;
+  height: 2vh;
+  width: 6vw;
+  margin: 0.5vh 0;
+  border-radius: 20px;
+  background-color: #4682B4;
+  border: none;
+  box-shadow: 0 0 8px gray;
+  color: #ffffff;
+  line-height: 1.5;
+  font-size: 1.3vh;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all  0.3s ease;
+}
+.edit-btn:hover {
+  background-color: rgba($color: #4682B4, $alpha: 0.80);
+}
+
+
+#modal-open {
+  color: #ffffff;
+  height: 2vh;
+  width: 10vw;
+  height: 2vh;
+  width: 6vw;
+  margin: 0.5vh 0;
+  border-radius: 20px;
+  background-color: #cc0000;
+  border: none;
+  box-shadow: 0 0 8px gray;
+  color: #ffffff;
+  line-height: 1.5;
+  font-size: 1.3vh;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all  0.3s ease;
+}
+#modal-open:hover {
+  background-color: rgba($color: #cc0000, $alpha: 0.80);
+}
+
 /* モーダル コンテンツエリア */
 #modal-main {
   display: none;

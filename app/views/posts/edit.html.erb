@@ -1,53 +1,53 @@
-<div class="newContents">
-  <h3 class='newContents__message'>
+<div class="NewContents">
+  <h3 class='NewContents__message'>
     Edit Post
   </h3>
-  <div class="newContents__container">
+  <div class="NewContents__container">
     <%= form_with(model: @post, local: true, multipart: true) do |form| %>
-      <div class='formArea'>
-        <div class='inputArea'>
-          <ul class='formSpace'>
-            <li class="prefecture">
-              <label class="labelName" for="prefecture">Prefecture：</label>
-              <%= form.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: '選択してください'}, {class: "prefecture__input"} %>
+      <div class='FormArea'>
+        <div class='InputArea'>
+          <ul class='FormSpace'>
+            <li class="Prefecture">
+              <label class="labelName" for="Prefecture">Prefecture：</label>
+              <%= form.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: '選択してください'}, {class: "Prefecture__input"} %>
             </li>
-            <li class="category">
+            <li class="Category">
               <label class="labelname" for="category">Category：</label>
-              <%= form.collection_select :category_id, Category.all, :id, :name, {include_blank: '選択してください'}, {class: "category__input"} %>
+              <%= form.collection_select :category_id, Category.all, :id, :name, {include_blank: '選択してください'}, {class: "Category__input"} %>
             </li>
-            <li class="title">
+            <li class="Title">
               <label class="labelName" for="titleSpace">Title：</label>
-              <%= form.text_field :title, class: 'title__input', placeholder: "タイトルを入力してください" %>
+              <%= form.text_field :title, class: 'Title__input', placeholder: "タイトルを入力してください" %>
             </li>
-            <li class='image'>
+            <li class='Image'>
               <label class="labelName" for="imageSpace">Photo：</label>
-              <%= form.file_field :image, class: 'imageInput', placeholder: "写真を選択してください" %>
+              <%= form.file_field :image, class: 'Image_input', placeholder: "写真を選択してください" %>
             </li>
               <div class="prevImageBox">
               </div>
-            <li class='content'>
+            <li class='Content'>
               <label class="labelName" for="contentSpace">Content：</label>
-              <%= form.text_area :content, class: 'content__input', placeholder: "コメントを入力してください" %>
+              <%= form.text_area :content, class: 'Content__input', placeholder: "コメントを入力してください" %>
             </li>
           </ul>
-          <div class="googleMap">
-            <div class="mapName">
+          <div class="GoogleMap">
+            <div class="MapName">
               Map
             </div>
             <%= form.fields_for :spot do |spot| %>
-              <div class="addressArea">
-                <%= spot.label :address, "レビュー場所（ googleMapで検索）", class: 'addressArea__title' %>
-                <%= spot.text_field :address, placepholder: "スポットを入力", id: "address", class: 'addressArea__text' %>
-                <input type="button" value="検索" onclick="codeAddress()" class="addressArea__btn">
+              <div class="Address">
+                <%= spot.label :address, "レビュー場所（ googleMapで検索）", class: 'Address__label' %>
+                <%= spot.text_field :address, placeholder: "スポットを入力", id: "address", class: 'Address__input' %>
+                <input type="button" value="検索" onclick="codeAddress()" class="Address__btn">
               </div>
-              <div class="maps" id="show_map" style="height: 40vh; width: 40vw;">
-              </div>
+            <div class="map", id="show_map">
+            </div>
             <% end %>
           </div>
         </div>
       </div>
-      <div class='send'>
-        <%= form.submit "送信中", class: 'send__btn', value: "更新する" %>
+      <div class='Send'>
+        <%= form.submit "送信中", class: 'Send__btn', value: "更新する" %>
       </div>
     <% end %>
   </div>
