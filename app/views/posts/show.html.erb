@@ -4,15 +4,32 @@
       <span>~ <%= @post.title %> ~</span>
     </div>
     <div class='postShowImage' style="background-image: url(<%= @post.image %>);">
-      <% if user_signed_in? && current_user.id == @post.user.id %>
-        <div class="AreaInfomation">
-          <div class="UserIcon">
-            <i class="fas fa-map-marker-alt"></i>
-          </div>
-          <div class="AreaName">
-            <%= @post.prefecture.name if @post.prefecture_id? %>
-          </div>
+      <div class="AreaInfomation">
+        <div class="UserIcon">
+          <i class="fas fa-map-marker-alt"></i>
         </div>
+        <div class="AreaName">
+          <%= @post.prefecture.name if @post.prefecture_id? %>
+        </div>
+      </div>
+      <% if current_user.already_cliped?(@post) %>
+        <%= link_to post_clip_path(@post), class: "ClipButton", method: :delete do%>
+          <div class="CategoryIndexFavorite">
+            <i class="fas fa-bookmark"></i>
+            <div class="ClipedCount">
+              <%= @post.clips.count %>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <%= link_to post_clips_path(@post), method: :post do%>
+          <div class="CategoryIndexFavorite">
+            <i class="far fa-bookmark"></i>
+            <div class="ClipedCount">
+              <%= @post.clips.count %>
+            </div>
+          </div>
+        <% end %>
       <% end %>
     </div>
     <div class='PostDescription'>
@@ -22,13 +39,13 @@
       <%= link_to '編集', edit_post_path(@post.id), method: :get %>
       <%= link_to '削除', post_path(@post.id), method: :delete %>
     <% end %>
-    <h3>いいね件数： <%= @post.clips.count %></h3>
     <% if current_user.already_cliped?(@post) %>
-      <i class="far fa-bookmark"></i>
-      <%= button_to 'いいねを取り消す', post_clip_path(@post), method: :delete %>
+      <%= button_to post_clip_path(@post), method: :delete do%>
+        <i class="fas fa-bookmark"></i> Bookmarkを解除
+      <% end %>
     <% else %>
       <%= button_to post_clips_path(@post) do%>
-        <i class="far fa-bookmark"> bookmark</i>
+        <i class="far fa-bookmark"> Bookmark</i>
       <% end %>
     <% end %>
   </div>
