@@ -7,9 +7,9 @@ class Post < ApplicationRecord
   belongs_to :prefecture
   belongs_to :category
 
-  has_many :clips
+  has_many :clips, dependent: :destroy
   has_many :cliped_users, through: :clips, source: :user
-  has_many :comments
+  has_many :comments, dependent: :destroy
   has_one :spot, dependent: :destroy
 
   accepts_nested_attributes_for :spot, allow_destroy: true
