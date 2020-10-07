@@ -48,12 +48,34 @@
 }
 
 .myPageBoxInformation-Image {
-  height: 10vh;
-  width: auto;
-  .image {
-    border-radius: 50%;
+  height: 11vh;
+  width: 11vw;
+  background-color: rgba($color: #ffffff, $alpha: 0.40);
+  border: 1px solid #999999;
+  border-radius: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1vh;
+  .NoImage {
+    border-radius: 5%;
+    border: 1px solid #888888;
     height: 10vh;
     width: 10vw;
+    font-size: 5vh;
+    background-color: #BBBBBB;
+    text-align: center;
+    align-items: center;
+    p{
+      font-size: 1.5vh;
+    }
+  }
+  .image {
+    border-radius: 5%;
+    height: 10vh;
+    width: 10vw;
+    background-size: cover;
+    background-position: center center;
   }
 }
 
@@ -78,6 +100,9 @@
   margin:0 0 0 5vw;
   a{
     color: rgba($color: #ffffff, $alpha: 0.30);
+    a:hover {
+      color: #00BFFF;
+    }
   }
   li {
     background-color: rgba($color: #222222, $alpha: 0.40);
@@ -88,6 +113,11 @@
 
 ul.user-nav-bar li .active {
   color: #ffffff;
+  text-decoration: none;
+}
+
+.user-nav:hover {
+  color: #00BFFF;
   text-decoration: none;
 }
 
