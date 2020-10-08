@@ -19,19 +19,22 @@
           <div class="prev-content">
           </div>
           <div class="label-content">
-            <label class="label-box" for="item_images_attributes_0_image">
+            <label class="label-box" for="post_images_attributes_0_image">
               <div class="label-box__text-visible">
-                クリックしてファイルをアップロード（最大５枚）
+                クリックしてファイルをアップロード
+              </div>
+              <div class="label-box__text-visible2">
+                最大５枚まで
               </div>
             </label>
           </div>
           <div class="hidden-content">
             <%= form.fields_for :images do |i| %>
-              <%= i.file_field :image, class: "hidden-field", id: "item_images_attributes_0_image", name: "item[images_attributes][0][image]", type: "file" %>
-              <%= i.file_field :image, class: "hidden-field", id: "item_images_attributes_1_image", name: "item[images_attributes][1][image]", type: "file" %>
-              <%= i.file_field :image, class: "hidden-field", id: "item_images_attributes_2_image", name: "item[images_attributes][2][image]", type: "file" %>
-              <%= i.file_field :image, class: "hidden-field", id: "item_images_attributes_3_image", name: "item[images_attributes][3][image]", type: "file" %>
-              <%= i.file_field :image, class: "hidden-field", id: "item_images_attributes_4_image", name: "item[images_attributes][4][image]", type: "file" %>
+              <%= i.file_field :image, class: "hidden-field", id: "post_images_attributes_0_image", name: "post[images_attributes][0][image]", type: "file" %>
+              <%= i.file_field :image, class: "hidden-field", id: "post_images_attributes_1_image", name: "post[images_attributes][1][image]", type: "file" %>
+              <%= i.file_field :image, class: "hidden-field", id: "post_images_attributes_2_image", name: "post[images_attributes][2][image]", type: "file" %>
+              <%= i.file_field :image, class: "hidden-field", id: "post_images_attributes_3_image", name: "post[images_attributes][3][image]", type: "file" %>
+              <%= i.file_field :image, class: "hidden-field", id: "post_images_attributes_4_image", name: "post[images_attributes][4][image]", type: "file" %>
             <% end %>
           </div>
         </li>

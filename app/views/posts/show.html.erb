@@ -3,7 +3,7 @@
     <div class="PostTitle">
       <span>~ <%= @post.title %> ~</span>
     </div>
-    <div class='postShowImage' style="background-image: url(<%= @post.image %>);">
+    <div class='postShowImage' style="background-image: url(<%= @post.images[0].image%>);">
       <div class="AreaInfomation">
         <div class="UserIcon">
           <i class="fas fa-map-marker-alt"></i>
@@ -32,6 +32,13 @@
         <% end %>
       <% end %>
     </div>
+    <ul class="PostImagesShow">
+      <%= @post.images.each do |i| %>
+        <li>
+          <%= image_tag i.image.url, class: "subImage"%>
+        <li>
+      <% end %>
+    </ul>
     <div class='PostDescription'>
       <%= @post.content %>
     </div>
