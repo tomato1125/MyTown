@@ -113,7 +113,7 @@
                     <i class="far fa-clock"></i>
                     <span class="postTime"><%= time_ago_in_words(post.created_at) %>前</span>
                   </div>
-                  <div class='CategoryPostImage' style="background-image: url(<%= post.image %>);">
+                  <div class='CategoryPostImage' style="background-image: url(<%= post.images[0].image %>);">
         
                     <div class="CategoryAreaInfomation">
                       <div class="CategoryAreaIcon">

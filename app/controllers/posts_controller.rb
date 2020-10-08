@@ -44,8 +44,8 @@ class PostsController < ApplicationController
     @clip = Clip.new
     @lat = @post.spot.latitude
     @lng = @post.spot.longitude
-    gon.lat = @lat
-    gon.lng = @lng
+    gon.latitude = @lat
+    gon.longtitude = @lng
     @comment = Comment.new
     @comments = @post.comments.includes(:user)
   end
@@ -67,7 +67,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :content, :prefecture_id, :category_id, spot_attributes: [:id, :address, :latitude, :longtitude], images_attributes: [:id, :image, :_destroy]).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :content, :prefecture_id, :category_id, spot_attributes: [:id, :address, :latitude, :longitude], images_attributes: [:id, :image, :_destroy]).merge(user_id: current_user.id)
   end
 
   # def set_post_info
