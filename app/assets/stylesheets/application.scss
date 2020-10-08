@@ -12,6 +12,7 @@
 @import "prefecture/index";
 @import "prefecture/show";
 @import "flash";
+@import "validationEngine.jquery";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "bootstrap-sprockets";
@@ -93,9 +94,66 @@
   }
   .LoginMenu {
     margin-left: 2vw;
+    cursor: pointer;
     text-decoration: none;
   }
 }
+
+
+// モーダル部分//
+.HeaderModal {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.LogoutBtn-yes {
+  margin: 1vh 1vh;
+  height: 4vh;
+  width: 150px;
+  margin: 50px 0;
+  border-radius: 20px;
+  background-color: #1E90FF;
+  border: none;
+  box-shadow: 0 0 8px gray;
+  color: #ffffff;
+  line-height: 1.5;
+  font-size: 2vh;
+  font-weight: bold;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all  0.3s ease;
+}
+
+.LogoutBtn-yes:hover {
+  background-color: rgba($color: #1E90FF, $alpha: 0.70);
+}
+
+.LogoutBtn-no {
+  margin: 1vh 1vh;
+  height: 4vh;
+  width: 150px;
+  margin: 50px 0;
+  border-radius: 20px;
+  background-color: #FF0000;
+  border: none;
+  box-shadow: 0 0 8px gray;
+  color: #ffffff;
+  line-height: 1.5;
+  font-size: 2vh;
+  font-weight: bold;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all  0.3s ease;
+}
+
+.LogoutBtn-no:hover {
+  background-color: rgba($color: #FF0000, $alpha: 0.70);
+}
+
 
 .BeforeLoginMenus {
   font-size: 2vh;
@@ -193,6 +251,7 @@
   }
   
   .LoginedMenus {
+    color: #4682B4;
     width: auto;
     font-size: 2vh;
     .LoginMenu:hover {
@@ -203,9 +262,11 @@
       font-size: 1.5vh;
     }
     .LoginMenu {
+      color: #4682B4;
       display: none;
       margin-left: 2vw;
       text-decoration: none;
+      cursor: pointer;
     }
   }
   
