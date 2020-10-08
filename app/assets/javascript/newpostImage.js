@@ -112,14 +112,14 @@ $(function(){
       labelWidth = (620 - parseInt($(prevContent).css('width')));  //parseIntは文字列を整数に変換するjavascriptの関数
       $('.label-content').css('width', labelWidth);
       //id・forの値を変更
-      $('.label-box').attr({for: `item_images_attributes_${count}_image`});
+      $('.label-box').attr({for: `post_images_attributes_${count}_image`});
     }
   }
 
   //====================================================
   //編集ページ(items/:i/edit)へリンクした際のアクション
   //====================================================
-  if (window.location.href.match(/\/items\/\d+\/edit/)){
+  if (window.location.href.match(/\/posts\/\d+\/edit/)){
     //プレビューの数を取得
     var count = $('.preview-box').length;
     //countに応じてラベルのwidth・id・forの値を変更
@@ -160,13 +160,13 @@ $(function(){
   $(document).on('click', '.delete-btn', function() {
     var id = $(this).attr('data-delete-id')
     //削除用チェックボックスにチェックを入れる
-    if ($(`#item_images_attributes_${id}__destroy`).length) {
-      $(`#item_images_attributes_${id}__destroy`).prop('checked',true);
+    if ($(`#post_images_attributes_${id}__destroy`).length) {
+      $(`#post_images_attributes_${id}__destroy`).prop('checked',true);
     }
     //画像を消去
     $(this).parent().parent().parent().remove();
     //フォームの中身を削除
-    $(`#item_images_attributes_${id}_image`).val("");
+    $(`#post_images_attributes_${id}_image`).val("");
     //プレビューの数を取得
     var count = $('.preview-box').length;
     //countに応じてラベルのwidth・id・forの値を変更

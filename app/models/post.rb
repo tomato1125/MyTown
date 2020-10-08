@@ -16,6 +16,6 @@ class Post < ApplicationRecord
   accepts_nested_attributes_for :spot, allow_destroy: true
   accepts_nested_attributes_for :images, allow_destroy: true
 
-  mount_uploader :image, ImageUploader
+  # mount_uploader :image, ImageUploader
 
 end

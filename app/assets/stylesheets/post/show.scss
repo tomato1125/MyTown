@@ -52,17 +52,33 @@
       }
     }
   }
-  .PostDescription {
-    width: 40vw;
+}
+
+.PostImagesShow {
+  display: flex;
+  height: 10vh;
+  width: 20vw;
+  li{
+    font-size: 0;
+  }
+  .subImage {
+    width: 8vw;
     height: 10vh;
-    font-size: 1.5vh;
-    background-color: #EEEEEE;
-    border: 1px solid #000000;
-    border-radius: 10px;
-    margin-top: 5px;
-    padding: 10px 10px;
   }
 }
+
+//コメント部分//
+.PostDescription {
+  width: 40vw;
+  height: 10vh;
+  font-size: 1.5vh;
+  background-color: #EEEEEE;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  margin-top: 5px;
+  padding: 10px 10px;
+}
+
 
 .clips {
   z-index: 3;

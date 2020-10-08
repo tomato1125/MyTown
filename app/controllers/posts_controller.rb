@@ -15,9 +15,14 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to root_path
+      respond_to do |format|
+        format.html{redirect_to root_path}
+        format.json
+      end
     else
-      redirect_to new_post_path
+      flash.now[:alert] = "必須項目を入力してください"
+      @post.images.build
+      render :new
     end
   end
 
@@ -62,7 +67,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :image, :content, :prefecture_id, :category_id, spot_attributes: [:id, :address, :latitude, :longtitude]).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :content, :prefecture_id, :category_id, spot_attributes: [:id, :address, :latitude, :longtitude], images_attributes: [:id, :image, :_destroy]).merge(user_id: current_user.id)
   end
 
   # def set_post_info
