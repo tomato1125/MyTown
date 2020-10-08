@@ -11,6 +11,11 @@
     
     <%= stylesheet_link_tag 'application' %>
     <%= javascript_include_tag 'application' %>
+    <script>
+      $(function(){
+        jQuery("#form_1").validationEngine();
+      });
+    </script>
   </head>
 
   <body>
@@ -24,7 +29,22 @@
               <span class="LoginUserName">ログイン名: <%= current_user.name %></span>
               <%= link_to "マイページ", "/users/#{current_user.id}", class:"LoginMenu" %>
               <%= link_to  "投稿する", new_post_path, class: "LoginMenu" %>
-              <%= link_to "ログアウト", destroy_user_session_path, class:"LoginMenu", method: :delete %>
+              <a class="LoginMenu", id="Logout">ログアウト</a>
+              <div id="modal-main">
+              <%# モーダル部分 %>
+                <div class="modal-contents">
+                  <div class="modal-content">
+                    <h3>ログアウトしますか？</h3>
+                    <div class="HeaderModal">
+                      <div class="LogoutYesNoButton">
+                        <%= button_to 'はい', destroy_user_session_path, method: :delete, class: "LogoutBtn-yes"%>
+                      </div>
+                      <button class="LogoutBtn-no">いいえ</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <%# モーダル部分ここまで %>
             </div>
           <% else %>
             <div class="BeforeLoginMenus">
@@ -66,6 +86,8 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmv1pwJDbQBm2zCU5YOV2hNw41U5zjjsU&callback=initMap" async defer></script>
     <script src='//cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js' type='text/javascript'></script>
     <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
+    <script src="js/jquery.validationEngine.js"></script>
+    <script src="js/jquery.validationEngine-ja.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script>
