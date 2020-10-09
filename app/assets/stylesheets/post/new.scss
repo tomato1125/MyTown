@@ -88,6 +88,7 @@
   }
 }
 
+//Title=============================================================================
 .Title {
   height: auto;
   width: auto;
@@ -101,9 +102,10 @@
     border: 1px solid #ccc;
     background-color: #fff;
     color: #000000;
-    margin-left: 20px;
+    margin-left: 25px;
   }
 }
+//Titleここまで===============================================================================
 
 //Imageここから===============================================================================
 
@@ -113,6 +115,11 @@
   display: flex;
   flex-wrap: wrap;
   cursor: pointer;
+}
+
+.ImageLabelName {
+  color: #fff;
+  margin-right: 25px;
 }
 
 .prev-content {
@@ -191,9 +198,6 @@
     }
   }
 }
-
-
-
   //file_fieldのcss
 .hidden-content {
   .hidden-field {
@@ -377,41 +381,3 @@
   }
 }
 //レスポンシブ対応ここまで/////////////////////////////////////////////////////////////////////
-
-// 画像選択時の画像表示部分のCSS
-.prevImageBox {
-  display: block;
-  width: 30vw;
-  margin: 0 15px 10px 0;
-  padding-left: 45px;
-  .upper-box {
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-    img{
-      width: 30vw;
-      height: 30vh;
-    }
-  }
-  .lower-box {
-    display: flex;
-    text-align: center;
-    .delete-box {
-      color: #00b0ff;
-      width: 30vw;
-      height: 5vh;
-      line-height: 5vh;
-      border: 1px solid #eee;
-      background: #f5f5f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      .delete-btn {
-        background-color: #f5f5f5;
-        line-height: 40px;
-        width: 60px;
-      }
-    }
-  }
-}
