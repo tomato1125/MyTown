@@ -17,7 +17,7 @@ $(function(){
                   </div>
                   <div class="lower-box">
                     <div class="delete-box">
-                      <div class="delete-btn" data-delete-id= ${id}>削除</div>
+                      <div class="ImageDelete-btn" data-delete-id= ${id}>削除</div>
                     </div>
                   </div>
                 </div>`
@@ -83,7 +83,7 @@ $(function(){
   //=====================================================================
   // 画像の削除
   //=====================================================================
-  $(document).on('click', '.delete-btn', function() {
+  $(document).on('click', '.ImageDelete-btn', function() {
     var id = $(this).attr('data-delete-id')
     //削除用チェックボックスにチェックを入れる
     if ($(`#post_images_attributes_${id}__destroy`).length) {
