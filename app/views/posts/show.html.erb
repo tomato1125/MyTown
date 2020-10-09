@@ -63,6 +63,7 @@
           </div>
         </div>
       </div>
+      <%# モーダルエリアここまで %>
     <% end %>
     <% if current_user.already_cliped?(@post) %>
       <%= button_to post_clip_path(@post), method: :delete do%>
