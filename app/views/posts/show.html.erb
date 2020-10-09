@@ -55,7 +55,7 @@
             <br>
             <h6>（削除すると復元ができませんのでご注意ください。）</h6>
             <div class="DeleteMotalButton">
-              <%= button_to '削除する', post_path(@post.id), method: :delete, class: "delete-btn"%>
+              <%= link_to '削除する', post_path(@post.id), method: :delete, class: "delete-btn"%>
             </div>
             <div class="ReturnBtn">
               戻る
