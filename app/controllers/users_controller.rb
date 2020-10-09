@@ -6,6 +6,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @relationship = current_user.relationships.find_by(follow_id: @user.id)  
+    @set_relationship = current_user.relationships.new
     @name = @user.name
     @posts = @user.posts
     @image = @user.image
@@ -23,6 +25,16 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def followings
+    @user = User.find(params[:id])
+    @users = @user.followings.all
+  end
+
+  def followers
+    @user = User.find(params[:id])
+    @users = @user.followers.all
   end
 
   private

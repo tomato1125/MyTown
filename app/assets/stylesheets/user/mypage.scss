@@ -93,6 +93,52 @@
   text-decoration: none;
 }
 
+//フォロー・フォロワー登録・解除ボタン==========================================================
+.FollowingMessage {
+  font-size: 1.5vh;
+  font-weight: bold;
+}
+
+.Rerationship-On {
+  color: #ffffff;
+  height: 2vh;
+  width: 10vw;
+  margin: 0.5vh 0;
+  border-radius: 20px;
+  background-color: #00BFFF;
+  border: none;
+  box-shadow: 0 0 8px gray;
+  line-height: 1.5;
+  font-size: 1.3vh;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all  0.3s ease;
+}
+.Rerationship-On:hover {
+  background-color: rgba($color: #00BFFF, $alpha: 0.80);
+}
+
+.Rerationship-Off {
+  color: #ffffff;
+  height: 2vh;
+  width: 10vw;
+  margin: 0.5vh 0;
+  border-radius: 20px;
+  background-color: #EE0000;
+  border: none;
+  box-shadow: 0 0 8px gray;
+  line-height: 1.5;
+  font-size: 1.3vh;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all  0.3s ease;
+}
+.Rerationship-Off:hover {
+  background-color: rgba($color: #EE0000, $alpha: 0.80);
+}
+
 
 .user-nav-bar {
   display: flex;

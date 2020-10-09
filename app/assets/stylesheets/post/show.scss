@@ -142,7 +142,7 @@
   transition: all  0.3s ease;
 }
 .edit-btn:hover {
-  background-color: rgba($color: #4682B4, $alpha: 0.80);
+  background-color: rgba($color: #4682B4, $alpha: 0.50);
 }
 
 
@@ -150,14 +150,11 @@
   color: #ffffff;
   height: 2vh;
   width: 10vw;
-  height: 2vh;
-  width: 6vw;
   margin: 0.5vh 0;
   border-radius: 20px;
   background-color: #cc0000;
   border: none;
   box-shadow: 0 0 8px gray;
-  color: #ffffff;
   line-height: 1.5;
   font-size: 1.3vh;
   -webkit-transition: all 0.3s ease;
