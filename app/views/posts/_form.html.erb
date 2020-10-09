@@ -11,11 +11,11 @@
           <%= form.collection_select :category_id, Category.all, :id, :name, {include_blank: '選択してください'}, {class: "Category__input"} %>
         </li>
         <li class="Title">
-          <label class="labelName" for="titleSpace">Title：</label>
+          <label class="TitleLabelName" for="titleSpace">Title：</label>
           <%= form.text_field :title, class: 'Title__input', placeholder: "タイトルを入力してください" %>
         </li>
         <li class='Image'>
-          <label class="labelName" for="imageSpace">Photo：</label>
+          <label class="ImageLabelName" for="imageSpace">Photo：</label>
           <div class="prev-content">
           </div>
           <div class="label-content">
