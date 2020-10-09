@@ -44,8 +44,8 @@ class PostsController < ApplicationController
     @clip = Clip.new
     @lat = @post.spot.latitude
     @lng = @post.spot.longitude
-    gon.latitude = @lat
-    gon.longtitude = @lng
+    gon.lat = @lat
+    gon.lng = @lng
     @comment = Comment.new
     @comments = @post.comments.includes(:user)
   end

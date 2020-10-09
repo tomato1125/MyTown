@@ -26,8 +26,8 @@
               <%= link_to "マイページ", "/users/#{current_user.id}", class:"LoginMenu" %>
               <%= link_to  "投稿する", new_post_path, class: "LoginMenu" %>
               <a class="LoginMenu", id="Logout">ログアウト</a>
-              <div id="modal-main">
               <%# モーダル部分 %>
+              <div id="LogoutModal-main">
                 <div class="modal-contents">
                   <div class="modal-content">
                     <h3>ログアウトしますか？</h3>

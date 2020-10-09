@@ -108,6 +108,16 @@
   align-items: center;
 }
 
+/* モーダル コンテンツエリア */
+#LogoutModal-main {
+  display: none;
+  margin: 0;
+  padding: 2vh 2vh;
+  color: #666666;
+  position:fixed;
+  z-index: 2;
+}
+
 .LogoutBtn-yes {
   margin: 1vh 1vh;
   height: 4vh;
