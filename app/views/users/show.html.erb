@@ -86,7 +86,6 @@
                   </li>
                   <li class="top-page__status__sentence__contents__content">
                     Post:
-                    favorite: <%= @favorite %>
                   </li>
                   <li class="top-page__status__sentence__contents__content">
                     Bookmark: 
@@ -112,8 +111,9 @@
               </div>
             </div>
           </div>
-          <canvas id="chart" height="200" width="400">
-          </canvas>
+          <div class="CanvasContainer">
+            <canvas id="chart"></canvas>
+          </div>
         </li>
         <li class="page">
           <% if @posts.length == 0 %>
