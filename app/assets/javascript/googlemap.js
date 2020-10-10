@@ -44,4 +44,4 @@ function codeAddress(){ //コールバック関数
       alert('該当する結果がありませんでした');
     }
   });   
-}
+}(jQuery);
