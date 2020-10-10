@@ -217,7 +217,6 @@ ul.user-nav-bar li .active {
       justify-content: space-around;
       align-items: center;
       padding: 1.5vh 1.5vw;
-      // flex-direction: column;
       &__contents {
         height: auto;
         width: auto;
@@ -681,20 +680,24 @@ ul.user-nav-bar li .active {
   // width: 500px;
   // height: 300px;
   width: 800px;
-  height: 700px;
+  height: 82vh;
   margin: 0;
   padding: 2vh 2vh;
-  background-color: #ffffff;
+  background-color: #444444;
   box-shadow:10px 10px 10px #222222;
   color: #666666;
   position:fixed;
   z-index: 2;
 }
 
-.FollowModal-contents {
-  width: 800px;
-  height: 700px;
-  box-shadow:10px 10px 10px #222222;
+.FollowModalTop {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1vh;
+  p {
+    color: #ffffff;
+    font-size: 2vh;
+  }
 }
 
 .follow-nav-bar {
@@ -723,6 +726,163 @@ ul.follow-nav-bar li .active {
 .follow-nav:hover {
   color: #00BFFF;
   text-decoration: none;
+}
+
+.pages {
+  height: 100vh;
+}
+.FollowPage {
+  background-color: rgba($color: #222222, $alpha: 0.40);
+  height: 65vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2vh;
+  display: none;
+  overflow: scroll;
+}
+.Follow-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 12vh;
+  width: 100%;
+  border: 1px solid #4682B4;
+  border-radius: 8px;
+  padding: 1vh 1vw;
+  margin: 2vh 0;
+  position: relative;
+  &:hover {
+    border-radius: 8px;
+    border: 1px solid #00BFFF;
+    background-color: rgba($color: #fff, $alpha: 0.06);
+    transition: all  0.3s ease;
+  }
+  .followslink {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+  }
+  &__leftSide {
+    display: flex;
+    width: 80%;
+    height: 100%;
+    &__Image {
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color: #ffffff, $alpha: 0.40);
+      border: 1px solid #999999;
+      border-radius: 5%;
+      padding: 0.1vh 0.1vw;
+      .image{
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center center;
+      }
+    }
+    &__FollowDetail {
+      display: flex;
+      justify-content: space-between;
+      width: auto;
+      height: 100%;
+      margin-left: 1vw;
+      &__username {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        margin-right: 1vw;
+        z-index: 10;
+        p {
+          color: #ffffff;
+          font-size: 2vh;
+        }
+      }
+      &__Prefecture{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 4vw;
+        margin-right: 1vw;
+        p {
+          color: #ffffff;
+        }
+      }
+      &__Introduce {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 10vw;
+        p {
+          color: #ffffff;
+        }
+      }
+    }
+  }
+  &__rightSide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
+    height: 100%;
+    z-index: 20;
+    &__Rerationship-Off {
+      color: #ffffff;
+      height: 2vh;
+      width: 7vw;
+      margin: 0.5vh 0;
+      border-radius: 20px;
+      background-color: #EE0000;
+      border: none;
+      box-shadow: 0 0 8px gray;
+      line-height: 1.5;
+      font-size: 1.0vh;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all  0.3s ease;
+    }
+    &__Rerationship-On {
+      color: #ffffff;
+      height: 2vh;
+      width: 7vw;
+      margin: 0.5vh 0;
+      border-radius: 20px;
+      background-color: #00BFFF;
+      border: none;
+      box-shadow: 0 0 8px gray;
+      line-height: 1.5;
+      font-size: 1.0vh;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all  0.3s ease;
+    }
+  }
+}
+
+.Follow-info__rightSide__Rerationship-Off:hover {
+  background-color: rgba($color: #EE0000, $alpha: 0.60);
+}
+
+.Follow-info__rightSide__Rerationship-On:hover {
+  background-color: rgba($color: #00BFFF, $alpha: 0.60);
+}
+
+.Follow-info__leftSide__FollowDetail__username__name:hover {
+  color: #1E90FF;
+  text-decoration: none;
+}
+.top-page-title {
+  color: #ffffff;
+  font-size: 2vh;
+  display: block;
+  text-align: center;
 }
 
 
