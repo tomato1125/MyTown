@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  # before_action :set_user
   # before_action :user_params
 
   # def index
@@ -10,11 +11,23 @@ class UsersController < ApplicationController
     @set_relationship = current_user.relationships.new
     @name = @user.name
     @posts = @user.posts
+    @favorite = @posts.where(category_id: 0).count
     @image = @user.image
     @introduce = @user.introduce
     @prefecture = @user.prefecture.name
     @following_users = @user.followings.all
     @follow_users = @user.followers.all
+
+    @favorite = @posts.where(category_id: 0).count
+    @food = @posts.where(category_id: 1).count
+    @shopping = @posts.where(category_id: 2).count
+    @nature = @posts.where(category_id: 3).count
+    @event = @posts.where(category_id: 4).count
+    gon.favorite = @favorite
+    gon.food = @food
+    gon.shopping = @shopping
+    gon.nature = @nature
+    gon.event = @event
   end
 
   def edit
@@ -43,4 +56,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :image, :introduce, :prefecture_id)
   end
+
 end
