@@ -13,6 +13,8 @@ class UsersController < ApplicationController
     @image = @user.image
     @introduce = @user.introduce
     @prefecture = @user.prefecture.name
+    @following_users = @user.followings.all
+    @follow_users = @user.followers.all
   end
 
   def edit
@@ -29,12 +31,12 @@ class UsersController < ApplicationController
 
   def followings
     @user = User.find(params[:id])
-    @users = @user.followings.all
+    @following_users = @user.followings.all
   end
 
   def followers
     @user = User.find(params[:id])
-    @users = @user.followers.all
+    @follow_users = @user.followers.all
   end
 
   private
