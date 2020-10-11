@@ -1,16 +1,16 @@
 $(function() {
   function buildHTML(message) {
     let html = `<div class="Message">
-                  <div class="Message-Avater">
-                    <img src = '${message.user_image}', class="MessageAvater">
+                  <div class="MessageInfo">
+                    <div class="Message-Avater">
+                      <img src = '${message.user_image}', class="MessageAvater">
+                    </div>
+                    <strong>
+                      <a href=/users/${message.user_id}, class: "MessageUserName">${message.user_name}</a>：
+                    </strong>
+                    ${message.text}
                   </div>
-                  <strong>
-                    <a href=/users/${message.user_id}, class: "MessageUserName">${message.user_name}</a>：
-                    <span><%= ${message.message} %></span>
-                  </strong>
-                </div>
-                <div class="MessageDate">
-                  <%= ${message.date}("%Y-%m-%d %H:%M") %>
+                  ${message.created_at}
                 </div>`
     return html;
   }
@@ -29,7 +29,7 @@ $(function() {
     })
     .done(function(data){
       let html = buildHTML(data);
-      $('.Messages').append(html);
+      $('.Messages').prepend(html);
       $('.MessageForm__textbox').val('');
       $('.MessageForm__btn').prop('disabled', false);
     })

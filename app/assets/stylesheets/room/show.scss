@@ -176,16 +176,21 @@
 
 .Message {
   font-size: 1.5vh;
-  display: flex;
-  align-items: center;
   padding: 1.5vh 0;
   border-bottom: 1px solid #999999;
+  position: relative;
+}
+
+.MessageInfo {
+  display: flex;
+  align-items: center;
 }
 
 .MessageAvater {
   height: 50px;
   width: 50px;
   border-radius: 50%;
+  margin-right: 0.5vw;
 }
 
 .MessageUserName:hover {
@@ -196,3 +201,12 @@
 .Message span {
   margin-left: 1vw;
 }
+
+.MessageDate {
+  position: absolute;
+  font-size: 1vh;
+  color: #999999;
+  bottom: 0%;
+  right: 2%;
+}
+
