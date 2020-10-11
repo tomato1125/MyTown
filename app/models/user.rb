@@ -13,6 +13,9 @@ class User < ApplicationRecord
   has_many :clips, dependent: :destroy
   has_many :cliped_posts, through: :clips, source: :post
   has_many :comments
+  has_many :messages
+  has_many :entries
+  has_many :rooms, through: :entries
   
   belongs_to :prefecture
   
