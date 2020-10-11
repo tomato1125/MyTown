@@ -147,6 +147,7 @@
 
 .ToppagePostIndex {
   width: 100%;
+  height: 100%;
   padding: 50px 50px;
   display: flex;
   justify-content: center;
@@ -154,6 +155,7 @@
   background-color: #222222;
   background-size: cover;
   background-position: center center;
+  overflow: scroll;
 }
 
 .ToppageNewPost {
