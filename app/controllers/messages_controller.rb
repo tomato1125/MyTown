@@ -5,7 +5,11 @@ class MessagesController < ApplicationController
   def create
     if Entry.where(:user_id => current_user.id, :room_id => params[:message][:room_id]).present?
       @message = Message.create(params.require(:message).permit(:user_id, :message, :room_id).merge(:user_id => current_user.id))
-      redirect_to "/rooms/#{@message.room_id}"
+      respond_to do |format|
+        format.html {redirect_to "/rooms/#{@message.room_id}"}
+        format.json
+      end
+      # redirect_to post_path(params[:post_id])
     else
       flash[:alert] = "メッセージの送信に失敗しました"
       redirect_back(fallback_location: root_path)
