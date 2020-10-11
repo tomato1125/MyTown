@@ -5,7 +5,6 @@ class RelationshipsController < ApplicationController
     following = current_user.follow(@user)
     if following.save
       flash[:notice] = @user.name + " " + "さんをフォローしました"
-      # redirect_to @user
       redirect_back(fallback_location: root_path)
     else
       flash.now[:alert] = "ユーザーのフォローに失敗しました"

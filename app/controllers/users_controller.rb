@@ -18,30 +18,22 @@ class UsersController < ApplicationController
     @following_users = @user.followings.all
     @follow_users = @user.followers.all
 
-    if user_signed_in?
-      # ルームに参加済みか確認
-      @currentUserEntry = Entry.where(user_id: current_user.id)
-      # ユーザーshowページにて表示しているユーザーがルーム参加済みか確認
-      @userEntry = Entry.where(user_id: @user.id)
-      unless @user.id == current_user.id
-        # current_user参加済みの全ルームidを出力
-        @currentUserEntry.each do |cu|
-          # @user参加済みの全ルームidを出力
-          @userEntry.each do |u|
-            # current_userの参加しているroom.idと@userのroom.idで一致するものがあるか確認
-            if cu.room_id == u.room_id
-              # ルームが存在済みを示す記述
-              @haveRoom = true
-              @roomId = cu.room_id
-            end
+    @currentUserEntry=Entry.where(user_id: current_user.id)
+    @userEntry=Entry.where(user_id: @user.id)
+    if @user.id == current_user.id
+    else
+      @currentUserEntry.each do |cu|
+        @userEntry.each do |u|
+          if cu.room_id == u.room_id then
+            @isRoom = true
+            @roomId = cu.room_id
           end
         end
-        # ルームが存在しなかった場合の記述
-        unless @haveRoom
-          # ルームを新規作成
-          @room = Room.new
-          @entry = Entry.new
-        end
+      end
+      if @isRoom
+      else
+        @room = Room.new
+        @entry = Entry.new
       end
     end
     
