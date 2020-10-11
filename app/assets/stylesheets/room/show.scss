@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+.left-button {
+  margin-top: 10vh;
+}
+
+.rooms-title {
+  text-align: center;
+  font-size: 2.5vh;
+}
+
+.rooms-users {
+  display: flex;
+  height: auto;
+  width: auto;
+}
+
+.rooms-users-info {
+  width: 10vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rooms-users-nav {
+  display: flex;
+
+}
+
+
+.rooms-user-image {
+  height: 200px;
+  width: 200px;
+}
+
+.chats {
+  height: 500px;
+}
