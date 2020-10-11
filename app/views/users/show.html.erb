@@ -112,8 +112,30 @@
             </div>
           </div>
           <div [hidden]="!chart">
-            <canvas id="chart"></canvas>
+            <canvas id="chart">{{ chart }}</canvas>
           </div>
+          <div id="jmap"></div>
+          <!-- モーダル用HTML -->
+          <div class="modal fade" id="prefectureModal" tabindex="-1" role="dialog" aria-labelledby="prefectureModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="prefectureModalTitle"></h5>
+                  <%= @user.followers.count %> 人
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body overflow-auto" style="height:350px;">
+                  <%= @user.followings.count %> 人
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- モーダル用HTMLここまで -->
         </li>
         <li class="page">
           <% if @posts.length == 0 %>

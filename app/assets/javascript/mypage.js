@@ -39,8 +39,10 @@ $(function() {
   const config = {
     type: 'pie',
     data: {
+      color: "#ffffff",
       labels: ["favorite", "food", "shopping", "nature", "event"],
       datasets: [{
+          color: "#ffffff",
           backgroundColor: [
               "#3399FF",
               "#FAFF67",
@@ -54,10 +56,18 @@ $(function() {
     options: {
       title: {
         display: true,
-        text: 'POST DATA'
-      }
+        text: 'Post Category Data',
+        fontColor: "white", 
+        fontSize: 18
+      },
+      legend: { 
+        labels: { 
+         fontColor: "white", 
+         fontSize: 18 
+        } 
+      },
     }
   }
   const context = $("#chart")
   const chart = new Chart(context, config)
-})
+});
