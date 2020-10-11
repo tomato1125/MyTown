@@ -4,17 +4,19 @@ class MessagesController < ApplicationController
 
   def create
     if Entry.where(:user_id => current_user.id, :room_id => params[:message][:room_id]).present?
-      @message = Message.create(params.require(:message).permit(:user_id, :message, :room_id).merge(:user_id => current_user.id))
+      @message = Message.create(message_params)
       respond_to do |format|
-        format.html {redirect_to "/rooms/#{@message.room_id}"}
-        format.json
+        format.html {redirect_back(fallback_location: root_path)}
+        format.json 
       end
+      # redirect_to "/rooms/#{@message.room_id}"
       # redirect_to post_path(params[:post_id])
     else
       flash[:alert] = "メッセージの送信に失敗しました"
       redirect_back(fallback_location: root_path)
     end
   end
+  
 
   def edit
   end
@@ -41,10 +43,10 @@ class MessagesController < ApplicationController
   #   @message = Message.find(params[:id])
   # end
 
-  # def gets_entries_all_messages
-  #   @messages = @room.messages.includes(:user).order("created_at asc")
-  #   @entries = @room.entries
-  # end
+  def gets_entries_all_messages
+    @messages = @room.messages.includes(:user).order("created_at DESC")
+    @entries = @room.entries
+  end
 
   def message_params
     params.require(:message).permit(:message, :room_id).merge(user_id: current_user.id)
