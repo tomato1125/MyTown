@@ -295,6 +295,7 @@
               <% if current_user.following?(user) %>
                 <%= form_with model: @relationship, url:relationship_path, method: :delete, local: true do |f| %>
                   <%= f.hidden_field :follow_id, value: user.id %>
+                  <%= f.hidden_field :id, value: user.id %>
                   <%= f.submit value="フォローを解除する", class: "Follow-info__rightSide__Rerationship-Off" %>
                 <% end %>
               <% else %>

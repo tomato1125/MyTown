@@ -1,11 +1,11 @@
 class RelationshipsController < ApplicationController
-  before_action :set_user
+  before_action :set_user, only: [:destroy]
 
   def create
     following = current_user.follow(@user)
     if following.save
       flash[:notice] = @user.name + " " + "さんをフォローしました"
-      redirect_back(fallback_location: root_path)
+      redirect_to @user
     else
       flash.now[:alert] = "ユーザーのフォローに失敗しました"
       redirect_to @user
