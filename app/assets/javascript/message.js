@@ -10,7 +10,7 @@ $(function() {
                     </strong>
                     ${message.text}
                   </div>
-                  ${message.created_at}
+                  <div class="MessageDate">${message.created_at}</div>
                 </div>`
     return html;
   }
