@@ -680,7 +680,7 @@ ul.user-nav-bar li .active {
   display: none;
   // width: 500px;
   // height: 300px;
-  width: 800px;
+  width: 1400px;
   height: 82vh;
   margin: 0;
   padding: 2vh 2vh;
@@ -732,6 +732,12 @@ ul.follow-nav-bar li .active {
 .pages {
   height: 100vh;
 }
+
+.followpages {
+  height: 100vh;
+  width: 45vw;
+}
+
 .FollowPage {
   background-color: rgba($color: #222222, $alpha: 0.40);
   height: 65vh;
@@ -914,4 +920,15 @@ ul.follow-nav-bar li .active {
 
 #prefectureModal {
   color: #000000;
+}
+
+#jmap {
+  display: flex;
+  justify-content: center;
+}
+
+.jmap-title {
+  text-align: center;
+  margin-top: 1.5vh;
+  font-weight: bold;
 }

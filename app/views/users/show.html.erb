@@ -22,19 +22,14 @@
             <%= link_to 'マイページ編集', edit_user_registration_path(current_user), class: "MypageEdit", method: :get %>
           <% end %>
 
-          <% unless current_user == @user %>
-            <% if current_user.following?(@user) %>
-              <p class="FollowingMessage">フォロー済み</p>
-              <%= form_with model: @relationship, url:relationship_path, method: :delete, local: true do |f| %>
-                <%= f.hidden_field :follow_id, value: @user.id %>
-                <%= f.submit value="フォローを解除する", class: "Rerationship-Off" %>
+          <% if user_signed_in? && @user != current_user %>
+            <div id="follow_form">
+              <% if current_user.following?(@user) %>
+                <%= render "unfollow" %>
+              <% else %>
+                <%= render "follow" %>
               <% end %>
-            <% else %>
-              <%= form_with model: @set_relationship, url:relationships_path, local: true do |f| %>
-                <%= f.hidden_field :follow_id, value: @user.id %>
-                <%= f.submit name="フォローする", class: "Rerationship-On" %>
-              <% end %>
-            <% end %>
+            </div>
           <% end %>
 
         </div>
@@ -94,10 +89,15 @@
                     Prefecture： 
                   </li>
                   <li class="top-page__status__sentence__contents__content">
-                    <a class="Follows", id="FollowModal-open">Follow</a>
+                    <%= link_to followings_user_path(@user) do %>
+                      <h5>フォロー</h5>
+                    <% end %>
+                    <%# <a class="Follows", id="FollowModal-open">Follow</a> %>
                   </li>
                   <li class="top-page__status__sentence__contents__content">
-                    Follower
+                    <%= link_to followers_user_path(@user) do %>
+                      <h5>フォロワー</h5>
+                    <% end %>
                   </li>
                   <li class="top-page__status__sentence__contents__content">
                     Post:
@@ -129,6 +129,7 @@
           <div [hidden]="!chart">
             <canvas id="chart">{{ chart }}</canvas>
           </div>
+          <p class="jmap-title">投稿数（都道府県別）</p>
           <div id="jmap"></div>
           <!-- モーダル用HTML -->
           <div class="modal fade" id="prefectureModal" tabindex="-1" role="dialog" aria-labelledby="prefectureModalCenterTitle" aria-hidden="true">
@@ -244,116 +245,3 @@
   </div>
 </div>
 
-<%# followのモーダル画面 %>
-<div id="FollowModal-main">
-  <div class="FollowModalTop">
-    <p><%= @name %> さんのフォロー・フォロワー</p>
-  </div>
-  <ul class='follow-nav-bar'>
-    <li>
-      <a href="#" id="top", class='follow-nav active'>
-        Follow
-      </a>
-    </li>
-    <li>
-      <a href="#" id="post", class='follow-nav'>
-        Follower
-      </a>
-    </li>
-  </ul>
-  <ul class="pages">
-    <li class="FollowPage show">
-      <% @following_users.each do |user| %>
-        <div class="Follow-info">
-        <%= link_to '', user_path(user.id), class: "followslink", method: :get %>
-          <div class="Follow-info__leftSide">
-            <div class="Follow-info__leftSide__Image">
-            <% if @user.image.url.present? %>
-              <div class='image' style="background-image: url(<%= user.image %>);">
-              </div>
-            <% else %>
-              <div class="NoImage">
-                <i class="fas fa-user-alt"></i>
-                <p>No Image</p>
-              </div>
-            <% end %>
-            </div>
-            <div class="Follow-info__leftSide__FollowDetail">
-              <div class="Follow-info__leftSide__FollowDetail__username">
-                <p><%= link_to user.name, "/users/#{user.id}", class:"Follow-info__leftSide__FollowDetail__username__name" %></p>
-              </div>
-              <div class="Follow-info__leftSide__FollowDetail__Prefecture">
-                <p><%= user.prefecture.name %></p>
-              </div>
-              <div class="Follow-info__leftSide__FollowDetail__Introduce">
-                <p><%= user.introduce %></p>
-              </div>
-            </div>
-          </div>
-          <div class="Follow-info__rightSide">
-            <% unless current_user == user %>
-              <% if current_user.following?(user) %>
-                <%= form_with model: @relationship, url:relationship_path, method: :delete, local: true do |f| %>
-                  <%= f.hidden_field :follow_id, value: user.id %>
-                  <%= f.hidden_field :id, value: user.id %>
-                  <%= f.submit value="フォローを解除する", class: "Follow-info__rightSide__Rerationship-Off" %>
-                <% end %>
-              <% else %>
-                <%= form_with model: @set_relationship, url:relationships_path, local: true do |f| %>
-                  <%= f.hidden_field :follow_id, value: user.id %>
-                  <%= f.submit name="フォローする", class: "Follow-info__rightSide__Rerationship-On" %>
-                <% end %>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-    </li>
-    <li class="FollowPage">
-      <% @follow_users.each do |user| %>
-        <div class="Follow-info">
-        <%= link_to '', user_path(user.id), class: "followslink", method: :get %>
-          <div class="Follow-info__leftSide">
-            <div class="Follow-info__leftSide__Image">
-            <% if @user.image.url.present? %>
-              <div class='image' style="background-image: url(<%= user.image %>);">
-              </div>
-            <% else %>
-              <div class="NoImage">
-                <i class="fas fa-user-alt"></i>
-                <p>No Image</p>
-              </div>
-            <% end %>
-            </div>
-            <div class="Follow-info__leftSide__FollowDetail">
-              <div class="Follow-info__leftSide__FollowDetail__username">
-                <p><%= link_to user.name, "/users/#{user.id}", class:"Follow-info__leftSide__FollowDetail__username__name" %></p>
-              </div>
-              <div class="Follow-info__leftSide__FollowDetail__Prefecture">
-                <p><%= user.prefecture.name %></p>
-              </div>
-              <div class="Follow-info__leftSide__FollowDetail__Introduce">
-                <p><%= user.introduce %></p>
-              </div>
-            </div>
-          </div>
-          <div class="Follow-info__rightSide">
-            <% unless current_user == user %>
-              <% if current_user.following?(user) %>
-                <%= form_with model: @relationship, url:relationship_path, method: :delete, local: true do |f| %>
-                  <%= f.hidden_field :follow_id, value: user.id %>
-                  <%= f.submit value="フォローを解除する", class: "Follow-info__rightSide__Rerationship-Off" %>
-                <% end %>
-              <% else %>
-                <%= form_with model: @set_relationship, url:relationships_path, local: true do |f| %>
-                  <%= f.hidden_field :follow_id, value: user.id %>
-                  <%= f.submit name="フォローする", class: "Follow-info__rightSide__Rerationship-On" %>
-                <% end %>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-    </li>
-  </ul>
-</div>
