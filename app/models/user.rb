@@ -19,10 +19,10 @@ class User < ApplicationRecord
   
   belongs_to :prefecture
   
-  has_many :relationships, foreign_key: "user_id", dependent: :destroy
-  has_many :followings, through: :relationships, source: :follow
-  has_many :passive_relationships, class_name: "Relationship", foreign_key: "follow_id", dependent: :destroy
-  has_many :followers, through: :passive_relationships, source: :user
+  has_many :following_relationships, foreign_key: "follower_id", class_name: "Relationship",  dependent: :destroy
+  has_many :following, through: :following_relationships
+  has_many :follower_relationships, foreign_key: "following_id", class_name: "Relationship", dependent: :destroy
+  has_many :followers, through: :follower_relationships
 
   mount_uploader :image, ImageUploader
 
@@ -30,19 +30,18 @@ class User < ApplicationRecord
     self.clips.exists?(post_id: post.id)
   end
   
-  def following?(other_user)
-    self.followings.include?(other_user)
+  def following?(user)
+    following_relationships.find_by(following_id: user.id)
   end
 
-  def follow(other_user)
-    unless self == other_user
-      self.relationships.find_or_create_by(follow_id: other_user.id)
-    end
+  #フォローするときのメソッド
+  def follow(user)
+    following_relationships.create!(following_id: user.id)
   end
 
-  def unfollow(other_user)
-    relationship = self.relationships.find_by(follow_id: other_user.id)
-    relationship.destroy if relationship
+  #フォローを外すときのメソッド
+  def unfollow(user)
+    following_relationships.find_by(following_id: user.id).destroy
   end
 
 end

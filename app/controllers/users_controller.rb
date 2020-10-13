@@ -7,8 +7,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @relationship = current_user.relationships.find_by(follow_id: @user.id)  
-    @set_relationship = current_user.relationships.new
+    # @relationship = current_user.relationships.find_by(follow_id: @user.id)  
+    # @set_relationship = current_user.relationships.new
     @name = @user.name
     @posts = @user.posts
     @favorite = @posts.where(category_id: 0).count
@@ -64,12 +64,14 @@ class UsersController < ApplicationController
 
   def followings
     @user = User.find(params[:id])
-    @following_users = @user.followings.all
+    @users = @user.following
+    render 'followings'
   end
 
   def followers
     @user = User.find(params[:id])
-    @follow_users = @user.followers.all
+    @users = @user.followers
+    render 'followers'
   end
 
   private
