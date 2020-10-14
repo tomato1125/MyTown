@@ -47,7 +47,7 @@ class PostsController < ApplicationController
     gon.lat = @lat
     gon.lng = @lng
     @comment = Comment.new
-    @comments = @post.comments.includes(:user)
+    @comments = @post.comments.includes(:user).order(created_at: :desc)
   end
 
   def destroy
