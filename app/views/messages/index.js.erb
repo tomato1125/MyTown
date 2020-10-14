@@ -1,0 +1,2 @@
+$("#messages-area").html("<%= j(render 'index', { messages: @message.room.messages }) %>")
+$("textarea").val('')
