@@ -22,6 +22,10 @@
             <%= link_to 'マイページ編集', edit_user_registration_path(current_user), class: "MypageEdit", method: :get %>
           <% end %>
 
+          <%= link_to followings_user_path(@user.id) do %>
+            <h5>フォロー・フォロワーを見る</h5>
+          <% end %>
+
           <% unless current_user == @user %>
             <% if current_user.following?(@user) %>
               <%= form_with(model: @relationship, url: relationship_path, method: :delete, local: true) do |f| %>
@@ -93,15 +97,10 @@
                     Prefecture： 
                   </li>
                   <li class="top-page__status__sentence__contents__content">
-                    <%= link_to followings_user_path(@user.id) do %>
-                      <h5>フォロー</h5>
-                    <% end %>
-                    <%# <a class="Follows", id="FollowModal-open">Follow</a> %>
+                    フォロー:
                   </li>
                   <li class="top-page__status__sentence__contents__content">
-                    <%= link_to followers_user_path(@user.id) do %>
-                      <h5>フォロワー</h5>
-                    <% end %>
+                    フォロワー:
                   </li>
                   <li class="top-page__status__sentence__contents__content">
                     Post:
