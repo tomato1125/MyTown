@@ -119,22 +119,21 @@
     text-align: center;
     line-height: 2vh;
     background-color: #FF6928;
-    // padding-left: 1rem;
-    // padding-top: 0rem;
-    // color: #efa04c;
   }
 }
 
+.header-bellIcon:hover {
+  color: rgba($color:#ffffff, $alpha: 0.50);
+}
+
 .stack-count {
-  position: absolute;
-  bottom: 1%;
-  right: 0%;
-  height: 0.5vh;
-  width: 0.5vw;
-  background-color: #FF6928;
-  // padding-left: 1rem;
-  // padding-top: 0rem;
-  // color: #efa04c;
+  // position: absolute;
+  // bottom: 1%;
+  // right: 0%;
+  // height: 0.5vh;
+  // width: 0.5vw;
+  // background-color: #FF6928;
+
 }
 
 
