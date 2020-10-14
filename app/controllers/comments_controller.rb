@@ -1,11 +1,10 @@
 class CommentsController < ApplicationController
   def create
-    # @comment = @post.comments.new(comment_params)
-    @comment = Comment.create(comment_params)
-    respond_to do |format|
-      format.html {redirect_to post_path(params[:post_id])}
-      format.json
-    end
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.build(comment_params)
+    @comment.user_id = current_user.id
+    @comment.save
+    redirect_to post_path(params[:post_id])
   end
 
   private

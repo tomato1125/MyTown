@@ -1,0 +1,33 @@
+<% visitor = notification.visitor %>
+<% visited = notification.visited %>
+<div class="col-md-6">
+  <div class="form-inline">
+    <%= link_to user_path(visitor) do %>
+      <%= visitor.name %>さん
+      <div class="card-stacked">
+        <div class="notification-content">
+          <% case notification.action %>
+          <% when 'follow' then %>
+          <%= "があなたをフォローしました" %>
+          <% when 'clip' then %>
+          <%= link_to 'あなたの投稿', post_path(notification.post), style: "font-weight: bold;" %>
+          <p>いいねしました</p>
+          <% when 'comment' then %>
+          <div class="notification-comment">
+            <% if notification.post.user_id == visited.id %>
+              <%= link_to 'あなたの投稿', post_path(notification.post), style: "font-weight: bold;" %>
+              <p>コメントしました</p>
+            <% else %>
+              <span>
+                <%= link_to post_path(notification.post) do %>
+                  <p><%= notification.post.user.name %>さんの投稿にコメントしました。</p>
+                <% end %>
+              </span>
+            <% end %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
