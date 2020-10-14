@@ -22,14 +22,18 @@
             <%= link_to 'マイページ編集', edit_user_registration_path(current_user), class: "MypageEdit", method: :get %>
           <% end %>
 
-          <% if user_signed_in? && @user != current_user %>
-            <div id="follow_form">
-              <% if current_user.following?(@user) %>
-                <%= render "unfollow" %>
-              <% else %>
-                <%= render "follow" %>
+          <% unless current_user == @user %>
+            <% if current_user.following?(@user) %>
+              <%= form_with(model: @relationship, url: relationship_path, method: :delete, local: true) do |f| %>
+                <%= f.hidden_field :follow_id %>  
+                <%= f.submit "フォロー解除", class: "Rerationship-Off" %>
               <% end %>
-            </div>
+            <% else %>
+              <%= form_with(model: @set_relationship, url: relationships_path, local: true) do |f| %>
+                <%= f.hidden_field :follow_id, value: @user.id %>
+                <%= f.submit "フォローする", class: "Rerationship-On" %>
+              <% end %>
+            <% end %>
           <% end %>
 
         </div>
@@ -89,13 +93,13 @@
                     Prefecture： 
                   </li>
                   <li class="top-page__status__sentence__contents__content">
-                    <%= link_to followings_user_path(@user) do %>
+                    <%= link_to followings_user_path(@user.id) do %>
                       <h5>フォロー</h5>
                     <% end %>
                     <%# <a class="Follows", id="FollowModal-open">Follow</a> %>
                   </li>
                   <li class="top-page__status__sentence__contents__content">
-                    <%= link_to followers_user_path(@user) do %>
+                    <%= link_to followers_user_path(@user.id) do %>
                       <h5>フォロワー</h5>
                     <% end %>
                   </li>
@@ -137,13 +141,12 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="prefectureModalTitle"></h5>
-                  <%= @user.followers.count %> 人
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body overflow-auto" style="height:350px;">
-                  <%= @user.followings.count %> 人
+                  5人
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>

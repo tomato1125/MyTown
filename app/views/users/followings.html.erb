@@ -20,6 +20,56 @@
         </ul>
         <ul class="followpages">
           <li class="FollowPage show">
+            <% if @following_users.present? %>
+              <% @following_users.each do |user| %>
+                <div class="Follow-info">
+                <%= link_to '', user_path(user.id), class: "followslink", method: :get %>
+                  <div class="Follow-info__leftSide">
+                    <div class="Follow-info__leftSide__Image">
+                    <% if @user.image.url.present? %>
+                      <div class='image' style="background-image: url(<%= user.image %>);">
+                      </div>
+                    <% else %>
+                      <div class="NoImage">
+                        <i class="fas fa-user-alt"></i>
+                        <p>No Image</p>
+                      </div>
+                    <% end %>
+                    </div>
+                    <div class="Follow-info__leftSide__FollowDetail">
+                      <div class="Follow-info__leftSide__FollowDetail__username">
+                        <p><%= link_to user.name, "/users/#{user.id}", class:"Follow-info__leftSide__FollowDetail__username__name" %></p>
+                      </div>
+                      <div class="Follow-info__leftSide__FollowDetail__Prefecture">
+                        <p><%= user.prefecture.name %></p>
+                      </div>
+                      <div class="Follow-info__leftSide__FollowDetail__Introduce">
+                        <p><%= user.introduce %></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="Follow-info__rightSide">
+                    <% unless current_user == user %>
+                      <% if current_user.following?(user) %>
+                        <%= form_with(model: @relationship, url: relationship_path, method: :delete, local: true) do |f| %>
+                          <%= f.hidden_field :follow_id %>  
+                          <%= f.submit "フォロー解除", class: "Rerationship-Off" %>
+                        <% end %>
+                      <% else %>
+                        <%= form_with(model: @set_relationship, url: relationships_path, local: true) do |f| %>
+                          <%= f.hidden_field :follow_id, value: user.id %>
+                          <%= f.submit "フォローする", class: "Rerationship-On" %>
+                        <% end %>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+            <% else %>
+              <p>フォローしている人がいません</p>
+            <% end%>
+          </li>
+          <li class="FollowPage">
             <% if @follower_users.present? %>
               <% @follower_users.each do |user| %>
                 <div class="Follow-info">
@@ -51,13 +101,13 @@
                   <div class="Follow-info__rightSide">
                     <% unless current_user == user %>
                       <% if current_user.following?(user) %>
-                        <%= form_with(model: current_user.following_relationships.find_by(following_id: @user.id),method: :delete) do |f| %>
-                          <%= f.hidden_field :following_id %>  
-                          <%= f.submit "フォローを解除", class: "Rerationship-Off" %>
+                        <%= form_with(model: @relationship, url: relationship_path, method: :delete, local: true) do |f| %>
+                          <%= f.hidden_field :follow_id %>  
+                          <%= f.submit "フォロー解除", class: "Rerationship-Off" %>
                         <% end %>
                       <% else %>
-                        <%= form_with(model: current_user.following_relationships.build) do |f| %>
-                          <%= f.hidden_field :following_id, value: @user.id %>
+                        <%= form_with(model: @set_relationship, url: relationships_path, local: true) do |f| %>
+                          <%= f.hidden_field :follow_id, value: user.id %>
                           <%= f.submit "フォローする", class: "Rerationship-On" %>
                         <% end %>
                       <% end %>
@@ -65,54 +115,6 @@
                   </div>
                 </div>
               <% end %>
-            <% else %>
-              <p>フォローしている人がいません</p>
-            <% end%>
-          </li>
-          <li class="FollowPage">
-            <% @follower_users.each do |user| %>
-              <div class="Follow-info">
-              <%= link_to '', user_path(user.id), class: "followslink", method: :get %>
-                <div class="Follow-info__leftSide">
-                  <div class="Follow-info__leftSide__Image">
-                  <% if @user.image.url.present? %>
-                    <div class='image' style="background-image: url(<%= user.image %>);">
-                    </div>
-                  <% else %>
-                    <div class="NoImage">
-                      <i class="fas fa-user-alt"></i>
-                      <p>No Image</p>
-                    </div>
-                  <% end %>
-                  </div>
-                  <div class="Follow-info__leftSide__FollowDetail">
-                    <div class="Follow-info__leftSide__FollowDetail__username">
-                      <p><%= link_to user.name, "/users/#{user.id}", class:"Follow-info__leftSide__FollowDetail__username__name" %></p>
-                    </div>
-                    <div class="Follow-info__leftSide__FollowDetail__Prefecture">
-                      <p><%= user.prefecture.name %></p>
-                    </div>
-                    <div class="Follow-info__leftSide__FollowDetail__Introduce">
-                      <p><%= user.introduce %></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="Follow-info__rightSide">
-                  <% unless current_user == user %>
-                    <% if current_user.following?(user) %>
-                      <%= form_with(model: current_user.following_relationships.find_by(following_id: @user.id),method: :delete) do |f| %>
-                        <%= f.hidden_field :following_id %>  
-                        <%= f.submit "フォローを解除", class: "Rerationship-Off" %>
-                      <% end %>
-                    <% else %>
-                      <%= form_with(model: current_user.following_relationships.build) do |f| %>
-                        <%= f.hidden_field :following_id, value: @user.id %>
-                        <%= f.submit "フォローする", class: "Rerationship-On" %>
-                      <% end %>
-                    <% end %>
-                  <% end %>
-                </div>
-              </div>
             <% end %>
           </li>
         </ul>

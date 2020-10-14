@@ -3,9 +3,8 @@ Rails.application.routes.draw do
   root to: 'posts#index'
 
   resources :users, only: [:index, :show, :new, :edit, :create, :update] do
-    member do
-      get :followings, :followers
-    end
+    get :followings, on: :member
+    get :followers, on: :member
   end
 
   resources :relationships, only: [:create, :destroy]
