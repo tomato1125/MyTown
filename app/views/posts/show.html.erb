@@ -84,7 +84,7 @@
 <div class="CommentArea">
   <% if current_user %>
     <div class="CommentForm">
-      <%= form_with(model: [@post, @comment], local: true, id: "new_comment") do |form| %>
+      <%= form_with(model: [@post, @comment], local: true) do |form| %>
         <%= form.text_area :text, placeholder: "コメントする", rows: "2", class: "CommentForm__textbox" %>
         <%= form.submit "SEND", class: "CommentForm__btn" %>
       <% end %>
