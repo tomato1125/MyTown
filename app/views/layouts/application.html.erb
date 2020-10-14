@@ -30,7 +30,6 @@
               <span class="LoginUserName">ログイン名: <%= current_user.name %></span>
               <%= link_to "マイページ", "/users/#{current_user.id}", class:"LoginMenu" %>
               <%= link_to  "投稿する", new_post_path, class: "LoginMenu" %>
-              <%= link_to  "通知", notifications_path, class: "LoginMenu" %>
               <a class="LoginMenu", id="Logout">ログアウト</a>
               <%# モーダル部分 %>
               <div id="LogoutModal-main">
@@ -55,10 +54,20 @@
             </div>
           <% end %>
         </div>
-        <div class="HeaderMenus__right">
-          <i class="fas fa-user"></i>
-          <i class="fas fa-bell"></i>
-        </div>
+        <% if user_signed_in? %>
+          <div class="HeaderMenus__right">
+            <i class="fas fa-user header-userIcon"></i>
+            <%= link_to(notifications_path) do %>
+              <i class="fas fa-bell header-bellIcon", data-toggle="tooltip", data-placement="top", title="通知">
+                <% if unchecked_notifications.any? %>
+                  <span class="header-bellIcon__stack-count">
+                    <%= unchecked_notifications.count %>
+                  </span>
+                <% end %>
+              </i>
+            <% end %>
+          </div>
+        <% end %>
         <div class="HanbergerMenu">
           <div class="bargermenu-btn">
             <i class="fa fa-bars", id="bargermenu-btn"></i>

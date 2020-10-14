@@ -100,6 +100,43 @@
   }
 }
 
+.header-userIcon {
+  font-size: 3vh;
+}
+
+.header-bellIcon {
+  font-size: 3vh;
+  color: #ffffff;
+  position: relative;
+  &__stack-count {
+    position: absolute;
+    bottom: -15%;
+    right: -25%;
+    height: 1.9vh;
+    width: 1.5vw;
+    border-radius: 50%;
+    font-size: 1.4vh;
+    text-align: center;
+    line-height: 2vh;
+    background-color: #FF6928;
+    // padding-left: 1rem;
+    // padding-top: 0rem;
+    // color: #efa04c;
+  }
+}
+
+.stack-count {
+  position: absolute;
+  bottom: 1%;
+  right: 0%;
+  height: 0.5vh;
+  width: 0.5vw;
+  background-color: #FF6928;
+  // padding-left: 1rem;
+  // padding-top: 0rem;
+  // color: #efa04c;
+}
+
 
 // モーダル部分//
 .HeaderModal {
