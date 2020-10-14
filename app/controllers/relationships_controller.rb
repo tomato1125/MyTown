@@ -4,10 +4,10 @@ class RelationshipsController < ApplicationController
   def create
     following = current_user.follow(@user)
     if following.save
-      flash[:notice] = "ユーザーをフォローしました"
+      flash[:notice] = @user.name + "さんをフォローしました"
       redirect_back(fallback_location: root_path)
     else
-      flash.now[:alert] = "ユーザーのフォローに失敗しました"
+      flash.now[:alert] = @user.name + "さんのフォローに失敗しました"
       redirect_to @user
     end
   end
@@ -15,7 +15,7 @@ class RelationshipsController < ApplicationController
   def destroy
     following = current_user.unfollow(@user)
     if following.destroy
-      flash[:notice] = "ユーザーのフォローを解除しました"
+      flash[:notice] = @user.name + "のフォローを解除しました"
       redirect_to @user
     else
       flash.now[:alert] = "ユーザーのフォロー解除に失敗しました"
