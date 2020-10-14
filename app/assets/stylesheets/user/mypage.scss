@@ -734,12 +734,14 @@ ul.follow-nav-bar li .active {
 }
 
 .followpages {
-  height: 100vh;
+  // height: 100vh;
   width: 45vw;
+  background-color: rgba($color: #222222, $alpha: 0.40);
+  padding: 2vh;
 }
 
 .FollowPage {
-  background-color: rgba($color: #222222, $alpha: 0.40);
+  background-color: rgba($color: #222222, $alpha: 0.80);
   height: 65vh;
   margin: 0 auto;
   display: flex;
