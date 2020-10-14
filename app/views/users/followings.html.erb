@@ -2,7 +2,7 @@
   <div class="myPageMain">
     <div class="myPageBox">
       <%# followのモーダル画面 %>
-      <div class="FollowModal-main">
+      <div id="FollowModal-main">
         <div class="FollowModalTop">
           <p><%=  current_user.name %> さんのフォロー・フォロワー</p>
         </div>
@@ -51,10 +51,7 @@
                   <div class="Follow-info__rightSide">
                     <% unless current_user == user %>
                       <% if current_user.following?(user) %>
-                        <%= form_with(model: @relationship, url: relationship_path, method: :delete, local: true) do |f| %>
-                          <%= f.hidden_field :follow_id %>  
-                          <%= f.submit "フォロー解除", class: "Rerationship-Off" %>
-                        <% end %>
+                        <h4>フォロー済み</h4>
                       <% else %>
                         <%= form_with(model: @set_relationship, url: relationships_path, local: true) do |f| %>
                           <%= f.hidden_field :follow_id, value: user.id %>
@@ -101,10 +98,7 @@
                   <div class="Follow-info__rightSide">
                     <% unless current_user == user %>
                       <% if current_user.following?(user) %>
-                        <%= form_with(model: @relationship, url: relationship_path, method: :delete, local: true) do |f| %>
-                          <%= f.hidden_field :follow_id %>  
-                          <%= f.submit "フォロー解除", class: "Rerationship-Off" %>
-                        <% end %>
+                        <h4>フォロー済み</h4>
                       <% else %>
                         <%= form_with(model: @set_relationship, url: relationships_path, local: true) do |f| %>
                           <%= f.hidden_field :follow_id, value: user.id %>
