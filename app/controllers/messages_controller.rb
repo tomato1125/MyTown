@@ -4,13 +4,14 @@ class MessagesController < ApplicationController
 
   def create
     if Entry.where(:user_id => current_user.id, :room_id => params[:message][:room_id]).present?
-      @message = Message.create(message_params)
-      respond_to do |format|
-        format.html {redirect_back(fallback_location: root_path)}
-        format.json 
-      end
+      @message = Message.new(message_params)
+      
+      @message.save
+      @message.create_notification_dm!(current_user, @message.id, @room_id)
+      flash[:notice] = 'ダイレクトメッセージを送信しました'
       # redirect_to "/rooms/#{@message.room_id}"
       # redirect_to post_path(params[:post_id])
+      redirect_back(fallback_location: root_path)
     else
       flash[:alert] = "メッセージの送信に失敗しました"
       redirect_back(fallback_location: root_path)

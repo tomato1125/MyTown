@@ -12,6 +12,9 @@
           <% when 'clip' then %>
           <%= link_to 'あなたの投稿', post_path(notification.post), style: "font-weight: bold;" %>
           <p>いいねしました</p>
+          <% when 'dm' then %>
+          <%= link_to 'ダイレクトメッセージ', user_path(visitor), style: "font-weight: bold;" %>
+          <p>ダイレクトメッセージを送りました</p>
           <% when 'comment' then %>
           <div class="notification-comment">
             <% if notification.post.user_id == visited.id %>
