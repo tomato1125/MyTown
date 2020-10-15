@@ -74,6 +74,24 @@
         <i class="far fa-bookmark"> Bookmark</i>
       <% end %>
     <% end %>
+    <div class="shares">
+      <span class="shares__btn">
+        <a href="https://www.facebook.com/share.php?url=<%= request.url %>" rel="nofollow" target="_blank">
+          <i class="fab fa-facebook-square"></i>
+        </a>
+      </span>
+      <span class="shares__btn">
+        <a href="https://twitter.com/share?url=<%= request.url %>&text=Twitterでシェアしよう！@mytown Title:<%= @post.title %>" rel="nofollow" target="_blank">
+          <i class="fab fa-twitter-square"></i>
+        </a>
+      </span>
+      <span class="shares__btn">
+        <a href="http://line.me/R/msg/text/?https://syncer.jp">
+          <i class="fab fa-line"></i>
+        </a>
+      </span>
+    </div>
+
   </div>
   <%# グーグルマップ %>
   <div class='GoogleMapShow'>
