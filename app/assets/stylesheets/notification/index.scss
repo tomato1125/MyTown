@@ -1,0 +1,29 @@
+.notifications {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2vh;
+  background-color: rgba($color: #000000, $alpha: 0.40);
+  box-shadow: 0 0 20px gray;
+}
+
+.notification-box {
+  width: 45vw;
+  background-color: rgba($color: #000000, $alpha: 0.40);
+}
+
+.notification-formInline {
+  display: flex;
+  font-size: 1.7vh;
+  height: 10vh;
+  padding: 2vh;
+  border-bottom: 1px solid #ccc;
+}
+
+.notificationAvater {
+  height: 3vh;
+  width: 3vw;
+  border-radius: 50%;
+}
