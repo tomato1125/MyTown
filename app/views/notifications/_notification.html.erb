@@ -1,36 +1,43 @@
 <% visitor = notification.visitor %>
 <% visited = notification.visited %>
-<div class="col-md-6">
-  <div class="form-inline">
+<div class="notification-box">
+  <div class="notification-formInline">
     <%= link_to user_path(visitor) do %>
-      <%= visitor.name %>さん
-      <div class="card-stacked">
-        <div class="notification-content">
-          <% case notification.action %>
-          <% when 'follow' then %>
-          <%= "があなたをフォローしました" %>
-          <% when 'clip' then %>
-          <%= link_to 'あなたの投稿', post_path(notification.post), style: "font-weight: bold;" %>
-          <p>いいねしました</p>
-          <% when 'dm' then %>
-          <%= link_to 'ダイレクトメッセージ', user_path(visitor), style: "font-weight: bold;" %>
-          <p>ダイレクトメッセージを送りました</p>
-          <% when 'comment' then %>
-          <div class="notification-comment">
-            <% if notification.post.user_id == visited.id %>
-              <%= link_to 'あなたの投稿', post_path(notification.post), style: "font-weight: bold;" %>
-              <p>コメントしました</p>
-            <% else %>
-              <span>
-                <%= link_to post_path(notification.post) do %>
-                  <p><%= notification.post.user.name %>さんの投稿にコメントしました。</p>
-                <% end %>
-              </span>
-            <% end %>
-          </div>
+      <span class="notification-Avater">
+        <%= image_tag visitor.image.url, class: "notificationAvater" %>
+      </span>
+      <span><%= visitor.name %></span>
+    <% end %>
+    <span>さんが</span>
+    <div class="card-stacked">
+      <div class="notification-content">
+        <% case notification.action %>
+        <% when 'follow' then %>
+        <%= "があなたをフォローしました" %>
+        <% when 'clip' then %>
+        <%= link_to 'あなたの投稿', post_path(notification.post), style: "font-weight: bold;" %>
+        <span>いいねしました</span>
+        <% when 'dm' then %>
+        <%= link_to 'ダイレクトメッセージ', user_path(visitor), style: "font-weight: bold;" %>
+        <span>ダイレクトメッセージを送りました</span>
+        <% when 'comment' then %>
+        <div class="notification-comment">
+          <% if notification.post.user_id == visited.id %>
+            <%= link_to 'あなたの投稿', post_path(notification.post), style: "font-weight: bold;" %>
+            <span>にコメントしました</span>
+          <% else %>
+            <span>
+              <%= link_to post_path(notification.post) do %>
+                <span><%= notification.post.user.name %>さんの投稿にコメントしました。</span>
+              <% end %>
+            </span>
           <% end %>
         </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
+    <p class="notification-date">
+      <%= time_ago_in_words(notification.created_at).upcase %>
+    </p>
   </div>
 </div>

@@ -2,11 +2,16 @@
 <div class="myPage", style="background-image: url(<%= asset_path "TopPageImage.jpg" %>);">
   <div class="myPageMain">
     <div class="myPageBox">
-      <% if notifications.exists? %>
-        <%= render notifications %>
-      <% else %>
-        <p>通知はありません</p>
-      <% end %>
+      <h4 class="RoomsTitle">
+        Notifications
+      </h4>
+      <div class="notifications">
+        <% if notifications.exists? %>
+          <%= render notifications %>
+        <% else %>
+          <p>通知はありません</p>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
