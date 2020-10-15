@@ -6,11 +6,13 @@
         Notifications
       </h4>
       <div class="notifications">
-        <% if notifications.exists? %>
-          <%= render notifications %>
-        <% else %>
-          <p>通知はありません</p>
-        <% end %>
+        <div class="notification">
+          <% if notifications.exists? %>
+            <%= render notifications %>
+          <% else %>
+            <p>通知はありません</p>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
