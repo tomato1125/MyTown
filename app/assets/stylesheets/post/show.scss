@@ -67,6 +67,30 @@
   }
 }
 
+.shares {
+  margin-top: 0.5vh;
+  &__btn {
+    margin-right: 0.3vw;
+    height: 1.0vh;
+    font-size: 2vh;
+  }
+  a{
+    text-decoration: none;
+  }
+}
+
+.sns1 {
+  color: #005FFF;
+  // background-color: #ffffff;
+}
+.sns2 {
+  color: #0099FF;
+}
+.sns3 {
+  color: #00FF33;
+  // background-color: #ffffff;
+}
+
 //コメント部分//
 .PostDescription {
   width: 40vw;
