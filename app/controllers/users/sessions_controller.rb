@@ -18,6 +18,16 @@ class Users::SessionsController < Devise::SessionsController
   #   super
   # end
 
+  def new_guest
+    user = User.find(1)
+    user.update(email: 'guest@example.com',name: 'ゲストユーザー') do |user|
+      user.password = SecureRandom.urlsafe_base64
+    end
+    sign_in user
+    redirect_to root_path
+    flash[:notice] = "ゲストユーザーでログインしました"
+  end
+
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.
