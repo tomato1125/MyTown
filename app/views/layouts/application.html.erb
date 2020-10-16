@@ -49,6 +49,7 @@
             </div>
           <% else %>
             <div class="BeforeLoginMenus">
+              <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: 'BeforeLoginMenu' %>
               <%= link_to "ログイン", new_user_session_path, class: 'BeforeLoginMenu' %>
               <%= link_to "新規登録", new_user_registration_path, class: 'BeforeLoginMenu' %>
             </div>
