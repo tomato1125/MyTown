@@ -41,7 +41,7 @@
     <%= link_to 'See More...', newposts_path %>
   </div>
   <div class="ToppagePostIndex">
-    <%= @posts.first(5).each do |post| %>
+    <% @posts.first(5).each do |post| %>
       <div class='ToppageNewPost'>
       <%= link_to '', post_path(post.id), class: "showlink", method: :get %>
         <div class='IndexUserInfomation'>
