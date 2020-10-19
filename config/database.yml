@@ -52,5 +52,4 @@ production:
   database: MyTown_production
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
-  host: 18.177.226.77
   socket: /var/lib/mysql/mysql.sock
