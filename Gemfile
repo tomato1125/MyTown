@@ -75,3 +75,4 @@ gem 'geocoder'
 gem "gmaps4rails"
 gem "gon"
 gem 'kaminari'
+gem 'fog-aws'
