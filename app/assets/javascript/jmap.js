@@ -215,8 +215,8 @@ $(document).ready(function() {
       // Default Options
       var params = $.extend({
           id: null,
-          width: '50vw',
-          height: '30vh',
+          width: '100%',
+          height: '45vh',
           lineColor: 'transparent',
           lineWidth: 0,
           lineStyle: 'solid',
@@ -226,7 +226,7 @@ $(document).ready(function() {
           dividerWidth: '1px',
           dividerColor: '#bfbfbf',
           dividerStyle: 'solid',
-          fontSize: '12px',
+          fontSize: '0.8vw',
           fontColor: '#fff',
           font: 'inherit',
           textNowrap: false,
@@ -263,7 +263,7 @@ $(document).ready(function() {
           heatmapColors: [],
           heatmapLabelUnit: '件',
           heatmapFontColors: ['#222222'],
-          heatmapConditions: ["<1", ">=3", ">=5", ">=10", ">=15", ">=20", ">=30", ">=35", ">=40", ">=50"],
+          heatmapConditions: ["<3", ">=3", ">=5", ">=10", ">=15", ">=20", ">=30", ">=35", ">=40", ">=50"],
           viewType: 'map',
           gridNumber: 3,
           gridOffset: 1,
