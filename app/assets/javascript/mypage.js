@@ -56,14 +56,14 @@ $(function() {
     options: {
       title: {
         display: true,
-        text: 'Post Category Data',
+        text: '投稿数（カテゴリー別）',
         fontColor: "white", 
-        fontSize: 18
+        fontSize: 15
       },
       legend: { 
         labels: { 
          fontColor: "white", 
-         fontSize: 18 
+         fontSize: 15
         } 
       },
     }
