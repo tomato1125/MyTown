@@ -44,10 +44,10 @@ $(function() {
       datasets: [{
           color: "#ffffff",
           backgroundColor: [
-              "#3399FF",
-              "#FAFF67",
-              "#FF3366",
-              "#33CC66",
+              "#BBFFFF",
+              "#FFFFBB",
+              "#FF9872",
+              "#93FFAB",
               "#FFCC66"
           ],
           data: [gon.favorite, gon.food, gon.shopping, gon.nature, gon.event] 
