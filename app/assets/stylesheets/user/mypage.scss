@@ -917,8 +917,8 @@ ul.follow-nav-bar li .active {
 
 // グラフ===============================================================================
 .CanvasContainer {
-  width:  40vw;
-  height: 30vh;
+  width:  30vw;
+  height: 20vh;
   color: #ffffff;
   background-color: #ffffff;
 
@@ -926,6 +926,8 @@ ul.follow-nav-bar li .active {
 
 #chart {
   color: #ffffff;
+  height: 20vh;
+  margin: 5vh 0;
 }
 
 #prefectureModal {
