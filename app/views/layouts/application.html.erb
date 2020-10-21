@@ -11,7 +11,7 @@
     <%= Gon::Base.render_data({}) %>
     
     <%= stylesheet_link_tag 'application' %>
-    <%# <%= favicon_link_tag('favicon.ico') %>
+    <%= favicon_link_tag('favicon.ico') %>
     <%# <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> %>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -30,7 +30,6 @@
             <div class="LoginedMenus">
               <span class="LoginUserName">ログイン名: <%= current_user.name %></span>
               <%= link_to "マイページ", "/users/#{current_user.id}", class:"LoginMenu" %>
-              <%= link_to  "投稿する", new_post_path, class: "LoginMenu" %>
               <%= link_to  "投稿する", new_post_path, class: "LoginMenu" %>
               <a class="LoginMenu", id="Logout">ログアウト</a>
               <%# モーダル部分 %>
