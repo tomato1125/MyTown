@@ -463,12 +463,39 @@ ul.user-nav-bar li .active {
 //レスポンシブ対応//
 @media (max-width: 700px) {
   .myPageBoxInformation-Image {
-    height: 10vh;
-    width: auto;
+    // height: 11vh;
+    width: 30vw;
+    // background-color: rgba($color: #ffffff, $alpha: 0.40);
+    // box-shadow: 0 0 12px gray;
+    // border: 1px solid #999999;
+    // border-radius: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1vh;
+    .NoImage {
+      border-radius: 5%;
+      border: 1px solid #888888;
+      height: 10vh;
+      width: 10vw;
+      font-size: 5vh;
+      background-color: #BBBBBB;
+      text-align: center;
+      align-items: center;
+      p{
+        font-size: 1.5vh;
+      }
+    }
     .image {
-      border-radius: 50%;
-      height: 100px;
-      width: 100px;
+      background-color: rgba($color: #ffffff, $alpha: 0.40);
+      box-shadow: 0 0 12px gray;
+      border: 1px solid #999999;
+      padding: 1vh 1vw;
+      border-radius: 5%;
+      height: 10vh;
+      width: 100%;
+      background-size: cover;
+      background-position: center center;
     }
   }
 
