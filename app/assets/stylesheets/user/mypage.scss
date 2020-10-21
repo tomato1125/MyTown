@@ -190,11 +190,17 @@ ul.user-nav-bar li .active {
     width: 50%;
     color: #000000;
     font-size: 1vh;
-    padding: 1.5vh;
+    // padding: 1.5vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    &__title {
+      color: #ffffff;
+      font-size: 2vh;
+      display: block;
+      text-align: center;
+    }
     &__sentence {
       height: 100%;
       width: 100%;
@@ -210,6 +216,12 @@ ul.user-nav-bar li .active {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    &__title {
+      color: #ffffff;
+      font-size: 2vh;
+      display: block;
+      text-align: center;
+    }
     &__sentence {
       height: 100%;
       width: 100%;
@@ -217,7 +229,7 @@ ul.user-nav-bar li .active {
       display: flex;
       justify-content: space-around;
       align-items: center;
-      padding: 1.5vh 1.5vw;
+      // padding: 0 1.5vw;
       &__contents {
         height: auto;
         width: auto;
@@ -244,51 +256,74 @@ ul.user-nav-bar li .active {
     }
   }
 }
-.top-page-title {
-  color: #ffffff;
-  font-size: 2vh;
-  display: block;
-  text-align: center;
-}
+
 
 @media screen and (max-width: 1000px) {
   .top-page {
     display: flex;
     flex-direction: column;
     &__introduce {
-      height: 15vh;
       width: 100%;
       color: #000000;
       font-size: 2vw;
-      padding: 15px;
-      background-color: #fff;
-      align-items: center;
+
       margin-bottom: 3vh;
+      &__title {
+        font-size: 2vh;
+        margin-bottom: 1vh;
+        color: #fff;
+      }
+      &__sentence {
+        height: 15vh;
+        background-color: #fff;
+      }
     }
     &__status {
       height: 15vh;
       width: 100%;
-      background-color: #333333;
       justify-content: center;
-  
-      &__contents {
-        height: auto;
-        width: auto;
+      &__title {
+        font-size: 2vh;
+        margin-bottom: 1vh;
+      }
+      &__sentence {
+        height: 20vh;
+        width: 100%;
+        background-color: #333333;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 2.0vh;
-        font-size: 1.2vh;
-        &__content {
-          margin-bottom: 1vh;
+        justify-content: space-around;
+        align-items: center;
+        padding: 1.5vh 1.5vw;
+        &__contents {
+          height: auto;
+          width: auto;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          font-size: 1.5vh;
+          &__content {
+            margin: 0.5vh 0;
+          }
+        }
+        &__counts {
+          height: auto;
+          width: auto;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          font-size: 1.5vh;
+          &__content {
+            margin: 0.5vh 0;
+          }
         }
       }
     }
   }
-  .top-page-title {
-    font-size: 2vh;
-    display: block;
-    text-align: center;
+  .chart {
+    color: #ffffff;
+    height: 100vh;
+    width: 30vw;
+    margin: 5vh 0;
   }
 }
 
@@ -463,12 +498,7 @@ ul.user-nav-bar li .active {
 //レスポンシブ対応//
 @media (max-width: 700px) {
   .myPageBoxInformation-Image {
-    // height: 11vh;
     width: 30vw;
-    // background-color: rgba($color: #ffffff, $alpha: 0.40);
-    // box-shadow: 0 0 12px gray;
-    // border: 1px solid #999999;
-    // border-radius: 5%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -948,12 +978,12 @@ ul.follow-nav-bar li .active {
   height: 20vh;
   color: #ffffff;
   background-color: #ffffff;
-
 }
 
-#chart {
+.chart {
   color: #ffffff;
   height: 20vh;
+  width: 30vw;
   margin: 5vh 0;
 }
 
