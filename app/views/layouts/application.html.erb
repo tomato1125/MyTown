@@ -31,6 +31,7 @@
               <span class="LoginUserName">ログイン名: <%= current_user.name %></span>
               <%= link_to "マイページ", "/users/#{current_user.id}", class:"LoginMenu" %>
               <%= link_to  "投稿する", new_post_path, class: "LoginMenu" %>
+              <%= link_to  "投稿する", new_post_path, class: "LoginMenu" %>
               <a class="LoginMenu", id="Logout">ログアウト</a>
               <%# モーダル部分 %>
               <div id="LogoutModal-main">
