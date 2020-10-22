@@ -27,9 +27,8 @@
 - 通知機能を搭載しており、フォローしているユーザーが自身をフォロー、ダイレクトメッセージ送信、投稿へのコメントを行った時に通知を読むことができます。
 - レスポンシブ対応です。iphoneサイズだとヘッダーメニューがハンバーガーメニューに切り替わります。
 
-![gif1](https://user-images.githubusercontent.com/66346042/89199947-4da5da80-d5ea-11ea-8c27-c53a31450e82.gif)
-![gif2](https://user-images.githubusercontent.com/66346042/89203609-d3785480-d5ef-11ea-9820-95fcbbb34cea.gif)
-![gif3](https://user-images.githubusercontent.com/66346042/89201536-98285680-d5ec-11ea-83bc-029b2ff15fb6.gif)
+![MyTown_gif2](https://user-images.githubusercontent.com/66346042/96846885-71601a80-148d-11eb-824f-32dd5a887efa.gif)
+![MyTown_gif3](https://user-images.githubusercontent.com/66346042/96847502-3a3e3900-148e-11eb-8f6d-f09578e350bf.gif)
 ![MyTown_gif1](https://user-images.githubusercontent.com/66346042/96845397-9fdcf600-148b-11eb-971a-0986be09394e.gif)
 
 ## 投稿検索機能
