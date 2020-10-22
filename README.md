@@ -30,6 +30,7 @@
 ![gif1](https://user-images.githubusercontent.com/66346042/89199947-4da5da80-d5ea-11ea-8c27-c53a31450e82.gif)
 ![gif2](https://user-images.githubusercontent.com/66346042/89203609-d3785480-d5ef-11ea-9820-95fcbbb34cea.gif)
 ![gif3](https://user-images.githubusercontent.com/66346042/89201536-98285680-d5ec-11ea-83bc-029b2ff15fb6.gif)
+![MyTown_gif1](https://user-images.githubusercontent.com/66346042/96845397-9fdcf600-148b-11eb-971a-0986be09394e.gif)
 
 ## 投稿検索機能
 - 投稿した情報は文字列検索、カテゴリー別検索、県別検索が可能です。
