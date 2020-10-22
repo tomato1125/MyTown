@@ -5,12 +5,13 @@
 
 
 .NewContents {
-  // height: 100vh;
+  height: 100vh;
   width: auto;
   border-radius: 5px;
   border: 1px solid #ccc;
   line-height: 1.5;
   font-size: 15px;
+  margin-top: 8vh;
   background-image: image-url("NewPostImage2.jpg");
   background-attachment: fixed;
   background-size: cover;
@@ -261,7 +262,7 @@
 
 .map {
   height: 50vh;
-  width: 45vw;
+  width: 40vw;
 }
 
 //GoogleMapここまで=========================================================================
