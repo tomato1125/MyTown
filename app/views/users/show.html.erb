@@ -166,7 +166,7 @@
               <div class="userPostIndex__postCount">
                 POST :  <%= @posts.length %> 件
               </div>
-              <% @posts.first(5).each do |post| %>
+              <% @posts.each do |post| %>
                 <div class='mypage-NewPost'>
                 <%= link_to '', post_path(post.id), class: "showlink", method: :get %>
                   <div class="CategoryPostTitle">
