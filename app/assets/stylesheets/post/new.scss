@@ -11,7 +11,6 @@
   border: 1px solid #ccc;
   line-height: 1.5;
   font-size: 15px;
-  margin-top: 8vh;
   background-image: image-url("NewPostImage2.jpg");
   background-attachment: fixed;
   background-size: cover;
@@ -24,10 +23,13 @@
     font-size: 3vh;
     font-weight: bold;
     height: 5vh;
-    padding-top: 15vh;
+    padding-top: 10vh;
     h3{
       text-align: center;
     }
+  }
+  &__container {
+    // height: 100vh;
   }
 }
 
