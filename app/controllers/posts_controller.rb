@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :move_to_index, except: [:index, :show, :search]
+  before_action :move_to_index, except: [:index, :search]
   # before_action :set_post_info, only: [:show]
 
   def index
@@ -79,6 +79,7 @@ class PostsController < ApplicationController
   def move_to_index
     unless user_signed_in?
       redirect_to action: :index
+      flash[:alert] = "ログイン・新規登録してご利用ください"
     end
   end
 
