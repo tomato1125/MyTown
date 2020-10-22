@@ -1,6 +1,9 @@
 # アプリ名
 
-My Town
+## My Town
+
+
+# ロゴ
 ![myTown4](https://user-images.githubusercontent.com/66346042/96842708-550daf00-1488-11eb-8193-0f316418a9dc.jpg)
 
 
