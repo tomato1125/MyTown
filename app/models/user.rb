@@ -5,7 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   
-  validates :name, presence: true
   validates :email, presence: true
   validates :introduce, presence: true
   
@@ -28,6 +27,7 @@ class User < ApplicationRecord
   has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 10 }
+  # validates :prefecture_id, presence: true
 
   mount_uploader :image, ImageUploader
 
