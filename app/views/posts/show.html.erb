@@ -1,9 +1,12 @@
 <div class="postShow">
   <div class='showNewPostArea'>
+    <%# 投稿タイトル %>
     <div class="showPostTitle">
       <span>~ <%= @post.title %> ~</span>
     </div>
+    <%# 投稿トップ画像 %>
     <div class='showPostImage', id='change_image', style="background-image: url(<%= @post.images[0].image%>);">
+      <%# 都道府県名とアイコン %>
       <div class="showAreaInfomation">
         <div class="showUserIcon">
           <i class="fas fa-map-marker-alt"></i>
@@ -12,6 +15,7 @@
           <%= @post.prefecture.name if @post.prefecture_id? %>
         </div>
       </div>
+      <%# bookmarkのアイコンとカウント %>
       <% if current_user.already_cliped?(@post) %>
         <%= link_to post_clip_path(@post), class: "ClipButton", method: :delete do%>
           <div class="CategoryIndexFavorite">
@@ -32,6 +36,7 @@
         <% end %>
       <% end %>
     </div>
+    <%# 投稿画像一覧（最大５枚） %>
     <ul class="PostImagesShow">
       <% @post.images.each_with_index do |image, i| %>
         <li>
@@ -47,7 +52,7 @@
     <% if user_signed_in? && current_user.id == @post.user_id %>
       <div class="showButtons">
         <%= button_to '編集', edit_post_path(@post.id), method: :get, class: 'showPostEdit-btn' %>
-        <button name="削除する" id="modal-open">削除</button>
+        <button name="削除する" id="modal-open", class='showPostDelete-btn'>削除</button>
       </div>
     <% end %>
     <%# Bookmark登録ボタン %>
@@ -88,6 +93,7 @@
 </div>
 <%# コメントエリア %>
 <div class="CommentArea">
+  <%# コメントフォームと送信ボタン %>
   <% if current_user %>
     <div class="CommentForm">
       <%= form_with(model: [@post, @comment], local: true) do |form| %>
@@ -98,6 +104,7 @@
   <% else %>
     <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
   <% end %>
+  <%# コメント一覧 %>
   <div id="comments-area">
     <div class="comments">
       <h4>＜コメント一覧＞</h4>
