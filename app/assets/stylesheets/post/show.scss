@@ -185,11 +185,11 @@
     text-align: center;
   }
   .maptitleName {
-    font-size: 20px;
+    font-size: 30px;
   }
 }
 
-//投稿削除のモーダル=======================================================
+//投稿削除時のモーダル画面=======================================================
 
 #contents {
   z-index: 0;
@@ -334,16 +334,15 @@
   }
 
   .GoogleMapShow {
-    color: #ffffff;
     padding: 0;
-    .mapShow {
-      text-align: center;
+  }
+
+  .CommentForm {
+    &__textbox {
+      width: 100vw;
     }
-    .maptitleName {
-      font-size: 20px;
-    }
-    .maps {
-      width: 100%;
+    &__btn {
+      width: 40vw;
     }
   }
 }
