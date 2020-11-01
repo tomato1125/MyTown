@@ -3,7 +3,7 @@
     <div class="myPageBox">
       <%# followのモーダル画面 %>
       <div class="FollowModal-main">
-        <div class="FollowModalTop">
+        <div class="followModalTop">
           <p><%=  current_user.name %> さんのフォロー・フォロワー</p>
         </div>
         <ul class='follow-nav-bar'>
@@ -41,7 +41,7 @@
                     </div>
                     <div class="Follow-info__leftSide__FollowDetail__Prefecture">
                       <i class="fas fa-map-marker-alt"></i>
-                      <p><%= user.prefecture.name %></p>
+                      <span><%= user.prefecture.name %></span>
                     </div>
                     <div class="Follow-info__leftSide__FollowDetail__Introduce">
                       <p><%= user.introduce %></p>
@@ -89,7 +89,7 @@
                       </div>
                       <div class="Follow-info__leftSide__FollowDetail__Prefecture">
                         <i class="fas fa-map-marker-alt"></i>
-                        <p><%= user.prefecture.name %></p>
+                        <span><%= user.prefecture.name %></span>
                       </div>
                       <div class="Follow-info__leftSide__FollowDetail__Introduce">
                         <p><%= user.introduce %></p>
