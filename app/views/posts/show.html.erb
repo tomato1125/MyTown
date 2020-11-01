@@ -45,8 +45,8 @@
     </div>
     <%# 投稿編集・削除ボタン（投稿者のみ表示） %>
     <% if user_signed_in? && current_user.id == @post.user_id %>
-      <div class="Buttons">
-        <%= button_to '編集', edit_post_path(@post.id), method: :get, class: 'edit-btn' %>
+      <div class="showButtons">
+        <%= button_to '編集', edit_post_path(@post.id), method: :get, class: 'showPostEdit-btn' %>
         <button name="削除する" id="modal-open">削除</button>
       </div>
     <% end %>

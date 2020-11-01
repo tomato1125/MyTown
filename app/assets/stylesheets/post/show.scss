@@ -20,7 +20,7 @@
     border: 1px solid #000000;
     margin-top: 10px;
     height: 40vh;
-    width: 40vw;
+    // width: 40vw;
     color: #000000;
     border-radius: 20px;
     background-size: cover;
@@ -53,6 +53,7 @@
   }
 }
 
+// 投稿画像一覧（横並びで最大５枚まで表示）=======================================
 .PostImagesShow {
   display: flex;
   height: 10vh;
@@ -98,6 +99,58 @@
   padding: 10px 10px;
 }
 
+//投稿の編集・削除ボタン（投稿者のみ表示）=======================================
+.showButtons {
+  display: flex;
+  // justify-content: space-around;
+  // width: 100vw;
+  margin-bottom: 1vh;
+}
+
+.showPostEdit-btn {
+  color: #ffffff;
+  height: 2vh;
+  width: 10vw;
+  margin: 0.5vh 0;
+  border-radius: 20px;
+  background-color: #4682b4;
+  border: none;
+  box-shadow: 0 0 8px gray;
+  color: #ffffff;
+  line-height: 1.5;
+  font-size: 1.3vh;
+  text-align: center;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.showPostEdit-btn:hover {
+  text-decoration: none;
+  background-color: rgba($color: #4682b4, $alpha: 0.5);
+}
+
+// 削除ボタン //
+#modal-open {
+  color: #ffffff;
+  height: 2vh;
+  width: 10vw;
+  margin: 0.5vh 0;
+  border-radius: 20px;
+  background-color: #cc0000;
+  border: none;
+  box-shadow: 0 0 8px gray;
+  line-height: 1.5;
+  font-size: 1.3vh;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+#modal-open:hover {
+  background-color: rgba($color: #cc0000, $alpha: 0.8);
+}
+
 // Bookmark登録ボタン========================================================
 .clips {
   z-index: 3;
@@ -138,55 +191,6 @@
   font-size: 16px;
 }
 
-.Buttons {
-  display: flex;
-  width: 13vw;
-  justify-content: space-around;
-  margin-bottom: 1vh;
-}
-
-.edit-btn {
-  color: #ffffff;
-  height: 2vh;
-  width: 6vw;
-  margin: 0.5vh 0;
-  border-radius: 20px;
-  background-color: #4682b4;
-  border: none;
-  box-shadow: 0 0 8px gray;
-  color: #ffffff;
-  line-height: 1.5;
-  font-size: 1.3vh;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-.edit-btn:hover {
-  background-color: rgba($color: #4682b4, $alpha: 0.5);
-}
-
-#modal-open {
-  color: #ffffff;
-  height: 2vh;
-  width: 10vw;
-  margin: 0.5vh 0;
-  border-radius: 20px;
-  background-color: #cc0000;
-  border: none;
-  box-shadow: 0 0 8px gray;
-  line-height: 1.5;
-  font-size: 1.3vh;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-#modal-open:hover {
-  background-color: rgba($color: #cc0000, $alpha: 0.8);
-}
-
-/* モーダル コンテンツエリア */
 #modal-main {
   display: none;
   margin: 0;
@@ -264,7 +268,7 @@
   color: #1e90ff;
 }
 
-/* モーダル 背景エリア */
+/* モーダル background */
 #modal-bg {
   display: none;
   width: 100%;
@@ -276,3 +280,48 @@
   z-index: 1;
 }
 //モーダルここまで===============================================================================
+
+// /////////////////////////レスポンシブ対応//////////////////////////////////////////
+
+@media screen and (max-width: 700px) {
+  .postShow {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .showNewPostArea {
+    width: 100%;
+    padding: 2vh 2vw;
+  }
+
+  .showPostImage {
+    width: 100%;
+  }
+
+  .PostImagesShow {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: auto;
+    width: 100%;
+    margin-top: 1vh;
+    .subImage {
+      width: 30vw;
+      height: 10vh;
+    }
+  }
+
+  .PostDescription {
+    width: 100%;
+  }
+
+  // .Buttons {
+  //   display: block;
+  //   width: 300px;
+  // }
+
+  // .edit-btn {
+  //   display: block;
+  //   width: 30vw;
+  // }
+}
