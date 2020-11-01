@@ -35,8 +35,7 @@
  *= require_self
  */
 
-
- //ヘッダー部分のCSS
+//ヘッダー部分のCSS
 .Header {
   position: fixed;
   top: 0px;
@@ -52,7 +51,7 @@
   }
 }
 
-.HeaderMenus{ 
+.HeaderMenus {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -69,14 +68,12 @@
   }
 }
 
-
-
 .HeaderLogo {
   height: 7.5vh;
   width: auto;
   background-color: rgba($color: #222222, $alpha: 0.95);
   position: relative;
-  a{
+  a {
     position: absolute;
     top: 100%;
     left: 100%;
@@ -88,7 +85,7 @@
   font-size: 2vh;
   display: flex;
   .LoginMenu:hover {
-    color: #00BFFF;
+    color: #00bfff;
   }
   .LoginUserName {
     color: #ffffff;
@@ -119,24 +116,13 @@
     font-size: 1.4vh;
     text-align: center;
     line-height: 2vh;
-    background-color: #FF6928;
+    background-color: #ff6928;
   }
 }
 
 .header-bellIcon:hover {
-  color: rgba($color:#ffffff, $alpha: 0.50);
+  color: rgba($color: #ffffff, $alpha: 0.5);
 }
-
-.stack-count {
-  // position: absolute;
-  // bottom: 1%;
-  // right: 0%;
-  // height: 0.5vh;
-  // width: 0.5vw;
-  // background-color: #FF6928;
-
-}
-
 
 // モーダル部分//
 .HeaderModal {
@@ -152,7 +138,7 @@
   margin: 0;
   padding: 2vh 2vh;
   color: #666666;
-  position:fixed;
+  position: fixed;
   z-index: 2;
 }
 
@@ -162,7 +148,7 @@
   width: 150px;
   margin: 50px 0;
   border-radius: 20px;
-  background-color: #1E90FF;
+  background-color: #1e90ff;
   border: none;
   box-shadow: 0 0 8px gray;
   color: #ffffff;
@@ -172,11 +158,11 @@
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
-  transition: all  0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .LogoutBtn-yes:hover {
-  background-color: rgba($color: #1E90FF, $alpha: 0.70);
+  background-color: rgba($color: #1e90ff, $alpha: 0.7);
 }
 
 .LogoutBtn-no {
@@ -185,7 +171,7 @@
   width: 150px;
   margin: 50px 0;
   border-radius: 20px;
-  background-color: #FF0000;
+  background-color: #ff0000;
   border: none;
   box-shadow: 0 0 8px gray;
   color: #ffffff;
@@ -195,20 +181,19 @@
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
-  transition: all  0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .LogoutBtn-no:hover {
-  background-color: rgba($color: #FF0000, $alpha: 0.70);
+  background-color: rgba($color: #ff0000, $alpha: 0.7);
 }
-
 
 .BeforeLoginMenus {
   font-size: 2vh;
   margin-left: 5vw;
   display: flex;
   .BeforeLoginMenu:hover {
-    color: #00BFFF;
+    color: #00bfff;
   }
   .BeforeLoginMenu {
     margin-right: 2vw;
@@ -218,55 +203,55 @@
 
 //ヘッダーここまで
 
-
 .body {
   z-index: 1;
 }
 
 //ページネーションに関するCSS
-.pagination>li>a {          
-  border: none;     /*枠線をなくす*/
-  color: #4682B4;   /*文字の色を変える*/
+.pagination > li > a {
+  border: none; /*枠線をなくす*/
+  color: #4682b4; /*文字の色を変える*/
   background-color: #222222;
   font-size: 20px;
 }
 
 /* 表示しているページ番号のデザイン */
-.pagination>.active>a {     
-  background: #93c9ff;     /*背景の色を変える*/
-  border-radius: 15px;     /*角を丸くする*/
+.pagination > .active > a {
+  background: #93c9ff; /*背景の色を変える*/
+  border-radius: 15px; /*角を丸くする*/
 }
 
 /*ホバー時のデザイン*/
-.pagination>li>a:hover {        
-  border-radius: 15px;    /*角を丸くする*/
+.pagination > li > a:hover {
+  border-radius: 15px; /*角を丸くする*/
 }
 
+////レスポンシブ対応////////////////////////////////////////////////////////////
 
-
-//レスポンシブ対応
+//ブラウザ幅が700以上の場合はバーガーメニューを非表示================================
 @media screen and (min-width: 700px) {
   .HanbergerMenu {
     display: none;
-  } 
+  }
 }
 
+//ブラウザ幅が700px未満の場合===================================================
 @media screen and (max-width: 700px) {
   .Header {
     position: fixed;
     top: 0px;
     left: 0px;
     width: 100%;
-    height: 10vh;
     background-color: rgba($color: #222222, $alpha: 0.95);
     z-index: 9000;
   }
-  
-  .HeaderMenus{ 
+
+  .HeaderMenus {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0px 0px;
+    height: 100%;
     font-size: 2vh;
     &__left {
       display: flex;
@@ -277,13 +262,13 @@
       display: none;
     }
   }
-  
+
   .HeaderLogo {
     height: 7.5vh;
     width: auto;
-    background-image:("myTown4.jpg");
-    background-color:rgba(255,255,255,0.8);
-    background-blend-mode:lighten;
+    background-image: ("myTown4.jpg");
+    background-color: rgba(255, 255, 255, 0.8);
+    background-blend-mode: lighten;
   }
 
   .HeaderLogo {
@@ -291,39 +276,39 @@
     width: auto;
     background-color: rgba($color: #222222, $alpha: 0.95);
     position: relative;
-    a{
+    a {
       position: absolute;
       top: 100%;
       left: 100%;
     }
   }
-  
+
   .LoginedMenus {
-    color: #4682B4;
+    color: #4682b4;
     width: auto;
     font-size: 2vh;
     .LoginMenu:hover {
-      color: #00BFFF;
+      color: #00bfff;
     }
     .LoginUserName {
       color: #ffffff;
       font-size: 1.5vh;
     }
     .LoginMenu {
-      color: #4682B4;
+      color: #4682b4;
       display: none;
       margin-left: 2vw;
       text-decoration: none;
       cursor: pointer;
     }
   }
-  
+
   .BeforeLoginMenus {
     font-size: 2vh;
     margin-left: 5vw;
     display: none;
     .BeforeLoginMenu:hover {
-      color: #00BFFF;
+      color: #00bfff;
     }
     .BeforeLoginMenu {
       margin-right: 2vw;
@@ -331,7 +316,7 @@
     }
   }
   //ヘッダーここまで
-  .bargermenu-btn{
+  .bargermenu-btn {
     position: fixed;
     top: 2%;
     right: 5%;
@@ -342,10 +327,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba($color: #222222, $alpha: 0.95);
     color: #fff;
   }
-  .bargermenu-closebtn{
+  .bargermenu-closebtn {
     position: fixed;
     top: 2%;
     right: 10%;
@@ -363,7 +347,7 @@
       height: 10vh;
     }
   }
-  
+
   /*----------------------------
   * メニュー本体
   *----------------------------*/
@@ -382,15 +366,15 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    color: #4682B4;
+    color: #4682b4;
     padding-top: 10vh;
     :hover {
-      color: #00BFFF;
+      color: #00bfff;
       text-decoration: none;
     }
   }
 
-  .menu-item{
+  .menu-item {
     width: auto;
     height: auto;
     margin-top: 32px;
@@ -399,14 +383,14 @@
   /*----------------------------
   * アニメーション部分
   *----------------------------*/
-  
+
   /* アニメーション前のメニューの状態 */
-  .bargermenu{
+  .bargermenu {
     transform: translateX(100vw);
-    transition: all .1s linear;
+    transition: all 0.1s linear;
   }
   /* アニメーション後のメニューの状態 */
-  .bargermenu.is-active{
+  .bargermenu.is-active {
     transform: translateX(0);
     padding: 16px 16px;
   }
