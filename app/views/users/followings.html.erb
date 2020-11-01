@@ -3,7 +3,7 @@
     <div class="myPageBox">
       <%# followのモーダル画面 %>
       <div class="FollowModal-main">
-        <div class="FollowModalTop">
+        <div class="followModalTop">
           <p><%=  @user.name %> さんのフォロー・フォロワー</p>
         </div>
         <ul class='follow-nav-bar'>
@@ -42,7 +42,7 @@
                       </div>
                       <div class="Follow-info__leftSide__FollowDetail__Prefecture">
                         <i class="fas fa-map-marker-alt"></i>
-                        <p><%= user.prefecture.name %></p>
+                        <span><%= user.prefecture.name %></span>
                       </div>
                       <div class="Follow-info__leftSide__FollowDetail__Introduce">
                         <p><%= user.introduce %></p>
@@ -90,7 +90,7 @@
                       </div>
                       <div class="Follow-info__leftSide__FollowDetail__Prefecture">
                         <i class="fas fa-map-marker-alt"></i>
-                        <p><%= user.prefecture.name %></p>
+                        <span><%= user.prefecture.name %></span>
                       </div>
                       <div class="Follow-info__leftSide__FollowDetail__Introduce">
                         <p><%= user.introduce %></p>
@@ -100,7 +100,7 @@
                   <div class="Follow-info__rightSide">
                     <% unless current_user == user %>
                       <% if current_user.following?(user) %>
-                        <h4>フォロー済み</h4>
+                        <span>フォロー済み</span>
                       <% else %>
                         <%= form_with(model: @set_relationship, url: relationships_path, local: true) do |f| %>
                           <%= f.hidden_field :follow_id, value: user.id %>
