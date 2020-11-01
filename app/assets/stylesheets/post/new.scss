@@ -321,6 +321,19 @@
     margin: 0 auto;
   }
 
+  .prev-content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .label-content {
+    margin-bottom: 10px;
+    width: 30vw;
+    flex-wrap: wrap;
+  }
+  .label-box {
+    width: 10vw;
+  }
+
   .GoogleMap {
     height: auto;
     width: auto;
