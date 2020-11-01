@@ -193,8 +193,54 @@ ul.follow-nav-bar li .active {
 
 @media (max-width: 700px) {
   .followpages {
-    width: 100%;
+    width: 100vw;
     background-color: rgba($color: #222222, $alpha: 0.4);
     padding: 2vh;
+  }
+
+  .Follow-info__leftSide__Image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .Follow-info__leftSide__FollowDetail {
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    height: 100%;
+    margin-left: 1vw;
+    &__username {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: auto;
+      margin: auto;
+      height: 2vh;
+      margin-right: 1vw;
+      z-index: 10;
+    }
+  }
+
+  .Follow-info__leftSide__FollowDetail__Prefecture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    margin-left: 2vw;
+    p {
+      color: #ffffff;
+      font-size: 2vh;
+    }
+  }
+
+  .Follow-info__rightSide {
+    height: 2vh;
+    width: auto;
+    font-size: 1vw;
+    z-index: 10;
+  }
+
+  .Follow-info__leftSide__FollowDetail__Introduce {
+    display: none;
   }
 }
