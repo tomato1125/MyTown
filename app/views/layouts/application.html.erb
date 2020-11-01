@@ -28,7 +28,7 @@
           <%= link_to image_tag("myTown4.jpg", class: "HeaderLogo"), "/" %>
           <% if user_signed_in? %>
             <div class="LoginedMenus">
-              <span class="LoginUserName">ログイン名: <%= current_user.name %></span>
+              <span class="LoginUserName">Hello!: <%= current_user.name %></span>
               <%= link_to "マイページ", "/users/#{current_user.id}", class:"LoginMenu" %>
               <%= link_to  "投稿する", new_post_path, class: "LoginMenu" %>
               <a class="LoginMenu", id="Logout">ログアウト</a>

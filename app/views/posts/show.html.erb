@@ -1,14 +1,14 @@
 <div class="postShow">
-  <div class='NewPostArea'>
-    <div class="PostTitle">
+  <div class='showNewPostArea'>
+    <div class="showPostTitle">
       <span>~ <%= @post.title %> ~</span>
     </div>
-    <div class='postShowImage', id='change_image', style="background-image: url(<%= @post.images[0].image%>);">
-      <div class="AreaInfomation">
-        <div class="UserIcon">
+    <div class='showPostImage', id='change_image', style="background-image: url(<%= @post.images[0].image%>);">
+      <div class="showAreaInfomation">
+        <div class="showUserIcon">
           <i class="fas fa-map-marker-alt"></i>
         </div>
-        <div class="AreaName">
+        <div class="showAreaName">
           <%= @post.prefecture.name if @post.prefecture_id? %>
         </div>
       </div>
@@ -33,38 +33,24 @@
       <% end %>
     </div>
     <ul class="PostImagesShow">
-      <%= @post.images.each_with_index do |image, i| %>
+      <% @post.images.each_with_index do |image, i| %>
         <li>
           <%= image_tag image.image.url, class: "subImage"%>
         <li>
       <% end %>
     </ul>
+    <%# 投稿のコメント部分 %>
     <div class='PostDescription'>
       <%= @post.content %>
     </div>
+    <%# 投稿編集・削除ボタン（投稿者のみ表示） %>
     <% if user_signed_in? && current_user.id == @post.user_id %>
       <div class="Buttons">
         <%= button_to '編集', edit_post_path(@post.id), method: :get, class: 'edit-btn' %>
         <button name="削除する" id="modal-open">削除</button>
       </div>
-      <%# モーダルエリア %>
-      <div id="modal-main">
-        <div class="modal-contents">
-          <div class="modal-content">
-            <h3>投稿を削除しますか？</h3>
-            <br>
-            <h6>（削除すると復元ができませんのでご注意ください。）</h6>
-            <div class="DeleteMotalButton">
-              <%= link_to '削除する', post_path(@post.id), method: :delete, class: "delete-btn"%>
-            </div>
-            <div class="ReturnBtn">
-              戻る
-            </div>
-          </div>
-        </div>
-      </div>
-      <%# モーダルエリアここまで %>
     <% end %>
+    <%# Bookmark登録ボタン %>
     <% if current_user.already_cliped?(@post) %>
       <%= button_to post_clip_path(@post), method: :delete do%>
         <i class="fas fa-bookmark"></i> Bookmarkを解除
@@ -74,6 +60,7 @@
         <i class="far fa-bookmark"> Bookmark</i>
       <% end %>
     <% end %>
+    <%# SNSシェアボタン %>
     <div class="shares">
       <span class="shares__btn">
         <a href="https://www.facebook.com/share.php?url=<%= request.url %>" rel="nofollow" target="_blank">
@@ -91,7 +78,6 @@
         </a>
       </span>
     </div>
-
   </div>
   <%# グーグルマップ %>
   <div class='GoogleMapShow'>
@@ -129,3 +115,21 @@
     </div>
   </div>
 </div>
+
+<%# 投稿削除部分モーダルエリア %>
+<div id="modal-main">
+  <div class="modal-contents">
+    <div class="modal-content">
+      <h3>投稿を削除しますか？</h3>
+      <br>
+      <h6>（削除すると復元ができませんのでご注意ください。）</h6>
+      <div class="DeleteMotalButton">
+        <%= link_to '削除する', post_path(@post.id), method: :delete, class: "delete-btn"%>
+      </div>
+      <div class="ReturnBtn">
+        戻る
+      </div>
+    </div>
+  </div>
+</div>
+<%# モーダルエリアここまで %>
