@@ -152,8 +152,12 @@
 }
 
 // Bookmark登録ボタン========================================================
-.clips {
-  z-index: 3;
+.bookmark-btn {
+  color: #ffffff;
+  border-radius: 10%;
+  .bookmark-btn:hover {
+    color: #00bfff;
+  }
 }
 
 // コメント投稿部分===========================================================
@@ -174,8 +178,9 @@
 
 // グーグルマップ===========================================================
 .GoogleMapShow {
-  margin-right: 100px;
   color: #ffffff;
+  padding: 0 50px;
+  width: 100%;
   .mapShow {
     text-align: center;
   }
@@ -315,13 +320,30 @@
     width: 100%;
   }
 
-  // .Buttons {
-  //   display: block;
-  //   width: 300px;
-  // }
+  .bookmark-btn {
+    display: flex;
+    justify-content: flex-end;
+  }
 
-  // .edit-btn {
-  //   display: block;
-  //   width: 30vw;
-  // }
+  .shares {
+    display: flex;
+    justify-content: flex-end;
+    &__btn {
+      margin: 0 1vw;
+    }
+  }
+
+  .GoogleMapShow {
+    color: #ffffff;
+    padding: 0;
+    .mapShow {
+      text-align: center;
+    }
+    .maptitleName {
+      font-size: 20px;
+    }
+    .maps {
+      width: 100%;
+    }
+  }
 }

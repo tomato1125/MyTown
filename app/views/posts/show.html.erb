@@ -51,15 +51,17 @@
       </div>
     <% end %>
     <%# Bookmark登録ボタン %>
-    <% if current_user.already_cliped?(@post) %>
-      <%= button_to post_clip_path(@post), method: :delete do%>
-        <i class="fas fa-bookmark"></i> Bookmarkを解除
+    <div class='bookmark-btn'>
+      <% if current_user.already_cliped?(@post) %>
+        <%= link_to post_clip_path(@post), method: :delete do%>
+          <i class="fas fa-bookmark"></i> Bookmarkを解除
+        <% end %>
+      <% else %>
+        <%= link_to post_clips_path(@post), method: :post do%>
+          <i class="far fa-bookmark"> Bookmarkに登録</i>
+        <% end %>
       <% end %>
-    <% else %>
-      <%= button_to post_clips_path(@post) do%>
-        <i class="far fa-bookmark"> Bookmark</i>
-      <% end %>
-    <% end %>
+    </div>
     <%# SNSシェアボタン %>
     <div class="shares">
       <span class="shares__btn">
