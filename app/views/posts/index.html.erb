@@ -54,6 +54,7 @@
             </a>
           </span>
           <div class='IndexUserInfomation__date'>
+            <i class="far fa-clock"></i>
             <span><%= time_ago_in_words(post.created_at) %>前</span>
           </div>
         </div>
@@ -70,8 +71,10 @@
             </div>
           </div>
           <div class="ToppageIndexFavorite">
-            <i class="far fa-bookmark"></i>
-            <%= post.cliped_users.count %>
+            <i class="fas fa-bookmark"></i>
+            <div class="ClipedCount">
+              <%= post.cliped_users.count %>
+            </div>
           </div>
         </div>
       </div>

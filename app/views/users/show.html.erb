@@ -156,6 +156,7 @@
           </div>
           <!-- モーダル用HTMLここまで -->
         </li>
+        <%# POSTページ %>
         <li class="page">
           <% if @posts.length == 0 %>
             <div class="post-page__sentence">
@@ -171,8 +172,10 @@
                 <%= link_to '', post_path(post.id), class: "showlink", method: :get %>
                   <div class="CategoryPostTitle">
                     <span>~ <%= post.title %> ~</span>
-                    <i class="far fa-clock"></i>
-                    <span class="postTime"><%= time_ago_in_words(post.created_at) %>前</span>
+                    <div class='CategoryPostDate'>
+                      <i class="far fa-clock"></i>
+                      <span class="postTime"><%= time_ago_in_words(post.created_at) %>前</span>
+                    </div>
                   </div>
                   <div class='CategoryPostImage' style="background-image: url(<%= post.images[0].image %>);">
         
@@ -186,6 +189,9 @@
                     </div>
                     <div class="CateogryIndexFavorite">
                       <i class="far fa-bookmark"></i>
+                      <div class="ClipedCount">
+                        <%= post.cliped_users.count %>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -209,7 +215,6 @@
                   <div class='IndexUserInfomation'>
                     <div class='IndexUserInfomation__userAvater'>
                       <%= image_tag post.user.image.url, class: "avater" %>
-                      <%# <i class="fas fa-user-circle"></i> %>
                     </div>
                     <span class='IndexUserInfomation__username'>
                       <a href="/users/<%= post.user.id %>">
@@ -235,7 +240,9 @@
                     </div>
                     <div class="CategoryIndexFavorite">
                       <i class="far fa-bookmark"></i>
-                      <%= post.clips.count %>
+                      <div class="ClipedCount">
+                        <%= post.clips.count %>
+                      </div>
                     </div>
                   </div>
                 </div>
