@@ -101,7 +101,9 @@
   <div id="comments-area">
     <div class="comments">
       <h4>＜コメント一覧＞</h4>
-      <% if @comments %>
+      <% if @comments.length == 0 %>
+        <h4>コメントがまだありません</h4>
+      <% else %>
         <% @comments.each do |comment| %>
           <div class="comment">
             <div class="comment_Avater">
