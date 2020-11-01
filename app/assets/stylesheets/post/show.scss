@@ -12,45 +12,74 @@
   padding: 50px 50px;
   display: flex;
   flex-direction: column;
-  .showPostTitle {
-    font-size: 20px;
+}
+
+// 投稿タイトル=============================================================
+.showPostTitle {
+  font-size: 20px;
+  color: #ffffff;
+}
+
+// 投稿トップ画像===========================================================
+.showPostImage {
+  border: 1px solid #000000;
+  margin-top: 10px;
+  height: 40vh;
+  color: #000000;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+// 都道府県名とアイコン=======================================================
+.showAreaInfomation {
+  background-color: rgba($color: #000000, $alpha: 0.4);
+  border: #ffffff;
+  border-radius: 20px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4vh;
+  width: 90px;
+  margin: 5px 0 0 5px;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  .showUserIcon {
+    font-size: 15px;
     color: #ffffff;
   }
-  .showPostImage {
-    border: 1px solid #000000;
-    margin-top: 10px;
-    height: 40vh;
-    // width: 40vw;
-    color: #000000;
-    border-radius: 20px;
-    background-size: cover;
-    background-position: center center;
-    position: relative;
-    .showAreaInfomation {
-      background-color: rgba($color: #000000, $alpha: 0.4);
-      border: #ffffff;
-      border-radius: 20px;
-      color: #ffffff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 30px;
-      width: 90px;
-      size: 13px;
-      margin: 5px 0 0 5px;
-      position: absolute;
-      top: 5px;
-      left: 10px;
-      .showUserIcon {
-        font-size: 20px;
-        color: #ffffff;
-      }
-      .showAreaName {
-        font-size: 15px;
-        margin-left: 6px;
-      }
-    }
+  .showAreaName {
+    font-size: 15px;
+    margin-left: 6px;
   }
+}
+
+// 画像のbookmarkのアイコンとカウント===========================================
+.CategoryIndexFavorite {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: rgba($color: #000000, $alpha: 0.4);
+  border: #ffffff;
+  border-radius: 20px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4vh;
+  width: 4vw;
+  margin: 5px 0 0 5px;
+}
+
+.ClipedCount {
+  margin-left: 0.5vw;
+}
+
+.ClipButton {
+  width: 0;
 }
 
 // 投稿画像一覧（横並びで最大５枚まで表示）=======================================
@@ -62,29 +91,6 @@
     width: 8vw;
     height: 10vh;
   }
-}
-
-// SNSシェアボタン============================================================
-.shares {
-  margin-top: 0.5vh;
-  &__btn {
-    margin-right: 0.3vw;
-    height: 1vh;
-    font-size: 2.5vh;
-  }
-  a {
-    text-decoration: none;
-  }
-}
-
-.sns1 {
-  color: #005fff;
-}
-.sns2 {
-  color: #0099ff;
-}
-.sns3 {
-  color: #00ff33;
 }
 
 //投稿に関する文章部分========================================================
@@ -109,7 +115,7 @@
 
 .showPostEdit-btn {
   color: #ffffff;
-  height: 2vh;
+  height: 20px;
   width: 10vw;
   margin: 0.5vh 0;
   border-radius: 20px;
@@ -131,10 +137,10 @@
 }
 
 // 削除ボタン //
-#modal-open {
+.showPostDelete-btn {
   color: #ffffff;
-  height: 2vh;
-  width: 10vw;
+  height: 20px;
+  width: 90px;
   margin: 0.5vh 0;
   border-radius: 20px;
   background-color: #cc0000;
@@ -147,7 +153,7 @@
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-#modal-open:hover {
+.showPostDelete-btn:hover {
   background-color: rgba($color: #cc0000, $alpha: 0.8);
 }
 
@@ -158,6 +164,29 @@
   .bookmark-btn:hover {
     color: #00bfff;
   }
+}
+
+// SNSシェアボタン============================================================
+.shares {
+  margin-top: 0.5vh;
+  &__btn {
+    margin-right: 0.3vw;
+    height: 1vh;
+    font-size: 2.5vh;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.sns1 {
+  color: #005fff;
+}
+.sns2 {
+  color: #0099ff;
+}
+.sns3 {
+  color: #00ff33;
 }
 
 // コメント投稿部分===========================================================
@@ -185,7 +214,7 @@
     text-align: center;
   }
   .maptitleName {
-    font-size: 30px;
+    font-size: 20px;
   }
 }
 
@@ -303,6 +332,28 @@
     width: 100%;
   }
 
+  .CategoryIndexFavorite {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgba($color: #000000, $alpha: 0.4);
+    border: #ffffff;
+    border-radius: 20px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+    width: 4vw;
+    margin: 5px 0 0 5px;
+  }
+  .ClipedCount {
+    margin-left: 1vw;
+  }
+  .ClipButton {
+    width: 0;
+  }
+
   .PostImagesShow {
     display: flex;
     justify-content: center;
@@ -336,6 +387,9 @@
   .GoogleMapShow {
     padding: 0;
   }
+  .maptitleName {
+    font-size: 20px;
+  }
 
   .CommentForm {
     &__textbox {
@@ -344,5 +398,10 @@
     &__btn {
       width: 40vw;
     }
+  }
+  .comments {
+    padding: 5px;
+    width: 100%;
+    margin: 0 auto;
   }
 }
