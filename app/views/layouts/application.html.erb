@@ -26,7 +26,6 @@
           <%= link_to image_tag("myTown4.jpg", class: "HeaderLogo"), "/" %>
           <% if user_signed_in? %>
             <div class="LoginedMenus">
-              <span class="LoginUserName">Hello!: <%= current_user.name %></span>
               <%= link_to "マイページ", "/users/#{current_user.id}", class:"LoginMenu" %>
               <%= link_to  "投稿する", new_post_path, class: "LoginMenu" %>
               <a href="#0", class="LoginMenu">Top</a>
@@ -58,9 +57,10 @@
             </div>
           <% end %>
         </div>
+        <%# ログイン時のヘッダーメニュー（アイコン） %>
         <% if user_signed_in? %>
           <div class="HeaderMenus__right">
-            <i class="fas fa-user header-userIcon"></i>
+            <%# お知らせ用アイコン %>
             <%= link_to(notifications_path) do %>
               <i class="fas fa-bell header-bellIcon", data-toggle="tooltip", data-placement="top", title="お知らせ">
                 <% if unchecked_notifications.any? %>
@@ -70,6 +70,14 @@
                 <% end %>
               </i>
             <% end %>
+            <div class="loginUserInfo">
+              <div class="loginUserInfo__Avatar">
+                <%= image_tag current_user.image.url, class: "loginUserInfo__Avatar--image" %>
+              </div>
+              <span class=loginUserName>
+                <%= link_to current_user.name %>
+              </span>
+            </div>
           </div>
         <% end %>
         <div class="HanbergerMenu">

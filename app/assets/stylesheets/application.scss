@@ -36,7 +36,7 @@
  *= require_self
  */
 
-//ヘッダー部分のCSS
+//ヘッダーのアウトライン=======================================================
 .Header {
   position: fixed;
   top: 0px;
@@ -66,8 +66,13 @@
   &__right {
     color: #ffffff;
     font-size: 2vh;
+    width: auto;
+    display: flex;
+    align-items: center;
   }
 }
+
+// ヘッダーのアプリケーションロゴ================================================
 
 .HeaderLogo {
   height: 7.5vh;
@@ -81,6 +86,7 @@
   }
 }
 
+// ログインメニュー==========================================================
 .LoginedMenus {
   width: auto;
   font-size: 2vh;
@@ -99,8 +105,30 @@
   }
 }
 
+// ヘッダーのアイコン=======================================================
 .header-userIcon {
   font-size: 3vh;
+}
+
+.loginUserInfo {
+  width: 200px;
+  height: 50px;
+  margin-left: 5%;
+  display: flex;
+  align-items: center;
+  &__Avatar {
+    width: 40px;
+    height: 40px;
+    &--image {
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+    }
+  }
+}
+
+.loginUserName {
+  font-size: 0.9em;
 }
 
 .header-bellIcon {
@@ -125,7 +153,7 @@
   color: rgba($color: #ffffff, $alpha: 0.5);
 }
 
-// モーダル部分//
+// ログアウト時のモーダル画面===================================================
 .HeaderModal {
   width: 100%;
   display: flex;
@@ -189,6 +217,8 @@
   background-color: rgba($color: #ff0000, $alpha: 0.7);
 }
 
+// ログイン前のヘッダーメニュー一覧==============================================
+
 .BeforeLoginMenus {
   font-size: 2vh;
   margin-left: 5vw;
@@ -202,13 +232,12 @@
   }
 }
 
-//ヘッダーここまで
-
+// body要素==================================================================
 .body {
   z-index: 1;
 }
 
-//ページネーションに関するCSS
+//ページネーションに関するCSS===================================================
 .pagination > li > a {
   border: none; /*枠線をなくす*/
   color: #4682b4; /*文字の色を変える*/
@@ -227,7 +256,7 @@
   border-radius: 15px; /*角を丸くする*/
 }
 
-////レスポンシブ対応////////////////////////////////////////////////////////////
+/////////////////////////////////レスポンシブ対応////////////////////////////
 
 //ブラウザ幅が700以上の場合はバーガーメニューを非表示================================
 @media screen and (min-width: 700px) {
