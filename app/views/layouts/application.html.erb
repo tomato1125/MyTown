@@ -7,17 +7,15 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%# <%= include_gon %>
+  
     <%= Gon::Base.render_data({}) %>
     
     <%= stylesheet_link_tag 'application' %>
     <%= favicon_link_tag('favicon.ico') %>
-    <%# <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> %>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <%= javascript_include_tag 'application' %>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <%# <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script> %>
   </head>
 
   <body>
@@ -31,6 +29,9 @@
               <span class="LoginUserName">Hello!: <%= current_user.name %></span>
               <%= link_to "マイページ", "/users/#{current_user.id}", class:"LoginMenu" %>
               <%= link_to  "投稿する", new_post_path, class: "LoginMenu" %>
+              <a href="#1", class="LoginMenu">Category</a>
+              <a href="#2", class="LoginMenu">Prefecture</a>
+              <a href="#3", class="LoginMenu">New Posts</a>
               <a class="LoginMenu", id="Logout">ログアウト</a>
               <%# モーダル部分 %>
               <div id="LogoutModal-main">
@@ -60,7 +61,7 @@
           <div class="HeaderMenus__right">
             <i class="fas fa-user header-userIcon"></i>
             <%= link_to(notifications_path) do %>
-              <i class="fas fa-bell header-bellIcon", data-toggle="tooltip", data-placement="top", title="通知">
+              <i class="fas fa-bell header-bellIcon", data-toggle="tooltip", data-placement="top", title="お知らせ">
                 <% if unchecked_notifications.any? %>
                   <span class="header-bellIcon__stack-count">
                     <%= unchecked_notifications.count %>
