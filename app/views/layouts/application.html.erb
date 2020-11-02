@@ -29,6 +29,7 @@
               <span class="LoginUserName">Hello!: <%= current_user.name %></span>
               <%= link_to "マイページ", "/users/#{current_user.id}", class:"LoginMenu" %>
               <%= link_to  "投稿する", new_post_path, class: "LoginMenu" %>
+              <a href="#0", class="LoginMenu">Top</a>
               <a href="#1", class="LoginMenu">Category</a>
               <a href="#2", class="LoginMenu">Prefecture</a>
               <a href="#3", class="LoginMenu">New Posts</a>
