@@ -5,19 +5,19 @@ $(function(){
   //==================================================================
   // label-contentの直前に配置されている要素(今回はprev-content)を取得する
   
-  const prevContent = $('.label-content').prev();
+  const prevContent = $('.labelContent').prev();
 
   //============================================================
   //プレビューのhtmlを定義
   //============================================================
   function buildHTML(id,image) {
-    var html = `<div class="preview-box">
-                  <div class="upper-box">
+    var html = `<div class="previewBox">
+                  <div class="upperBox">
                     <img src=${image} alt="preview">
                   </div>
-                  <div class="lower-box">
-                    <div class="delete-box">
-                      <div class="ImageDelete-btn" data-delete-id= ${id}>削除</div>
+                  <div class="lowerBox">
+                    <div class="deleteBox">
+                      <div class="imageDeleteBtn" data-delete-id= ${id}>削除</div>
                     </div>
                   </div>
                 </div>`
@@ -30,15 +30,15 @@ $(function(){
   function setLabel(count) {
     //プレビューが5個あったらラベルを隠す
     if (count == 5) { 
-      $('.label-content').hide();
+      $('.labelContent').hide();
     } else {
       //プレビューが4個以下の場合はラベルを表示
-      $('.label-content').show();
+      $('.labelContent').show();
       //プレビューボックスのwidthを取得し、maxから引くことでラベルのwidthを決定(prevcontentのwidthを取って、大枠(width:620px)から引き算する)
       labelWidth = (620 - parseInt($(prevContent).css('width')));  //parseIntは文字列を整数に変換するjavascriptの関数
-      $('.label-content').css('width', labelWidth);
+      $('.labelContent').css('width', labelWidth);
       //id・forの値を変更
-      $('.label-box').attr({for: `post_images_attributes_${count}_image`});
+      $('.labelBox').attr({for: `post_images_attributes_${count}_image`});
     }
   }
 
@@ -47,7 +47,7 @@ $(function(){
   //====================================================
   if (window.location.href.match(/\/posts\/\d+\/edit/)){
     //プレビューの数を取得
-    var count = $('.preview-box').length;
+    var count = $('.previewBox').length;
     //countに応じてラベルのwidth・id・forの値を変更
     setLabel(count) 
   }
@@ -56,7 +56,7 @@ $(function(){
   //プレビューの追加
   //=======================================================
   //hidden-fielsの値が変更したとき発火
-  $(document).on('change', '.hidden-field', function() {
+  $(document).on('change', '.hiddenField', function() {
     //hidden-fieldのidの数値のみ取得
     var id = $(this).attr('id').replace(/[^0-4]/g, '');
     //選択したfileのオブジェクトを取得
@@ -74,7 +74,7 @@ $(function(){
       //ラベルの直前のプレビュー群にプレビューを追加
       $(prevContent).append(html);
       //プレビューの数を取得
-      var count = $('.preview-box').length;
+      var count = $('.previewBox').length;
       //countに応じてラベルのwidth・id・forの値を変更
       setLabel(count);
     }
@@ -83,7 +83,7 @@ $(function(){
   //=====================================================================
   // 画像の削除
   //=====================================================================
-  $(document).on('click', '.ImageDelete-btn', function() {
+  $(document).on('click', '.imageDeleteBtn', function() {
     var id = $(this).attr('data-delete-id')
     //削除用チェックボックスにチェックを入れる
     if ($(`#post_images_attributes_${id}__destroy`).length) {
@@ -94,7 +94,7 @@ $(function(){
     //フォームの中身を削除
     $(`#post_images_attributes_${id}_image`).val("");
     //プレビューの数を取得
-    var count = $('.preview-box').length;
+    var count = $('.previewBox').length;
     //countに応じてラベルのwidth・id・forの値を変更
     setLabel(count);
   });

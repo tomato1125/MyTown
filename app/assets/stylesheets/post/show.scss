@@ -58,7 +58,7 @@
 }
 
 // 画像のbookmarkのアイコンとカウント===========================================
-.CategoryIndexFavorite {
+.categoryIndexFavorite {
   position: absolute;
   top: 5px;
   right: 5px;
@@ -74,16 +74,16 @@
   margin: 5px 0 0 5px;
 }
 
-.ClipedCount {
+.clipedCount {
   margin-left: 0.5vw;
 }
 
-.ClipButton {
+.clipButton {
   width: 0;
 }
 
 // 投稿画像一覧（横並びで最大５枚まで表示）=======================================
-.PostImagesShow {
+.postImagesShow {
   display: flex;
   height: 10vh;
   width: 20vw;
@@ -94,7 +94,7 @@
 }
 
 //投稿に関する文章部分========================================================
-.PostDescription {
+.postDescription {
   width: 40vw;
   height: 10vh;
   font-size: 1.5vh;
@@ -113,7 +113,7 @@
   margin-bottom: 1vh;
 }
 
-.showPostEdit-btn {
+.showPostEditBtn {
   color: #ffffff;
   height: 20px;
   width: 10vw;
@@ -131,13 +131,13 @@
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.showPostEdit-btn:hover {
+.showPostEditBtn:hover {
   text-decoration: none;
   background-color: rgba($color: #4682b4, $alpha: 0.5);
 }
 
 // 削除ボタン //
-.showPostDelete-btn {
+.showPostDeleteBtn {
   color: #ffffff;
   height: 20px;
   width: 90px;
@@ -153,15 +153,15 @@
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.showPostDelete-btn:hover {
+.showPostDeleteBtn:hover {
   background-color: rgba($color: #cc0000, $alpha: 0.8);
 }
 
 // Bookmark登録ボタン========================================================
-.bookmark-btn {
+.bookmarkBtn {
   color: #ffffff;
   border-radius: 10%;
-  .bookmark-btn:hover {
+  .bookmarkBtn:hover {
     color: #00bfff;
   }
 }
@@ -206,7 +206,7 @@
 }
 
 // グーグルマップ===========================================================
-.GoogleMapShow {
+.googleMapShow {
   color: #ffffff;
   padding: 0 50px;
   width: 100%;

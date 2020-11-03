@@ -17,19 +17,19 @@
       </div>
       <%# bookmarkのアイコンとカウント %>
       <% if current_user.already_cliped?(@post) %>
-        <%= link_to post_clip_path(@post), class: "ClipButton", method: :delete do%>
-          <div class="CategoryIndexFavorite">
+        <%= link_to post_clip_path(@post), class: "clipButton", method: :delete do%>
+          <div class="categoryIndexFavorite">
             <i class="fas fa-bookmark"></i>
-            <div class="ClipedCount">
+            <div class="clipedCount">
               <%= @post.clips.count %>
             </div>
           </div>
         <% end %>
       <% else %>
         <%= link_to post_clips_path(@post), method: :post do%>
-          <div class="CategoryIndexFavorite">
+          <div class="categoryIndexFavorite">
             <i class="far fa-bookmark"></i>
-            <div class="ClipedCount">
+            <div class="clipedCount">
               <%= @post.clips.count %>
             </div>
           </div>
@@ -37,7 +37,7 @@
       <% end %>
     </div>
     <%# 投稿画像一覧（最大５枚） %>
-    <ul class="PostImagesShow">
+    <ul class="postImagesShow">
       <% @post.images.each_with_index do |image, i| %>
         <li>
           <%= image_tag image.image.url, class: "subImage"%>
@@ -45,18 +45,18 @@
       <% end %>
     </ul>
     <%# 投稿のコメント部分 %>
-    <div class='PostDescription'>
+    <div class='postDescription'>
       <%= @post.content %>
     </div>
     <%# 投稿編集・削除ボタン（投稿者のみ表示） %>
     <% if user_signed_in? && current_user.id == @post.user_id %>
       <div class="showButtons">
-        <%= button_to '編集', edit_post_path(@post.id), method: :get, class: 'showPostEdit-btn' %>
-        <button name="削除する" id="modal-open", class='showPostDelete-btn'>削除</button>
+        <%= button_to '編集', edit_post_path(@post.id), method: :get, class: 'showPostEditBtn' %>
+        <button name="削除する" id="modal-open", class='showPostDeleteBtn'>削除</button>
       </div>
     <% end %>
     <%# Bookmark登録ボタン %>
-    <div class='bookmark-btn'>
+    <div class='bookmarkBtn'>
       <% if current_user.already_cliped?(@post) %>
         <%= link_to post_clip_path(@post), method: :delete do%>
           <i class="fas fa-bookmark"></i> Bookmarkを解除
@@ -87,25 +87,25 @@
     </div>
   </div>
   <%# グーグルマップ %>
-  <div class='GoogleMapShow'>
+  <div class='googleMapShow'>
     <%= render 'showmap', post: @post %>
   </div>
 </div>
 <%# コメントエリア %>
-<div class="CommentArea">
+<div class="commentArea">
   <%# コメントフォームと送信ボタン %>
   <% if current_user %>
-    <div class="CommentForm">
+    <div class="commentForm">
       <%= form_with(model: [@post, @comment], local: true) do |form| %>
-        <%= form.text_area :text, placeholder: "コメントする", rows: "2", class: "CommentForm__textbox" %>
-        <%= form.submit "SEND", class: "CommentForm__btn" %>
+        <%= form.text_area :text, placeholder: "コメントする", rows: "2", class: "commentForm__textbox" %>
+        <%= form.submit "SEND", class: "commentForm__btn" %>
       <% end %>
     </div>
   <% else %>
     <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
   <% end %>
   <%# コメント一覧 %>
-  <div id="comments-area">
+  <div id="commentsArea">
     <div class="comments">
       <h4>＜コメント一覧＞</h4>
       <% if @comments.length == 0 %>
@@ -114,7 +114,7 @@
         <% @comments.each do |comment| %>
           <div class="comment">
             <div class="comment_Avater">
-              <%= image_tag comment.user.image.url, class: "CommentAvater" %>
+              <%= image_tag comment.user.image.url, class: "commentAvater" %>
             </div>
             <strong>
               <%= link_to comment.user.name, "/users/#{comment.user_id}" %>：

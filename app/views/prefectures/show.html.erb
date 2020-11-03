@@ -1,40 +1,40 @@
-<div class='NewPostMessage'>
-  <h2 class='NewPostMessage__heading'>
+<div class='newPostMessage'>
+  <h2 class='newPostMessage__heading'>
     <%= @prefecture.name %> の投稿
   </h2>
 </div>
-<div class="CategoryPostIndex">
+<div class="categoryPostIndex">
   <% @prefectures.each do |post| %>
-    <div class='CategoryNewPost'>
-    <%= link_to '', post_path(post.id), class: "showlink", method: :get %>
-      <div class='IndexUserInfomation'>
-        <div class='IndexUserInfomation__userAvater'>
+    <div class='categoryNewPost'>
+    <%= link_to '', post_path(post.id), class: "showLink", method: :get %>
+      <div class='indexUserInfomation'>
+        <div class='indexUserInfomation__userAvater'>
           <%= image_tag post.user.image.url, class: "avater" %>
         </div>
-        <span class='IndexUserInfomation__username'>
+        <span class='indexUserInfomation__username'>
           <a href="/users/<%= post.user.id %>">
             <%= post.user.name %>
           </a>
         </span>
-        <div class='IndexUserInfomation__date'>
+        <div class='indexUserInfomation__date'>
           <span><%= time_ago_in_words(post.created_at) %>前</span>
         </div>
       </div>
-      <div class="CategoryPostTitle">
+      <div class="categoryPostTitle">
         <span>~ <%= post.title %> ~</span>
       </div>
-      <div class='CategoryPostImage' style="background-image: url(<%= post.images[0].image %>);">
-        <div class="CategoryAreaInfomation">
-          <div class="CategoryUserIcon">
+      <div class='categoryPostImage' style="background-image: url(<%= post.images[0].image %>);">
+        <div class="categoryAreaInfomation">
+          <div class="categoryUserIcon">
             <i class="fas fa-map-marker-alt"></i>
           </div>
-          <div class="CategoryAreaName">
+          <div class="categoryAreaName">
             <%= post.prefecture.name if post.prefecture_id? %>
           </div>
         </div>
-        <div class="CategoryIndexFavorite">
+        <div class="categoryIndexFavorite">
           <i class="fas fa-bookmark"></i>
-          <div class="ClipedCount">
+          <div class="clipedCount">
             <%= post.cliped_users.count %>
           </div>
         </div>
