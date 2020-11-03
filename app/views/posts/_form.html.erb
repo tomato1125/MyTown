@@ -1,54 +1,55 @@
 <%= form_with(model: @post, local: true, multipart: true) do |form| %>
-  <div class='FormArea'>
-    <div class='InputArea'>
-      <ul class='FormSpace'>
-        <li class="Prefecture">
+  <div class='formArea'>
+    <div class='inputArea'>
+      <ul class='formSpace'>
+        <li class="prefecture">
           <label class="labelName" for="Prefecture">Prefecture：</label>
-          <%= form.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: '選択してください'}, {class: "Prefecture__input"} %>
+          <%= form.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: '選択してください'}, {class: "prefecture__input"} %>
         </li>
-        <li class="Category">
+        <li class="category">
           <label class="labelname" for="category">Category：</label>
-          <%= form.collection_select :category_id, Category.all, :id, :name, {include_blank: '選択してください'}, {class: "Category__input"} %>
+          <%= form.collection_select :category_id, Category.all, :id, :name, {include_blank: '選択してください'}, {class: "category__input"} %>
         </li>
-        <li class="Title">
-          <label class="TitleLabelName" for="titleSpace">Title：</label>
-          <%= form.text_field :title, class: 'Title__input', placeholder: "タイトルを入力してください" %>
+        <li class="title">
+          <label class="titleLabelName" for="titleSpace">Title：</label>
+          <%= form.text_field :title, class: 'title__input', placeholder: "タイトルを入力してください" %>
         </li>
-        <li class='Image'>
-          <label class="ImageLabelName" for="imageSpace">Photo：</label>
-          <div class="prev-content">
+        <li class='image'>
+          <label class="imageLabelName" for="imageSpace">Photo：</label>
+          <div class="prevContent">
           </div>
-          <div class="label-content">
-            <label class="label-box" for="post_images_attributes_0_image">
-              <div class="label-box__text-visible">
+          <div class="labelContent">
+            <label class="labelBox" for="post_images_attributes_0_image">
+              <div class="labelBox__text-visible">
                 クリックしてファイルをアップロード（最大５枚）
               </div>
             </label>
           </div>
-          <div class="hidden-content">
+          <div class="hiddenContent">
             <%= form.fields_for :images do |i| %>
-              <%= i.file_field :image, class: "hidden-field", id: "post_images_attributes_0_image", name: "post[images_attributes][0][image]", type: "file" %>
-              <%= i.file_field :image, class: "hidden-field", id: "post_images_attributes_1_image", name: "post[images_attributes][1][image]", type: "file" %>
-              <%= i.file_field :image, class: "hidden-field", id: "post_images_attributes_2_image", name: "post[images_attributes][2][image]", type: "file" %>
-              <%= i.file_field :image, class: "hidden-field", id: "post_images_attributes_3_image", name: "post[images_attributes][3][image]", type: "file" %>
-              <%= i.file_field :image, class: "hidden-field", id: "post_images_attributes_4_image", name: "post[images_attributes][4][image]", type: "file" %>
+              <%= i.file_field :image, class: "hiddenField", id: "post_images_attributes_0_image", name: "post[images_attributes][0][image]", type: "file" %>
+              <%= i.file_field :image, class: "hiddenField", id: "post_images_attributes_1_image", name: "post[images_attributes][1][image]", type: "file" %>
+              <%= i.file_field :image, class: "hiddenField", id: "post_images_attributes_2_image", name: "post[images_attributes][2][image]", type: "file" %>
+              <%= i.file_field :image, class: "hiddenField", id: "post_images_attributes_3_image", name: "post[images_attributes][3][image]", type: "file" %>
+              <%= i.file_field :image, class: "hiddenField", id: "post_images_attributes_4_image", name: "post[images_attributes][4][image]", type: "file" %>
             <% end %>
           </div>
         </li>
-        <li class='Content'>
+        <li class='content'>
           <label class="labelName" for="contentSpace">Content：</label>
-          <%= form.text_area :content, class: 'Content__input', placeholder: "コメントを入力してください" %>
+          <%= form.text_area :content, class: 'content__input', placeholder: "コメントを入力してください" %>
         </li>
       </ul>
-      <div class="GoogleMap">
-        <div class="MapName">
+      <%# googleMap %>
+      <div class="googleMap">
+        <div class="mapName">
           Map
         </div>
         <%= form.fields_for :spot do |spot| %>
-          <div class="Address">
-            <%= spot.label :address, "レビュー場所（ googleMapで検索）", class: 'Address__label' %>
-            <%= spot.text_field :address, placeholder: "スポット名・住所を入力", id: "address", class: 'Address__input' %>
-            <input type="button" value="検索" onclick="codeAddress()" class="Address__btn">
+          <div class="address">
+            <%= spot.label :address, "レビュー場所（ googleMapで検索）", class: 'address__label' %>
+            <%= spot.text_field :address, placeholder: "スポット名・住所を入力", id: "address", class: 'address__input' %>
+            <input type="button" value="検索" onclick="codeAddress()" class="address__btn">
           </div>
         <div class="map", id="map">
         </div>
@@ -56,8 +57,8 @@
       </div>
     </div>
   </div>
-  <div class='Send'>
-    <%= form.submit "送信中", class: 'Send__btn', value: "投稿する" %>
+  <div class='send'>
+    <%= form.submit "送信中", class: 'send__btn', value: "投稿する" %>
   </div>
 <% end %>
 

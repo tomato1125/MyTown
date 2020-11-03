@@ -1,7 +1,7 @@
 <% visitor = notification.visitor %>
 <% visited = notification.visited %>
-<div class="notification-box">
-  <div class="notification-formInline">
+<div class="notificationBox">
+  <div class="notificationFormInline">
     <%= link_to user_path(visitor) do %>
       <span class="notification-Avater">
         <%= image_tag visitor.image.url, class: "notificationAvater" %>
