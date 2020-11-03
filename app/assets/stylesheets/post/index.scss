@@ -3,21 +3,21 @@
 }
 
 // TOPページのWrapper=======================================================
-.MainSpace {
+.mainSpace {
   color: #222222;
   height: 100%;
   width: 100%;
 }
 
 // 検索バー画面=============================================================
-.SearchSection {
+.searchSection {
   background-color: #222222;
   color: #ffffff;
   height: 50vh;
   width: 100vw;
   padding-top: 10vh;
 }
-.SearchBackgroundImage {
+.searchBackgroundImage {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,19 +26,19 @@
   background-size: cover;
   background-position: center center;
 }
-.ApplicationIntroduction1 {
+.applicationIntroduction1 {
   font-size: 3.5vh;
   margin-top: 3vh;
 }
 .ApplicationIntroduction2 {
   font-size: 1.3vh;
 }
-.SearchHeading {
+.searchHeading {
   font-size: 3vh;
   font-weight: bold;
   margin-top: 4vh;
 }
-.SearchForm {
+.searchForm {
   width: auto;
   &__content {
     width: 40vw;
@@ -58,19 +58,19 @@
 }
 
 // カテゴリー画面=============================================================
-.CategorySection {
+.categorySection {
   display: flex;
   justify-content: center;
   background-color: #222222;
   align-items: center;
   padding-top: 100px;
-  .CategoryHeading {
-    font-size: 2.5vh;
-    color: #ffffff;
-    margin-top: 3vh;
-  }
 }
-.CategorySearch {
+.categoryHeading {
+  font-size: 2.5vh;
+  color: #ffffff;
+  margin-top: 3vh;
+}
+.categorySearch {
   width: 100vw;
   height: 50vh;
   font-size: 25px;
@@ -86,20 +86,20 @@
 }
 
 // Prefecture画面===========================================================
-.PrefectureSection {
+.prefectureSection {
   background-color: #222222;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding-top: 100px;
-  .PrefectureHeading {
-    font-size: 2.5vh;
-    color: #ffffff;
-    margin-top: 5vh;
-  }
 }
-.PrefectureSearch {
+.prefectureHeading {
+  font-size: 2.5vh;
+  color: #ffffff;
+  margin-top: 5vh;
+}
+.prefectureSearch {
   width: 100vw;
   height: 50vh;
   font-size: 25px;
@@ -112,7 +112,7 @@
 }
 
 //NewPostの部分=============================================================
-.NewPostMessage {
+.newPostMessage {
   background-color: #222222;
   display: flex;
   justify-content: center;
@@ -124,14 +124,13 @@
     margin-top: 5vh;
   }
 }
-.SeeMore {
+.seeMore {
   font-size: 1.5vh;
   height: auto;
   color: #4682b4;
   display: flex;
   justify-content: center;
   background-color: #222222;
-  padding-top: 4vh;
   text-decoration: none;
   a {
     text-decoration: none;
@@ -140,7 +139,7 @@
     color: #1e90ff;
   }
 }
-.ToppagePostIndex {
+.toppagePostIndex {
   width: 100%;
   height: 100%;
   padding: 50px 50px;
@@ -152,7 +151,7 @@
   background-position: center center;
   overflow: scroll;
 }
-.ToppageNewPost {
+.toppageNewPost {
   height: 60vh;
   width: 50vw;
   padding: 3vh 4vw;
@@ -169,7 +168,7 @@
     background-color: rgba($color: #fff, $alpha: 0.05);
     transition: all 0.3s ease;
   }
-  .showlink {
+  .showLink {
     position: absolute;
     top: 0;
     left: 0;
@@ -178,7 +177,7 @@
     z-index: 2;
   }
 }
-.ToppageUserInfomation {
+.toppageUserInfomation {
   height: auto;
   width: auto;
   display: flex;
@@ -220,13 +219,13 @@
     display: inline-block;
   }
 }
-.ToppagePostTitle {
+.toppagePostTitle {
   width: auto;
   font-size: 20px;
   margin: 1vh;
   color: #ffffff;
 }
-.ToppagePostImage {
+.toppagePostImage {
   border: 1px solid #000000;
   height: 100vh;
   width: 100%;
@@ -237,12 +236,12 @@
   position: relative;
   z-index: 1;
 }
-.ToppagePostImage:hover + .ToppagePostIndex {
+.toppagePostImage:hover + .toppagePostIndex {
   border-radius: 10px;
   border: 1px solid #00bfff;
   transition: all 0.3s ease;
 }
-.ToppageAreaInfomation {
+.toppageAreaInfomation {
   position: absolute;
   top: 5px;
   left: 5px;
@@ -257,15 +256,15 @@
   width: 8vw;
   margin: 5px 0 0 5px;
 }
-.ToppageUserIcon {
+.toppageUserIcon {
   font-size: 2vh;
   color: #ffffff;
 }
-.ToppageAreaName {
+.toppageAreaName {
   font-size: 1.5vh;
   margin-left: 6px;
 }
-.ToppageIndexFavorite {
+.toppageIndexFavorite {
   position: absolute;
   top: 5px;
   right: 5px;
@@ -283,7 +282,7 @@
 
 ////////////////////////////New Postsのレスポンシブ対応///////////////////////////
 @media (max-width: 700px) {
-  .NewPostMessage {
+  .newPostMessage {
     font-size: 2vh;
     background-color: #222222;
     display: flex;
@@ -295,13 +294,12 @@
     }
   }
 
-  .SeeMore {
+  .seeMore {
     font-size: 1.5vh;
     color: #4682b4;
     display: flex;
     justify-content: center;
     background-color: #222222;
-    padding-top: 3vh;
     text-decoration: none;
     a {
       text-decoration: none;
@@ -311,7 +309,7 @@
     }
   }
 
-  .ToppagePostIndex {
+  .toppagePostIndex {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -320,7 +318,7 @@
     padding: 1vh 2vw;
   }
 
-  .ToppageNewPost {
+  .toppageNewPost {
     height: 50vh;
     width: auto;
     display: flex;
@@ -330,7 +328,7 @@
     margin: 2vh 0;
   }
 
-  .ToppageUserInfomation {
+  .toppageUserInfomation {
     height: auto;
     width: auto;
     display: flex;
@@ -370,13 +368,13 @@
     }
   }
 
-  .ToppagePostTitle {
+  .toppagePostTitle {
     width: auto;
     font-size: 2vh;
     // background-color: #222222;
     color: #ffffff;
   }
-  .ToppagePostImage {
+  .toppagePostImage {
     border: 1px solid #000000;
     height: 100%;
     width: 100%;
@@ -386,13 +384,13 @@
     background-position: center center;
     position: relative;
   }
-  .ToppagePostImage:hover + .ToppagePostIndex {
+  .toppagePostImage:hover + .toppagePostIndex {
     border-radius: 10px;
     border: 1px solid #00bfff;
     transition: all 0.3s ease;
   }
 
-  .ToppageAreaInfomation {
+  .toppageAreaInfomation {
     position: absolute;
     top: 5px;
     left: 5px;
@@ -408,17 +406,17 @@
     margin: 5px 0 0 5px;
   }
 
-  .ToppageUserIcon {
+  .toppageUserIcon {
     font-size: 2vh;
     color: #ffffff;
   }
 
-  .ToppageAreaName {
+  .toppageAreaName {
     font-size: 1vh;
     margin-left: 6px;
   }
 
-  .ToppageIndexFavorite {
+  .toppageIndexFavorite {
     position: absolute;
     top: 5px;
     right: 5px;

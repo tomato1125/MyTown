@@ -1,17 +1,17 @@
-<div class='MainWrapper'>
+<div class='mainWrapper'>
   <%# TOP(検索バー)部分 %>
-  <div class='SearchSection' id="0">
-    <div class='SearchBackgroundImage' style="background-image: url(<%= asset_path "TopPageImage.jpg" %>);">
-      <h2 class='ApplicationIntroduction1'>〜故郷の良さを再発見〜
+  <div class='searchSection' id="0">
+    <div class='searchBackgroundImage' style="background-image: url(<%= asset_path "TopPageImage.jpg" %>);">
+      <h2 class='applicationIntroduction1'>〜故郷の良さを再発見〜
       </h2>
-      <h4 class='ApplicationIntroduction2'>ここは故郷・今住んでいる場所のお気に入りスポットなどを投稿して共有するためのサイトです
+      <h4 class='applicationIntroduction2'>ここは故郷・今住んでいる場所のお気に入りスポットなどを投稿して共有するためのサイトです
       </h4>
-      <h3 class='SearchHeading'>Keyword
+      <h3 class='searchHeading'>Keyword
       </h3>
-      <div class='SearchSpace'>
-        <%= form_with(url: search_posts_path, local: true, method: :get, class: "SearchForm") do |form| %>
-          <%= form.text_field :keyword, placeholder: "キーワード検索する", id: 'Search_Form', class: "SearchForm__content" %>
-          <%= form.submit "検索", class: "SearchForm__bottum" %>
+      <div class='searchSpace'>
+        <%= form_with(url: search_posts_path, local: true, method: :get, class: "searchForm") do |form| %>
+          <%= form.text_field :keyword, placeholder: "キーワード検索する", id: 'Search_Form', class: "searchForm__content" %>
+          <%= form.submit "検索", class: "searchForm__bottum" %>
         <% end %>
       </div>
       <div id="UserSearchResult">
@@ -20,63 +20,63 @@
   </div>
 
   <%# Category画面 %>
-  <div class='CategorySection' id="1">
-    <p class='CategoryHeading'>Category
+  <div class='categorySection' id="1">
+    <p class='categoryHeading'>Category
     </p>
   </div>
-  <div class='CategorySearch'>
+  <div class='categorySearch'>
     <%= render partial: "categories/categoryIndex" %>
   </div>
-  <div class='PrefectureSection' id="2">
-    <p class='PrefectureHeading'> Prefecture
+  <div class='prefectureSection' id="2">
+    <p class='prefectureHeading'> Prefecture
     </p>
   </div>
 
   <%# Prefecture画面 %>
-  <div class='PrefectureSearch'>
+  <div class='prefectureSearch'>
     <%= render partial: "prefectures/prefectureIndex" %>
   </div>
   
   <%# New Posts画面 %>
-  <div class='NewPostMessage' id="3">
-    <p class='NewPostMessage__heading'>
+  <div class='newPostMessage' id="3">
+    <p class='newPostMessage__heading'>
       New Posts
     </p>
   </div>
-  <div class='SeeMore'>
+  <div class='seeMore'>
     <%= link_to 'See More...', newposts_path %>
   </div>
-  <div class="ToppagePostIndex">
+  <div class="toppagePostIndex">
     <% @posts.first(5).each do |post| %>
-      <div class='ToppageNewPost'>
-      <%= link_to '', post_path(post.id), class: "showlink", method: :get %>
-        <div class='ToppageUserInfomation'>
-          <div class='ToppageUserInfomation__userAvater'>
+      <div class='toppageNewPost'>
+      <%= link_to '', post_path(post.id), class: "showLink", method: :get %>
+        <div class='toppageUserInfomation'>
+          <div class='toppageUserInfomation__userAvater'>
             <%= image_tag post.user.image.url, class: "Avater" %>
           </div>
-          <span class='ToppageUserInfomation__username'>
+          <span class='toppageUserInfomation__username'>
             <a href="/users/<%= post.user.id %>">
               <%= post.user.name %>
             </a>
           </span>
-          <div class='ToppageUserInfomation__date'>
+          <div class='toppageUserInfomation__date'>
             <i class="far fa-clock"></i>
             <span><%= time_ago_in_words(post.created_at) %>前</span>
           </div>
         </div>
-        <div class="ToppagePostTitle">
+        <div class="toppagePostTitle">
           <span>~ <%= post.title %> ~</span>
         </div>
-        <div class='ToppagePostImage' style="background-image: url(<%= post.images[0].image %>);">
-          <div class="ToppageAreaInfomation">
-            <div class="ToppageUserIcon">
+        <div class='toppagePostImage' style="background-image: url(<%= post.images[0].image %>);">
+          <div class="toppageAreaInfomation">
+            <div class="toppageUserIcon">
               <i class="fas fa-map-marker-alt"></i>
             </div>
-            <div class="ToppageAreaName">
+            <div class="toppageAreaName">
               <%= post.prefecture.name if post.prefecture_id? %>
             </div>
           </div>
-          <div class="ToppageIndexFavorite">
+          <div class="toppageIndexFavorite">
             <i class="fas fa-bookmark"></i>
             <div class="ClipedCount">
               <%= post.cliped_users.count %>

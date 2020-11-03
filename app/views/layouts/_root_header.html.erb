@@ -1,30 +1,30 @@
-<div class="HeaderMenus">
-  <div class="HeaderMenus__left">
-    <%= link_to image_tag("myTown4.jpg", class: "HeaderLogo"), "/" %>
+<div class="headerMenus">
+  <div class="headerMenus__left">
+    <%= link_to image_tag("myTown4.jpg", class: "headerLogo"), "/" %>
     <% if user_signed_in? %>
-      <div class="LoginedMenus">
-        <a href="#0", class="LoginMenu">Top</a>
-        <a href="#1", class="LoginMenu">Category</a>
-        <a href="#2", class="LoginMenu">Prefecture</a>
-        <a href="#3", class="LoginMenu">New Posts</a>
+      <div class="loginedMenus">
+        <a href="#0", class="loginMenu">Top</a>
+        <a href="#1", class="loginMenu">Category</a>
+        <a href="#2", class="loginMenu">Prefecture</a>
+        <a href="#3", class="loginMenu">New Posts</a>
       </div>
     <% else %>
-      <div class="BeforeLoginMenus">
-        <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: 'BeforeLoginMenu' %>
-        <%= link_to "ログイン", new_user_session_path, class: 'BeforeLoginMenu' %>
-        <%= link_to "新規登録", new_user_registration_path, class: 'BeforeLoginMenu' %>
+      <div class="beforeLoginMenus">
+        <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: 'beforeLoginMenu' %>
+        <%= link_to "ログイン", new_user_session_path, class: 'beforeLoginMenu' %>
+        <%= link_to "新規登録", new_user_registration_path, class: 'beforeLoginMenu' %>
       </div>
     <% end %>
   </div>
   <%# ログイン時のヘッダーメニュー（アイコン） %>
   <% if user_signed_in? %>
-    <div class="HeaderMenus__right">
+    <div class="headerMenus__right">
       <%# お知らせ用アイコン %>
       <%= link_to(notifications_path) do %>
-        <i class="fas fa-bell header-bellIcon", data-toggle="tooltip", data-placement="top", title="お知らせ">
+        <i class="fas fa-bell headerBellIcon", data-toggle="tooltip", data-placement="top", title="お知らせ">
           <%# 通知カウントを表示 %>
           <% if unchecked_notifications.any? %>
-            <span class="header-bellIcon__stack-count">
+            <span class="headerBellIcon__stack-count">
               <%= unchecked_notifications.count %>
             </span>
           <% end %>
@@ -45,22 +45,22 @@
         <ul class="dropDownMenu">
           <li>
             <i class="fas fa-user"></i>
-            <%= link_to "マイページ", "/users/#{current_user.id}", class:"LoginMenu" %>
+            <%= link_to "マイページ", "/users/#{current_user.id}", class:"loginMenu" %>
           </li>
           <li>
             <i class="fas fa-plus-square"></i>
-            <%= link_to  "投稿する", new_post_path, class: "LoginMenu" %>
+            <%= link_to  "投稿する", new_post_path, class: "loginMenu" %>
           </li>
           <li>
             <i class="fas fa-sign-out-alt"></i>
-            <%= link_to "ログアウト", destroy_user_session_path, class:"LoginMenu", method: :delete %>
+            <%= link_to "ログアウト", destroy_user_session_path, class:"loginMenu", method: :delete %>
           </li>
         </ul>
       </div>
     </div>
   <% end %>
   <%# スマートフォン時のバーガーメニューに関する記述 %>
-  <div class="HanbergerMenu">
+  <div class="hanbergerMenu">
     <div class="bargermenu-btn">
       <i class="fa fa-bars", id="bargermenu-btn"></i>
     </div>
@@ -84,15 +84,15 @@
           <ul>
             <li>
               <i class="fas fa-user"></i>
-              <%= link_to "マイページ", "/users/#{current_user.id}", class:"menu-item" %>
+              <%= link_to "マイページ", "/users/#{current_user.id}", class:"menuItem" %>
             </li>
             <li>
               <i class="fas fa-plus-square"></i>
-              <%= link_to  "投稿する", new_post_path, class: "menu-item" %>
+              <%= link_to  "投稿する", new_post_path, class: "menuItem" %>
             </li>
             <li>
               <i class="fas fa-sign-out-alt"></i>
-              <%= link_to "ログアウト", destroy_user_session_path, class:"menu-item", method: :delete %>
+              <%= link_to "ログアウト", destroy_user_session_path, class:"menuItem", method: :delete %>
             </li>
           </ul>
         </div>
@@ -101,15 +101,15 @@
         <ul class="menus">
           <li>
             <i class="fas fa-unlock"></i>
-            <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: 'menu-item' %>
+            <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: 'menuItem' %>
           </li>
           <li>
             <i class="fas fa-sign-in-alt"></i>
-            <%= link_to "ログイン", new_user_session_path, class: 'menu-item' %>
+            <%= link_to "ログイン", new_user_session_path, class: 'menuItem' %>
           </li>
           <li>
             <i class="fas fa-user-plus"></i>
-            <%= link_to "新規登録", new_user_registration_path, class: 'menu-item' %>
+            <%= link_to "新規登録", new_user_registration_path, class: 'menuItem' %>
           </li>
         </ul>
       <% end %>
