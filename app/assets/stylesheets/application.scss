@@ -155,16 +155,22 @@
 }
 
 .dropDownMenu {
-  // position: absolute;
-  width: 300px;
+  width: 200px;
   display: none;
   margin-left: -5px;
   margin-top: 5px;
   padding: 0;
-  background: rgb(75, 100, 209);
+  text-align: center;
+  background-color: rgba($color: #222222, $alpha: 0.95);
 }
 .dropDownMenu li {
+  cursor: pointer;
   width: 100%;
+  padding: 2vh 0;
+}
+.dropDownMenu li a:hover {
+  text-decoration: none;
+  color: #00bfff;
 }
 
 // ログアウト時のモーダル画面===================================================
