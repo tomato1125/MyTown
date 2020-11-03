@@ -121,11 +121,20 @@
               </div>
             <%# ログイン前のメニュー一覧 %>
             <% else %>
-              <div class="menus">
-                <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: 'BeforeLoginMenu' %>
-                <%= link_to "ログイン", new_user_session_path, class: 'menu-item' %>
-                <%= link_to "新規登録", new_user_registration_path, class: 'menu-item' %>
-              </div>
+              <ul class="menus">
+                <li>
+                  <i class="fas fa-unlock"></i>
+                  <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: 'menu-item' %>
+                </li>
+                <li>
+                  <i class="fas fa-sign-in-alt"></i>
+                  <%= link_to "ログイン", new_user_session_path, class: 'menu-item' %>
+                </li>
+                <li>
+                  <i class="fas fa-user-plus"></i>
+                  <%= link_to "新規登録", new_user_registration_path, class: 'menu-item' %>
+                </li>
+              </ul>
             <% end %>
           </div>
         </div>
