@@ -6,23 +6,17 @@
   padding: 24px;
 }
 
-.accountPage{
+.accountPage {
   display: flex;
   height: 100vh;
   width: 100vw;
-  padding-top: 9vh;
   overflow: scroll;
   color: #fff;
-  background-color:#f5f5f5;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.accountMain{
-  display: flex;
+  background-color: #f5f5f5;
   justify-content: center;
   align-items: center;
-  a{
+  flex-direction: column;
+  a {
     font-size: 20px;
     color: #ffffff;
     text-decoration: none;
@@ -31,17 +25,39 @@
     justify-content: center;
     align-items: center;
     :hover {
-      color: #00BFFF;
+      color: #00bfff;
     }
+  }
+  h2 {
+    justify-content: center;
+    font-size: 22px;
   }
 }
 
-.LoginMain{
+// .accountMain {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   a {
+//     font-size: 20px;
+//     color: #ffffff;
+//     text-decoration: none;
+//     margin-bottom: 24px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     :hover {
+//       color: #00bfff;
+//     }
+//   }
+// }
+
+.LoginMain {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 9vh;
-  a{
+  a {
     font-size: 20px;
     color: #ffffff;
     text-decoration: none;
@@ -50,77 +66,86 @@
     justify-content: center;
     align-items: center;
     :hover {
-      color: #00BFFF;
+      color: #00bfff;
     }
   }
 }
 
-.LoginPageBox{
+.LoginPageBox {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 700px;
-  h2{
-    justify-content: center;;
+  h2 {
+    justify-content: center;
     font-size: 22px;
   }
 }
 
-.accountPageBox{
+.accountPageBox {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 700px;
-  padding-top: 25vh;
-  h2{
-    justify-content: center;;
+  height: 100%;
+  margin: 0 auto;
+  h2 {
+    justify-content: center;
     font-size: 22px;
   }
 }
 
-
-.accountPageBoxForm {
-  display: flex;
-  justify-content: center;
-}
-
-.formField{
+.formField {
   margin: 24px;
-  &__lavel{
+  &__lavel {
     display: flex;
-    &--normal{
+    &--normal {
       font-weight: 600;
     }
   }
 }
 
-.formField__input--normal{
+.formField__input--normal {
   margin-top: 8px;
 }
 
-.field{
+.field {
   color: #000000;
   height: 48px;
-  width: 343px;
+  width: 100%;
   font-size: 16px;
   padding: 10px 16px 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-.actions{
+.actions {
   display: flex;
   justify-content: center;
-  .next_btn{
+  .next_btn {
     margin-bottom: 24px;
-    background-color: #1E90FF;
-    border: 1px solid #1E90FF;
+    background-color: #1e90ff;
+    border: 1px solid #1e90ff;
     font-size: 20px;
     color: #fff;
     height: 48px;
-    width: 343px;
+    width: 100%;
+    border-radius: 8%;
+  }
+}
+
+@media (max-width: 700px) {
+  .accountPage {
+    padding-top: 100vh;
+  }
+
+  .field {
+    color: #000000;
+    height: 48px;
+    width: 100%;
+    font-size: 1em;
+    padding: 10px 16px 8px;
+    border: 1px solid #ccc;
     border-radius: 4px;
   }
 }
