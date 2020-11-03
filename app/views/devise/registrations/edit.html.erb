@@ -1,75 +1,71 @@
 <div class="accountPage", style="background-image: url(<%= asset_path "TopPageImage.jpg" %>);">
-  <div class="accountMain">
-    <div class="accountPageBox">
-      <h2>マイページ編集</h2>
-      <div class="accountPageBoxForm">
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-          <%= render "devise/shared/error_messages", resource: resource %>
-          <div class="formField">
-            <div class='formField__lavel--normal'>
-              <%= f.label :name %>
-            </div>
-            <div class='formField__input--normal'>
-              <%= f.text_field :name, autofocus: true, class: "field", maxlength: "10", placeholder:"10文字以内で入力してください" %>
-            </div>
-          </div>
-          <div class="formField">
-            <div class='formField__lavel--normal'>
-              <%= f.label :image %>
-            </div>
-            <div class='formField__input--normal'>
-              <%= f.file_field :image, multipart: true, class: "field", placeholder: "イメージを選択してください"%>
-            </div>
-          </div>
-          <div class="formField">
-            <div class='formField__lavel--normal'>
-              <%= f.label :email, "E-mail" %>
-            </div>
-            <div class='formField__input--normal'>
-              <%= f.email_field :email, class: "field", autofocus: true, autocomplete: "email", placeholder:"PC・携帯どちらでも可" %>
-            </div>
-          </div>
-          <div class="formField">
-            <div class='formField__lavel--normal'>
-              <%= f.label :password %>
-              <% if @minimum_password_length %>
-              <em>(<%= @minimum_password_length %> 文字以上)</em>
-              <% end %><br />
-            </div>
-            <div class='formField__input--normal'>
-              <%= f.password_field :password, class: "field", autocomplete: "new-password", placeholder:"6文字以上で入力してください" %>
-            </div>
-          </div>
-          <div class="formField">
-            <div class='formField__lavel--normal'>
-              <%= f.label :password %> <em>(確認用)</em>
-            </div>
-            <div class='formField__input--normal'>
-              <%= f.password_field :password_confirmation, class: "field", autocomplete: "new-password", placeholder:"6文字以上で入力してください" %>
-            </div>
-          </div>
-          <div class="formField">
-            <div class='formField__lavel--normal'>
-              <%= f.label :prefecture %>
-            </div>
-            <div class='formField__input--normal'>
-              <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: '出身地を選択してください'}, {class: "field"} %>
-            </div>
-          </div>
-          <div class="formField">
-            <div class='formField__lavel--normal'>
-              <%= f.label :introduce %>
-            </div>
-            <div class='formField__input--normal'>
-              <%= f.text_field :introduce, autofocus: true, class: "field", placeholder:"紹介文で入力してください" %>
-            </div>
-          </div>
-          <div class="actions">
-            <%= f.submit "更新する", class: 'next_btn'%>
-          </div>
-          <%= link_to "戻る", user_path(current_user) %>
-        <% end %>
+  <h2>マイページ編集</h2>
+  <div class="accountPageBoxForm">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <div class="formField">
+        <div class='formField__lavel--normal'>
+          <%= f.label :name %>
+        </div>
+        <div class='formField__input--normal'>
+          <%= f.text_field :name, autofocus: true, class: "field", maxlength: "10", placeholder:"10文字以内で入力してください" %>
+        </div>
       </div>
-    </div>
+      <div class="formField">
+        <div class='formField__lavel--normal'>
+          <%= f.label :image %>
+        </div>
+        <div class='formField__input--normal'>
+          <%= f.file_field :image, multipart: true, class: "field", placeholder: "イメージを選択してください"%>
+        </div>
+      </div>
+      <div class="formField">
+        <div class='formField__lavel--normal'>
+          <%= f.label :email, "E-mail" %>
+        </div>
+        <div class='formField__input--normal'>
+          <%= f.email_field :email, class: "field", autofocus: true, autocomplete: "email", placeholder:"PC・携帯どちらでも可" %>
+        </div>
+      </div>
+      <div class="formField">
+        <div class='formField__lavel--normal'>
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> 文字以上)</em>
+          <% end %><br />
+        </div>
+        <div class='formField__input--normal'>
+          <%= f.password_field :password, class: "field", autocomplete: "new-password", placeholder:"6文字以上で入力してください" %>
+        </div>
+      </div>
+      <div class="formField">
+        <div class='formField__lavel--normal'>
+          <%= f.label :password %> <em>(確認用)</em>
+        </div>
+        <div class='formField__input--normal'>
+          <%= f.password_field :password_confirmation, class: "field", autocomplete: "new-password", placeholder:"6文字以上で入力してください" %>
+        </div>
+      </div>
+      <div class="formField">
+        <div class='formField__lavel--normal'>
+          <%= f.label :prefecture %>
+        </div>
+        <div class='formField__input--normal'>
+          <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: '出身地を選択してください'}, {class: "field"} %>
+        </div>
+      </div>
+      <div class="formField">
+        <div class='formField__lavel--normal'>
+          <%= f.label :introduce %>
+        </div>
+        <div class='formField__input--normal'>
+          <%= f.text_field :introduce, autofocus: true, class: "field", placeholder:"紹介文で入力してください" %>
+        </div>
+      </div>
+      <div class="actions">
+        <%= f.submit "更新する", class: 'next_btn'%>
+      </div>
+      <%= link_to "戻る", user_path(current_user) %>
+    <% end %>
   </div>
 </div>

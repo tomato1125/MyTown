@@ -52,7 +52,7 @@
   }
 }
 
-.HeaderMenus {
+.headerMenus {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -74,7 +74,7 @@
 
 // ヘッダーのアプリケーションロゴ================================================
 
-.HeaderLogo {
+.headerLogo {
   height: 7.5vh;
   width: auto;
   background-color: rgba($color: #222222, $alpha: 0.95);
@@ -87,18 +87,18 @@
 }
 
 // ログインメニュー==========================================================
-.LoginedMenus {
+.loginedMenus {
   width: auto;
   font-size: 2vh;
   display: flex;
-  .LoginMenu:hover {
+  .loginMenu:hover {
     color: #00bfff;
   }
-  .LoginUserName {
+  .loginUserName {
     color: #ffffff;
     font-size: 1.5vh;
   }
-  .LoginMenu {
+  .loginMenu {
     margin-left: 2vw;
     cursor: pointer;
     text-decoration: none;
@@ -107,7 +107,7 @@
 
 // ヘッダーのアイコン=======================================================
 // お知らせアイコン
-.header-bellIcon {
+.headerBellIcon {
   font-size: 3vh;
   color: #ffffff;
   position: relative;
@@ -125,7 +125,7 @@
   }
 }
 
-.header-bellIcon:hover {
+.headerBellIcon:hover {
   color: rgba($color: #ffffff, $alpha: 0.5);
 }
 
@@ -175,14 +175,14 @@
 
 // ログイン前のヘッダーメニュー一覧==============================================
 
-.BeforeLoginMenus {
+.beforeLoginMenus {
   font-size: 2vh;
   margin-left: 5vw;
   display: flex;
-  .BeforeLoginMenu:hover {
+  .beforeLoginMenu:hover {
     color: #00bfff;
   }
-  .BeforeLoginMenu {
+  .beforeLoginMenu {
     margin-right: 2vw;
     text-decoration: none;
   }
@@ -216,14 +216,14 @@
 
 //ブラウザ幅が700以上の場合はバーガーメニューを非表示================================
 @media screen and (min-width: 700px) {
-  .HanbergerMenu {
+  .hanbergerMenu {
     display: none;
   }
 }
 
 //ブラウザ幅が700px未満の場合===================================================
 @media screen and (max-width: 700px) {
-  .Header {
+  .header {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -232,7 +232,7 @@
     z-index: 9000;
   }
 
-  .HeaderMenus {
+  .headerMenus {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -249,7 +249,7 @@
     }
   }
 
-  .HeaderLogo {
+  .headerLogo {
     height: 7.5vh;
     width: auto;
     background-color: rgba($color: #222222, $alpha: 0.95);
@@ -262,18 +262,18 @@
   }
 
   // ログイン後のメニュー
-  .LoginedMenus {
+  .loginedMenus {
     color: #4682b4;
     width: auto;
     font-size: 2vh;
-    .LoginMenu:hover {
+    .loginMenu:hover {
       color: #00bfff;
     }
-    .LoginUserName {
+    .loginUserName {
       color: #ffffff;
       font-size: 1.5vh;
     }
-    .LoginMenu {
+    .loginMenu {
       color: #4682b4;
       display: none;
       margin-left: 2vw;
@@ -283,14 +283,14 @@
   }
 
   // ログイン前のメニュー
-  .BeforeLoginMenus {
+  .beforeLoginMenus {
     font-size: 2vh;
     margin-left: 5vw;
     display: none;
-    .BeforeLoginMenu:hover {
+    .beforeLoginMenu:hover {
       color: #00bfff;
     }
-    .BeforeLoginMenu {
+    .beforeLoginMenu {
       margin-right: 2vw;
       text-decoration: none;
     }
@@ -359,7 +359,7 @@
     }
   }
 
-  .menu-item {
+  .menuItem {
     width: auto;
     height: auto;
     color: #4682b4;
