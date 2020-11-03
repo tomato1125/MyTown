@@ -1,0 +1,118 @@
+<div class="HeaderMenus">
+  <div class="HeaderMenus__left">
+    <%= link_to image_tag("myTown4.jpg", class: "HeaderLogo"), "/" %>
+    <% if user_signed_in? %>
+      <div class="LoginedMenus">
+        <a href="#0", class="LoginMenu">Top</a>
+        <a href="#1", class="LoginMenu">Category</a>
+        <a href="#2", class="LoginMenu">Prefecture</a>
+        <a href="#3", class="LoginMenu">New Posts</a>
+      </div>
+    <% else %>
+      <div class="BeforeLoginMenus">
+        <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: 'BeforeLoginMenu' %>
+        <%= link_to "ログイン", new_user_session_path, class: 'BeforeLoginMenu' %>
+        <%= link_to "新規登録", new_user_registration_path, class: 'BeforeLoginMenu' %>
+      </div>
+    <% end %>
+  </div>
+  <%# ログイン時のヘッダーメニュー（アイコン） %>
+  <% if user_signed_in? %>
+    <div class="HeaderMenus__right">
+      <%# お知らせ用アイコン %>
+      <%= link_to(notifications_path) do %>
+        <i class="fas fa-bell header-bellIcon", data-toggle="tooltip", data-placement="top", title="お知らせ">
+          <%# 通知カウントを表示 %>
+          <% if unchecked_notifications.any? %>
+            <span class="header-bellIcon__stack-count">
+              <%= unchecked_notifications.count %>
+            </span>
+          <% end %>
+        </i>
+      <% end %>
+      <%# ログインユーザーの名前・アイコン表示 %>
+      <div class="loginUser">
+        <div class="loginUserInfo">
+          <div class="loginUserInfo__Avatar">
+            <%= image_tag current_user.image.url, class: "loginUserInfo__Avatar--image" %>
+          </div>
+          <span class=loginUserName>
+            <%= current_user.name %>
+          </span>
+          <i class="fas fa-caret-down"></i>
+        </div>
+        <%# ログインユーザーのメニューバー（マウスオーバー時） %>
+        <ul class="dropDownMenu">
+          <li>
+            <i class="fas fa-user"></i>
+            <%= link_to "マイページ", "/users/#{current_user.id}", class:"LoginMenu" %>
+          </li>
+          <li>
+            <i class="fas fa-plus-square"></i>
+            <%= link_to  "投稿する", new_post_path, class: "LoginMenu" %>
+          </li>
+          <li>
+            <i class="fas fa-sign-out-alt"></i>
+            <%= link_to "ログアウト", destroy_user_session_path, class:"LoginMenu", method: :delete %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+  <%# スマートフォン時のバーガーメニューに関する記述 %>
+  <div class="HanbergerMenu">
+    <div class="bargermenu-btn">
+      <i class="fa fa-bars", id="bargermenu-btn"></i>
+    </div>
+    <div class="bargermenu">
+      <div id="bargermenu-btn" class="bargermenu-closebtn">
+        <i class="far fa-times-circle"></i>
+      </div>
+      <%# ログイン時のメニュー一覧 %>
+      <% if user_signed_in? %>
+        <div class="menus">
+          <div class="loginUser">
+            <div class="loginUserInfo">
+              <div class="loginUserInfo__Avatar">
+                <%= image_tag current_user.image.url, class: "loginUserInfo__Avatar--image" %>
+              </div>
+              <span class=loginUserName>
+                <%= current_user.name %>
+              </span>
+            </div>
+          </div>
+          <ul>
+            <li>
+              <i class="fas fa-user"></i>
+              <%= link_to "マイページ", "/users/#{current_user.id}", class:"menu-item" %>
+            </li>
+            <li>
+              <i class="fas fa-plus-square"></i>
+              <%= link_to  "投稿する", new_post_path, class: "menu-item" %>
+            </li>
+            <li>
+              <i class="fas fa-sign-out-alt"></i>
+              <%= link_to "ログアウト", destroy_user_session_path, class:"menu-item", method: :delete %>
+            </li>
+          </ul>
+        </div>
+      <%# ログイン前のメニュー一覧 %>
+      <% else %>
+        <ul class="menus">
+          <li>
+            <i class="fas fa-unlock"></i>
+            <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: 'menu-item' %>
+          </li>
+          <li>
+            <i class="fas fa-sign-in-alt"></i>
+            <%= link_to "ログイン", new_user_session_path, class: 'menu-item' %>
+          </li>
+          <li>
+            <i class="fas fa-user-plus"></i>
+            <%= link_to "新規登録", new_user_registration_path, class: 'menu-item' %>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</div>
