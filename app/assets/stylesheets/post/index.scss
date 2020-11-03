@@ -2,12 +2,14 @@
   box-sizing: border-box;
 }
 
+// TOPページのWrapper=======================================================
 .MainSpace {
   color: #222222;
   height: 100%;
   width: 100%;
 }
 
+// 検索バー画面=============================================================
 .SearchSection {
   background-color: #222222;
   color: #ffffff;
@@ -24,22 +26,18 @@
   background-size: cover;
   background-position: center center;
 }
-
 .ApplicationIntroduction1 {
   font-size: 3.5vh;
   margin-top: 3vh;
 }
-
 .ApplicationIntroduction2 {
   font-size: 1.3vh;
 }
-
 .SearchHeading {
   font-size: 3vh;
   font-weight: bold;
   margin-top: 4vh;
 }
-
 .SearchForm {
   width: auto;
   &__content {
@@ -59,6 +57,7 @@
   }
 }
 
+// カテゴリー画面=============================================================
 .CategorySection {
   display: flex;
   justify-content: center;
@@ -66,8 +65,7 @@
   align-items: center;
   padding-top: 100px;
   .CategoryHeading {
-    font-size: 3vh;
-    height: 6vh;
+    font-size: 2.5vh;
     color: #ffffff;
     margin-top: 3vh;
   }
@@ -87,6 +85,7 @@
   }
 }
 
+// Prefecture画面===========================================================
 .PrefectureSection {
   background-color: #222222;
   display: flex;
@@ -95,8 +94,7 @@
   flex-direction: column;
   padding-top: 100px;
   .PrefectureHeading {
-    font-size: 3vh;
-    height: 6vh;
+    font-size: 2.5vh;
     color: #ffffff;
     margin-top: 5vh;
   }
@@ -126,7 +124,6 @@
     margin-top: 5vh;
   }
 }
-
 .SeeMore {
   font-size: 1.5vh;
   height: auto;
@@ -143,7 +140,6 @@
     color: #1e90ff;
   }
 }
-
 .ToppagePostIndex {
   width: 100%;
   height: 100%;
@@ -156,7 +152,6 @@
   background-position: center center;
   overflow: scroll;
 }
-
 .ToppageNewPost {
   height: 60vh;
   width: 50vw;
@@ -183,8 +178,7 @@
     z-index: 2;
   }
 }
-
-.IndexUserInfomation {
+.ToppageUserInfomation {
   height: auto;
   width: auto;
   display: flex;
@@ -207,14 +201,14 @@
   }
   &__username {
     width: auto;
-    font-size: 15px;
+    font-size: 1.5em;
     color: #4682b4;
     margin-left: 5px;
     display: inline-block;
     z-index: 3;
     :hover {
       text-decoration: none;
-      color: #1e90ff;
+      color: #00bfff;
       transition: all 0.3s ease;
     }
   }
@@ -226,7 +220,6 @@
     display: inline-block;
   }
 }
-
 .ToppagePostTitle {
   width: auto;
   font-size: 20px;
@@ -249,7 +242,6 @@
   border: 1px solid #00bfff;
   transition: all 0.3s ease;
 }
-
 .ToppageAreaInfomation {
   position: absolute;
   top: 5px;
@@ -265,17 +257,14 @@
   width: 8vw;
   margin: 5px 0 0 5px;
 }
-
 .ToppageUserIcon {
   font-size: 2vh;
   color: #ffffff;
 }
-
 .ToppageAreaName {
   font-size: 1.5vh;
   margin-left: 6px;
 }
-
 .ToppageIndexFavorite {
   position: absolute;
   top: 5px;
@@ -292,7 +281,7 @@
   margin: 5px 0 0 5px;
 }
 
-//New Postsのレスポンシブ対応//
+////////////////////////////New Postsのレスポンシブ対応///////////////////////////
 @media (max-width: 700px) {
   .NewPostMessage {
     font-size: 2vh;
@@ -341,8 +330,7 @@
     margin: 2vh 0;
   }
 
-  .IndexUserInfomation {
-    // background-color: #222222;
+  .ToppageUserInfomation {
     height: auto;
     width: auto;
     display: flex;
@@ -358,14 +346,14 @@
       color: #ffffff;
       display: inline-block;
       .Avater {
-        height: 50px;
-        width: 50px;
+        height: 40px;
+        width: 40px;
         border-radius: 50%;
       }
     }
     &__username {
       width: auto;
-      font-size: 20px;
+      font-size: 15px;
       color: #4682b4;
       margin-left: 5px;
       display: inline-block;
