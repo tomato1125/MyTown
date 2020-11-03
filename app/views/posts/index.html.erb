@@ -1,4 +1,5 @@
 <div class='MainWrapper'>
+  <%# TOP(検索バー)部分 %>
   <div class='SearchSection' id="0">
     <div class='SearchBackgroundImage' style="background-image: url(<%= asset_path "TopPageImage.jpg" %>);">
       <h2 class='ApplicationIntroduction1'>〜故郷の良さを再発見〜
@@ -17,6 +18,8 @@
       </div>
     </div>
   </div>
+
+  <%# Category画面 %>
   <div class='CategorySection' id="1">
     <p class='CategoryHeading'>Category
     </p>
@@ -28,10 +31,13 @@
     <p class='PrefectureHeading'> Prefecture
     </p>
   </div>
+
+  <%# Prefecture画面 %>
   <div class='PrefectureSearch'>
     <%= render partial: "prefectures/prefectureIndex" %>
   </div>
   
+  <%# New Posts画面 %>
   <div class='NewPostMessage' id="3">
     <p class='NewPostMessage__heading'>
       New Posts
@@ -44,16 +50,16 @@
     <% @posts.first(5).each do |post| %>
       <div class='ToppageNewPost'>
       <%= link_to '', post_path(post.id), class: "showlink", method: :get %>
-        <div class='IndexUserInfomation'>
-          <div class='IndexUserInfomation__userAvater'>
+        <div class='ToppageUserInfomation'>
+          <div class='ToppageUserInfomation__userAvater'>
             <%= image_tag post.user.image.url, class: "Avater" %>
           </div>
-          <span class='IndexUserInfomation__username'>
+          <span class='ToppageUserInfomation__username'>
             <a href="/users/<%= post.user.id %>">
               <%= post.user.name %>
             </a>
           </span>
-          <div class='IndexUserInfomation__date'>
+          <div class='ToppageUserInfomation__date'>
             <i class="far fa-clock"></i>
             <span><%= time_ago_in_words(post.created_at) %>前</span>
           </div>
