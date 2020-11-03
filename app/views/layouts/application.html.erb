@@ -26,28 +26,10 @@
           <%= link_to image_tag("myTown4.jpg", class: "HeaderLogo"), "/" %>
           <% if user_signed_in? %>
             <div class="LoginedMenus">
-              <%= link_to "マイページ", "/users/#{current_user.id}", class:"LoginMenu" %>
-              <%= link_to  "投稿する", new_post_path, class: "LoginMenu" %>
               <a href="#0", class="LoginMenu">Top</a>
               <a href="#1", class="LoginMenu">Category</a>
               <a href="#2", class="LoginMenu">Prefecture</a>
               <a href="#3", class="LoginMenu">New Posts</a>
-              <a class="LoginMenu", id="Logout">ログアウト</a>
-              <%# モーダル部分 %>
-              <div id="LogoutModal-main">
-                <div class="modal-contents">
-                  <div class="modal-content">
-                    <h3>ログアウトしますか？</h3>
-                    <div class="HeaderModal">
-                      <div class="LogoutYesNoButton">
-                        <%= button_to 'はい', destroy_user_session_path, method: :delete, class: "LogoutBtn-yes"%>
-                      </div>
-                      <button class="LogoutBtn-no">いいえ</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <%# モーダル部分ここまで %>
             </div>
           <% else %>
             <div class="BeforeLoginMenus">
@@ -76,14 +58,15 @@
                   <%= image_tag current_user.image.url, class: "loginUserInfo__Avatar--image" %>
                 </div>
                 <span class=loginUserName>
-                  <%= link_to current_user.name %>
+                  <%= current_user.name %>
                 </span>
                 <i class="fas fa-caret-down"></i>
               </div>
-              <div class="dropDownMenu">
+              <ul class="dropDownMenu">
                 <li><%= link_to "マイページ", "/users/#{current_user.id}", class:"LoginMenu" %></li>
                 <li><%= link_to  "投稿する", new_post_path, class: "LoginMenu" %></li>
-              </div>
+                <li><%= link_to "ログアウト", destroy_user_session_path, class:"LoginMenu", method: :delete %></li>
+              </ul>
             </div>
           </div>
         <% end %>
