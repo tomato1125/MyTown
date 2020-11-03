@@ -173,70 +173,6 @@
   color: #00bfff;
 }
 
-// ログアウト時のモーダル画面===================================================
-.HeaderModal {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-/* モーダル コンテンツエリア */
-#LogoutModal-main {
-  display: none;
-  margin: 0;
-  padding: 2vh 2vh;
-  color: #666666;
-  position: fixed;
-  z-index: 2;
-}
-
-.LogoutBtn-yes {
-  margin: 1vh 1vh;
-  height: 4vh;
-  width: 150px;
-  margin: 50px 0;
-  border-radius: 20px;
-  background-color: #1e90ff;
-  border: none;
-  box-shadow: 0 0 8px gray;
-  color: #ffffff;
-  line-height: 1.5;
-  font-size: 2vh;
-  font-weight: bold;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.LogoutBtn-yes:hover {
-  background-color: rgba($color: #1e90ff, $alpha: 0.7);
-}
-
-.LogoutBtn-no {
-  margin: 1vh 1vh;
-  height: 4vh;
-  width: 150px;
-  margin: 50px 0;
-  border-radius: 20px;
-  background-color: #ff0000;
-  border: none;
-  box-shadow: 0 0 8px gray;
-  color: #ffffff;
-  line-height: 1.5;
-  font-size: 2vh;
-  font-weight: bold;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.LogoutBtn-no:hover {
-  background-color: rgba($color: #ff0000, $alpha: 0.7);
-}
-
 // ログイン前のヘッダーメニュー一覧==============================================
 
 .BeforeLoginMenus {
@@ -316,14 +252,6 @@
   .HeaderLogo {
     height: 7.5vh;
     width: auto;
-    background-image: ("myTown4.jpg");
-    background-color: rgba(255, 255, 255, 0.8);
-    background-blend-mode: lighten;
-  }
-
-  .HeaderLogo {
-    height: 7.5vh;
-    width: auto;
     background-color: rgba($color: #222222, $alpha: 0.95);
     position: relative;
     a {
@@ -333,6 +261,7 @@
     }
   }
 
+  // ログイン後のメニュー
   .LoginedMenus {
     color: #4682b4;
     width: auto;
@@ -353,6 +282,7 @@
     }
   }
 
+  // ログイン前のメニュー
   .BeforeLoginMenus {
     font-size: 2vh;
     margin-left: 5vw;
@@ -365,7 +295,8 @@
       text-decoration: none;
     }
   }
-  //ヘッダーここまで
+
+  // バーガーメニューボタン（開閉ボタン）
   .bargermenu-btn {
     position: fixed;
     top: 2%;
@@ -398,9 +329,7 @@
     }
   }
 
-  /*----------------------------
-  * メニュー本体
-  *----------------------------*/
+  // バーガーメニュー本体
   .bargermenu {
     position: fixed;
     top: 0;
@@ -413,11 +342,17 @@
   }
 
   .menus {
-    display: flex;
+    // display: flex;
     align-items: center;
     flex-direction: column;
-    color: #4682b4;
+    color: #ffffff;
     padding-top: 10vh;
+    ul {
+      text-align: center;
+    }
+    li {
+      padding: 1vh 0;
+    }
     :hover {
       color: #00bfff;
       text-decoration: none;
@@ -427,6 +362,7 @@
   .menu-item {
     width: auto;
     height: auto;
+    color: #4682b4;
     margin-top: 32px;
     box-sizing: border-box;
   }

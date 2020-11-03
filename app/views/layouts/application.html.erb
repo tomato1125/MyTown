@@ -45,6 +45,7 @@
             <%# お知らせ用アイコン %>
             <%= link_to(notifications_path) do %>
               <i class="fas fa-bell header-bellIcon", data-toggle="tooltip", data-placement="top", title="お知らせ">
+                <%# 通知カウントを表示 %>
                 <% if unchecked_notifications.any? %>
                   <span class="header-bellIcon__stack-count">
                     <%= unchecked_notifications.count %>
@@ -52,6 +53,7 @@
                 <% end %>
               </i>
             <% end %>
+            <%# ログインユーザーの名前・アイコン表示 %>
             <div class="loginUser">
               <div class="loginUserInfo">
                 <div class="loginUserInfo__Avatar">
@@ -62,14 +64,25 @@
                 </span>
                 <i class="fas fa-caret-down"></i>
               </div>
+              <%# ログインユーザーのメニューバー（マウスオーバー時） %>
               <ul class="dropDownMenu">
-                <li><%= link_to "マイページ", "/users/#{current_user.id}", class:"LoginMenu" %></li>
-                <li><%= link_to  "投稿する", new_post_path, class: "LoginMenu" %></li>
-                <li><%= link_to "ログアウト", destroy_user_session_path, class:"LoginMenu", method: :delete %></li>
+                <li>
+                  <i class="fas fa-user"></i>
+                  <%= link_to "マイページ", "/users/#{current_user.id}", class:"LoginMenu" %>
+                </li>
+                <li>
+                  <i class="fas fa-plus-square"></i>
+                  <%= link_to  "投稿する", new_post_path, class: "LoginMenu" %>
+                </li>
+                <li>
+                  <i class="fas fa-sign-out-alt"></i>
+                  <%= link_to "ログアウト", destroy_user_session_path, class:"LoginMenu", method: :delete %>
+                </li>
               </ul>
             </div>
           </div>
         <% end %>
+        <%# スマートフォン時のバーガーメニューに関する記述 %>
         <div class="HanbergerMenu">
           <div class="bargermenu-btn">
             <i class="fa fa-bars", id="bargermenu-btn"></i>
@@ -78,12 +91,35 @@
             <div id="bargermenu-btn" class="bargermenu-closebtn">
               <i class="far fa-times-circle"></i>
             </div>
+            <%# ログイン時のメニュー一覧 %>
             <% if user_signed_in? %>
               <div class="menus">
-                <%= link_to "マイページ", "/users/#{current_user.id}", class:"menu-item" %>
-                <%= link_to  "投稿する", new_post_path, class: "menu-item" %>
-                <%= link_to "ログアウト", destroy_user_session_path, class:"menu-item", method: :delete %>
+                <div class="loginUser">
+                  <div class="loginUserInfo">
+                    <div class="loginUserInfo__Avatar">
+                      <%= image_tag current_user.image.url, class: "loginUserInfo__Avatar--image" %>
+                    </div>
+                    <span class=loginUserName>
+                      <%= current_user.name %>
+                    </span>
+                  </div>
+                </div>
+                <ul>
+                  <li>
+                    <i class="fas fa-user"></i>
+                    <%= link_to "マイページ", "/users/#{current_user.id}", class:"menu-item" %>
+                  </li>
+                  <li>
+                    <i class="fas fa-plus-square"></i>
+                    <%= link_to  "投稿する", new_post_path, class: "menu-item" %>
+                  </li>
+                  <li>
+                    <i class="fas fa-sign-out-alt"></i>
+                    <%= link_to "ログアウト", destroy_user_session_path, class:"menu-item", method: :delete %>
+                  </li>
+                </ul>
               </div>
+            <%# ログイン前のメニュー一覧 %>
             <% else %>
               <div class="menus">
                 <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: 'BeforeLoginMenu' %>
@@ -97,7 +133,6 @@
     </header>
 
     <%= yield %>
-  <%# <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> %>
   <script src='//cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js' type='text/javascript'></script>
   <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
