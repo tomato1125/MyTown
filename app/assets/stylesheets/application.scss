@@ -106,31 +106,7 @@
 }
 
 // ヘッダーのアイコン=======================================================
-.header-userIcon {
-  font-size: 3vh;
-}
-
-.loginUserInfo {
-  width: 200px;
-  height: 50px;
-  margin-left: 5%;
-  display: flex;
-  align-items: center;
-  &__Avatar {
-    width: 40px;
-    height: 40px;
-    &--image {
-      height: 100%;
-      width: 100%;
-      border-radius: 50%;
-    }
-  }
-}
-
-.loginUserName {
-  font-size: 0.9em;
-}
-
+// お知らせアイコン
 .header-bellIcon {
   font-size: 3vh;
   color: #ffffff;
@@ -151,6 +127,28 @@
 
 .header-bellIcon:hover {
   color: rgba($color: #ffffff, $alpha: 0.5);
+}
+
+// ログインユーザーのアイコン・名前
+.loginUserInfo {
+  width: 200px;
+  height: 50px;
+  margin-left: 5%;
+  display: flex;
+  align-items: center;
+  &__Avatar {
+    width: 40px;
+    height: 40px;
+    &--image {
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+    }
+  }
+}
+
+.loginUserName {
+  font-size: 0.9em;
 }
 
 // ログアウト時のモーダル画面===================================================
