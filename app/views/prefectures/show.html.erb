@@ -10,7 +10,6 @@
       <div class='IndexUserInfomation'>
         <div class='IndexUserInfomation__userAvater'>
           <%= image_tag post.user.image.url, class: "avater" %>
-          <%# <i class="fas fa-user-circle"></i> %>
         </div>
         <span class='IndexUserInfomation__username'>
           <a href="/users/<%= post.user.id %>">
@@ -34,7 +33,10 @@
           </div>
         </div>
         <div class="CategoryIndexFavorite">
-          <i class="far fa-bookmark"></i>
+          <i class="fas fa-bookmark"></i>
+          <div class="ClipedCount">
+            <%= post.cliped_users.count %>
+          </div>
         </div>
       </div>
     </div>

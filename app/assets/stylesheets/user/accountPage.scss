@@ -16,6 +16,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding-top: 30vh;
   a {
     font-size: 20px;
     color: #ffffff;
@@ -82,25 +83,12 @@
   }
 }
 
-.accountPageBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100%;
-  margin: 0 auto;
-  h2 {
-    justify-content: center;
-    font-size: 22px;
-  }
-}
-
 .formField {
   margin: 24px;
   &__lavel {
     display: flex;
     &--normal {
-      font-weight: 600;
+      font-size: 1vw;
     }
   }
 }
@@ -111,7 +99,7 @@
 
 .field {
   color: #000000;
-  height: 48px;
+  height: 4vh;
   width: 100%;
   font-size: 16px;
   padding: 10px 16px 8px;
@@ -126,9 +114,9 @@
     margin-bottom: 24px;
     background-color: #1e90ff;
     border: 1px solid #1e90ff;
-    font-size: 20px;
+    font-size: 2vh;
     color: #fff;
-    height: 48px;
+    height: 4vh;
     width: 100%;
     border-radius: 8%;
   }
@@ -136,12 +124,12 @@
 
 @media (max-width: 700px) {
   .accountPage {
-    padding-top: 100vh;
+    padding-top: 50vh;
   }
 
   .field {
     color: #000000;
-    height: 48px;
+    height: 5.5vh;
     width: 100%;
     font-size: 1em;
     padding: 10px 16px 8px;
