@@ -70,14 +70,20 @@
                 <% end %>
               </i>
             <% end %>
-            <div class="loginUserInfo">
-              <div class="loginUserInfo__Avatar">
-                <%= image_tag current_user.image.url, class: "loginUserInfo__Avatar--image" %>
+            <div class="loginUser">
+              <div class="loginUserInfo">
+                <div class="loginUserInfo__Avatar">
+                  <%= image_tag current_user.image.url, class: "loginUserInfo__Avatar--image" %>
+                </div>
+                <span class=loginUserName>
+                  <%= link_to current_user.name %>
+                </span>
+                <i class="fas fa-caret-down"></i>
               </div>
-              <span class=loginUserName>
-                <%= link_to current_user.name %>
-              </span>
-              <i class="fas fa-caret-down"></i>
+              <div class="dropDownMenu">
+                <li><%= link_to "マイページ", "/users/#{current_user.id}", class:"LoginMenu" %></li>
+                <li><%= link_to  "投稿する", new_post_path, class: "LoginMenu" %></li>
+              </div>
             </div>
           </div>
         <% end %>

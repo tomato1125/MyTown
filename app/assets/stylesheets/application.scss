@@ -130,12 +130,15 @@
 }
 
 // ログインユーザーのアイコン・名前
-.loginUserInfo {
+.loginUser {
   width: 200px;
   height: 50px;
   margin-left: 5%;
+}
+.loginUserInfo {
   display: flex;
   align-items: center;
+  // position: relative;
   &__Avatar {
     width: 40px;
     height: 40px;
@@ -146,9 +149,22 @@
     }
   }
 }
-
 .loginUserName {
   font-size: 0.9em;
+  margin-right: 5px;
+}
+
+.dropDownMenu {
+  // position: absolute;
+  width: 300px;
+  display: none;
+  margin-left: -5px;
+  margin-top: 5px;
+  padding: 0;
+  background: rgb(75, 100, 209);
+}
+.dropDownMenu li {
+  width: 100%;
 }
 
 // ログアウト時のモーダル画面===================================================
