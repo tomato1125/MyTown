@@ -30,6 +30,31 @@
     </header>
 
     <%= yield %>
+
+    <footer class="footer">
+      <div class="helps">
+        <%= link_to "TOP", '#', class: "helps__content" %>
+        <%= link_to "GUIDE",'#', class: "helps__content" %>
+        <%= link_to  "CONTACT", '#', class: "helps__content" %>
+        <%= link_to  "FAQ", '#', class: "helps__content" %>
+      </div>
+      <div class="footer-icon">
+        <%= link_to "#", class: "iconMark" do %>
+          <i class="fab fa-facebook-f footerIcon1"></i>
+        <% end %>
+        <%= link_to "#", class: "iconMark" do %>
+          <i class="fab fa-twitter footerIcon2"></i>
+        <% end %>
+      </div>
+      <div class="siteMap">
+        <%= link_to "運営会社", '#', class: "siteMap__content"%>
+        <%= link_to "特定商取引",'#', class: "siteMap__content" %>
+        <%= link_to "プライバシーポリシー", '#', class: "siteMap__content" %>
+      </div>
+      <div class="copyright">
+        Copyright ©︎ MyTown problems
+      </div>
+    </footer>
     <script src='//cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js' type='text/javascript'></script>
     <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
