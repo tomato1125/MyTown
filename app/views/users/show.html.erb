@@ -21,20 +21,37 @@
             <%= link_to 'マイページ編集', edit_user_registration_path(current_user), class: "MypageEdit", method: :get %>
           <% end %>
 
-          <%= link_to followings_user_path(@user.id) do %>
-            <h5>フォロー・フォロワーを見る</h5>
+          <%= link_to followings_user_path(@user.id), class:"followFollowerViews" do %>
+            <p>フォロー・フォロワーを見る</p>
           <% end %>
 
           <% unless current_user == @user %>
             <% if current_user.following?(@user) %>
               <%= form_with(model: @relationship, url: relationship_path, method: :delete, local: true) do |f| %>
                 <%= f.hidden_field :follow_id %>  
-                <%= f.submit "フォロー解除", class: "Rerationship-Off" %>
+                <%= f.submit "フォロー解除", class: "rerationshipOff" %>
               <% end %>
             <% else %>
               <%= form_with(model: @set_relationship, url: relationships_path, local: true) do |f| %>
                 <%= f.hidden_field :follow_id, value: @user.id %>
-                <%= f.submit "フォローする", class: "Rerationship-On" %>
+                <%= f.submit "フォローする", class: "rerationshipOn" %>
+              <% end %>
+            <% end %>
+          <% end %>
+
+          <% if @user.id == current_user.id %>
+          <% else %>
+            <% if @isRoom == true %>
+              <p>
+                <i class="fas fa-envelope"></i>
+                <a class="chatRoomLink", href="/rooms/<%= @roomId %>">チャットへ</a>
+              </p>
+            <% else %>
+              <%= form_for @room do |f| %>
+                <%= fields_for @entry do |e| %>
+                  <%= e.hidden_field :user_id, :value=> @user.id %>
+                <% end %>
+                <%= f.submit "チャットを始める" %>
               <% end %>
             <% end %>
           <% end %>
@@ -42,20 +59,6 @@
         </div>
       </div>
       <%# DM %>
-      <% if @user.id == current_user.id %>
-
-      <% else %>
-        <% if @isRoom == true %>
-          <p><a href="/rooms/<%= @roomId %>">チャットへ</a>
-        <% else %>
-          <%= form_for @room do |f| %>
-            <%= fields_for @entry do |e| %>
-              <%= e.hidden_field :user_id, :value=> @user.id %>
-            <% end %>
-            <%= f.submit "チャットを始める" %>
-          <% end %>
-        <% end %>
-      <% end %>
     </div>
     <div class="container">
       <ul class='user-nav-bar'>

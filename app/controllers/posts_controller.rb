@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
   before_action :move_to_index, except: [:index, :search]
-  # before_action :set_post_info, only: [:show]
 
   def index
     @posts = Post.includes(:user).order("created_at DESC")

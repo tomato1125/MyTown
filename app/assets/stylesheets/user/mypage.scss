@@ -128,16 +128,26 @@
   text-decoration: none;
 }
 
+// フォロー・フォロワー一覧リンク===============================================
+.followFollowerViews {
+  font-size: 1em;
+  padding: 1.5vh 0;
+}
+.followFollowerViews:hover {
+  color: #00bfff;
+  text-decoration: none;
+}
+
 //フォロー・フォロワー登録・解除ボタン==========================================================
 .FollowingMessage {
   font-size: 1.5vh;
   font-weight: bold;
 }
 
-.Rerationship-On {
+.rerationshipOn {
   color: #ffffff;
-  height: 2vh;
-  width: 10vw;
+  height: 20px;
+  width: 100px;
   margin: 0.5vh 0;
   border-radius: 20px;
   background-color: #00bfff;
@@ -150,14 +160,14 @@
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.Rerationship-On:hover {
+.rerationshipOn:hover {
   background-color: rgba($color: #00bfff, $alpha: 0.8);
 }
 
-.Rerationship-Off {
+.rerationshipOff {
   color: #ffffff;
-  height: 2vh;
-  width: 10vw;
+  height: 23px;
+  width: 150px;
   margin: 0.5vh 0;
   border-radius: 20px;
   background-color: #ee0000;
@@ -170,8 +180,17 @@
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.Rerationship-Off:hover {
+.rerationshipOff:hover {
   background-color: rgba($color: #ee0000, $alpha: 0.8);
+}
+
+// チャットページへのリンク===================================================
+.chatRoomLink {
+  font-size: 1.1em;
+}
+.chatRoomLink:hover {
+  color: #00bfff;
+  text-decoration: none;
 }
 
 // マイページ下段(TOP・POST・Bookmarkのセレクター部分)==========================
