@@ -2,18 +2,18 @@
   box-sizing: border-box;
 }
 
-.myPage{
+.myPage {
   display: flex;
   height: 100vh;
   width: 100vw;
   overflow: scroll;
   color: #fff;
-  background-color:#f5f5f5;
+  background-color: #f5f5f5;
   justify-content: center;
   flex-direction: column;
 }
 
-.RoomsMain{
+.roomsMain {
   max-width: 1400px;
   width: 100%;
   margin: 0 auto;
@@ -22,7 +22,7 @@
   margin-top: 15vh;
 }
 
-.RoomsBox{
+.roomsBox {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,12 +30,13 @@
   position: relative;
 }
 
-.RoomsTitle {
+.roomsTitle {
   text-align: center;
   font-size: 2.5vw;
 }
 
-.rooms-users {
+// ユーザーのアイコンと名前表示==================================================
+.roomsUsers {
   display: flex;
   height: 22vh;
   width: 100%;
@@ -43,7 +44,7 @@
   justify-content: space-around;
 }
 
-.RoomsUsersInfo {
+.roomsUsersInfo {
   width: 15vw;
   height: auto;
   display: flex;
@@ -52,21 +53,21 @@
   flex-direction: column;
 }
 
-.RoomsUsersNav {
+.roomsUsersNav {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   height: auto;
   position: relative;
-  &:hover{
+  &:hover {
     border-radius: 10px;
-    color: #00BFFF;
+    color: #00bfff;
     opacity: 10;
-    background-color: rgba($color: #fff, $alpha: 0.40);
-    transition: all  0.3s ease;
+    background-color: rgba($color: #fff, $alpha: 0.4);
+    transition: all 0.3s ease;
   }
-  .RoomUserLink {
+  .roomUserLink {
     position: absolute;
     top: 0;
     left: 0;
@@ -75,34 +76,35 @@
     z-index: 1;
   }
   &__image {
-    width: 100%;
-    height: auto;
+    width: 150px;
+    height: 150px;
     padding: 3%;
     border: 1px solid #999999;
     border-radius: 5%;
-    background-color: rgba($color: #ffffff, $alpha: 0.40);
+    background-color: rgba($color: #ffffff, $alpha: 0.4);
     box-shadow: 0 0 12px gray;
   }
-  &__name {
-    font-size: 1.5vh;
-  }
+}
+.roomsUsersNavName {
+  font-size: 1.5vw;
+  color: #ffffff;
 }
 
-.MessageIcon {
+.messageIcon {
   display: flex;
   flex-direction: column;
   position: absolute;
   top: 40%;
-  .iconA{
+  .iconA {
     font-size: 3vw;
     text-align: center;
-    // margin: 0 1vw;
   }
   .iconB {
     font-size: 4vw;
   }
 }
 
+// コメントスペース==========================================================
 .chats {
   height: auto;
   display: flex;
@@ -110,20 +112,18 @@
   align-items: center;
   flex-direction: column;
   padding: 2vh;
-  background-color: rgba($color: #000000, $alpha: 0.40);
+  background-color: rgba($color: #000000, $alpha: 0.4);
   box-shadow: 0 0 20px gray;
 }
 
+//コメントフォーム======================================================================
 
-//コメントエリア======================================================================
-
-
-.MessageForm {
+.messageForm {
   display: flex;
   justify-content: center;
   &__textbox {
     height: 10vh;
-    width: 30vw;
+    width: 40vw;
     padding: 10px;
     border-radius: 5px;
     color: #000000;
@@ -138,7 +138,7 @@
     height: 5vh;
     width: 20vw;
     border-radius: 20px;
-    background-color: #87CEFA;
+    background-color: #87cefa;
     border: none;
     box-shadow: 0 0 8px gray;
     color: #ffffff;
@@ -148,22 +148,16 @@
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
-    transition: all  0.3s ease;
+    transition: all 0.3s ease;
   }
-  .MessageForm__btn:hover {
-    background-color: #00BFFF;
+  .messageForm__btn:hover {
+    background-color: #00bfff;
   }
 }
 
-.CommentArea h3 {
-  margin: 0 0 20px;
-  text-align: center;
-  font-weight: normal;
-  font-size: 20px;
-  color: #000000;
-}
+// コメント一覧スペース======================================================
 
-.Messages {
+.messages {
   padding: 5px;
   width: 40vw;
   height: 40vh;
@@ -171,39 +165,39 @@
   overflow: scroll;
 }
 
-.chat h4 {
+.messagesLooks {
   text-align: center;
 }
 
-.Message {
+.message {
   font-size: 1.5vh;
   padding: 1.5vh 0;
   border-bottom: 1px solid #999999;
   position: relative;
 }
 
-.MessageInfo {
+.messageInfo {
   display: flex;
   align-items: center;
 }
 
-.MessageAvater {
+.messageAvater {
   height: 50px;
   width: 50px;
   border-radius: 50%;
   margin-right: 0.5vw;
 }
 
-.MessageUserName:hover {
-  color: #00BFFF;
+.messageUserName:hover {
+  color: #00bfff;
   text-decoration: none;
 }
 
-.Message span {
+.message span {
   margin-left: 1vw;
 }
 
-.MessageDate {
+.messageDate {
   position: absolute;
   font-size: 1vh;
   color: #999999;
@@ -211,3 +205,99 @@
   right: 2%;
 }
 
+.messageArea h3 {
+  margin: 0 0 20px;
+  text-align: center;
+  font-weight: normal;
+  font-size: 20px;
+  color: #000000;
+}
+
+// /////////////////////////レスポンシブ対応//////////////////////////////////
+
+@media screen and (max-width: 700px) {
+  .roomsTitle {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .roomsUsersNav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    position: relative;
+    &:hover {
+      border-radius: 10px;
+      color: #00bfff;
+      opacity: 10;
+      background-color: rgba($color: #fff, $alpha: 0.4);
+      transition: all 0.3s ease;
+    }
+    .roomUserLink {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+    }
+    &__image {
+      width: 100px;
+      height: 100px;
+      padding: 3%;
+      border: 1px solid #999999;
+      border-radius: 5%;
+      background-color: rgba($color: #ffffff, $alpha: 0.4);
+      box-shadow: 0 0 12px gray;
+    }
+    &__name {
+      font-size: 1.5vh;
+    }
+  }
+
+  // ユーザーのアイコンと名前
+  .messageIcon {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 40%;
+    .iconA {
+      font-size: 1em;
+      text-align: center;
+    }
+    .iconB {
+      font-size: 2em;
+    }
+  }
+
+  // コメントの入力フォーム
+  .messageForm {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0 10px;
+    &__textbox {
+      width: 90vw;
+      padding: 10px 10px;
+    }
+    &__btn {
+      width: 40vw;
+    }
+  }
+
+  // メッセージ一覧スペース=================================================
+  .messages {
+    padding: 5px;
+    width: 100vw;
+    height: 40vh;
+    margin: 0 auto;
+  }
+  .messageAvater {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 0.5vw;
+  }
+}

@@ -5,8 +5,7 @@
         <div class='myPageBoxInformation'>
           <div class="myPageBoxInformation-Image">
             <% if @user.image.url.present? %>
-              <div class='image' style="background-image: url(<%= @user.image %>);">
-              </div>
+              <%= image_tag @user.image.url, class:'image' %>
             <% else %>
               <div class="NoImage">
                 <i class="fas fa-user-alt"></i>

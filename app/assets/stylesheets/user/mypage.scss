@@ -51,21 +51,12 @@
 
 // ユーザーイメージ=========================================================
 .myPageBoxInformation-Image {
-  height: 11vh;
-  width: 11vw;
-  background-color: rgba($color: #ffffff, $alpha: 0.4);
-  box-shadow: 0 0 12px gray;
-  border: 1px solid #999999;
-  border-radius: 5%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin-bottom: 1vh;
   .NoImage {
     border-radius: 5%;
     border: 1px solid #888888;
-    height: 10vh;
-    width: 10vw;
+    width: 150px;
+    height: 150px;
     font-size: 5vh;
     background-color: #bbbbbb;
     text-align: center;
@@ -75,9 +66,13 @@
     }
   }
   .image {
+    width: 150px;
+    height: 150px;
+    padding: 3%;
+    border: 1px solid #999999;
     border-radius: 5%;
-    height: 10vh;
-    width: 10vw;
+    background-color: rgba($color: #ffffff, $alpha: 0.4);
+    box-shadow: 0 0 12px gray;
     background-size: cover;
     background-position: center center;
   }
@@ -86,18 +81,17 @@
 ///////////////////////ユーザーイメージ部分のレスポンシブ化////////////////////
 @media (max-width: 700px) {
   .myPageBoxInformation-Image {
-    width: 30vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-bottom: 1vh;
     .NoImage {
-      border-radius: 5%;
       border: 1px solid #888888;
-      height: 10vh;
-      width: 10vw;
+      height: 100px;
+      width: 100px;
+      padding: 3%;
+      border-radius: 5%;
+      border: 1px solid #999999;
       font-size: 5vh;
-      background-color: #bbbbbb;
+      background-color: rgba($color: #ffffff, $alpha: 0.4);
+      box-shadow: 0 0 12px gray;
       text-align: center;
       align-items: center;
       p {
@@ -105,13 +99,13 @@
       }
     }
     .image {
+      width: 100px;
+      height: 100px;
+      padding: 3%;
+      border: 1px solid #999999;
+      border-radius: 5%;
       background-color: rgba($color: #ffffff, $alpha: 0.4);
       box-shadow: 0 0 12px gray;
-      border: 1px solid #999999;
-      padding: 1vh 1vw;
-      border-radius: 5%;
-      height: 10vh;
-      width: 100%;
       background-size: cover;
       background-position: center center;
     }

@@ -27,8 +27,7 @@
                   <div class="Follow-info__leftSide">
                     <div class="Follow-info__leftSide__Image">
                     <% if @user.image.url.present? %>
-                      <div class='image' style="background-image: url(<%= user.image %>);">
-                      </div>
+                      <%= image_tag user.image.url, class:'image' %>
                     <% else %>
                       <div class="NoImage">
                         <i class="fas fa-user-alt"></i>
@@ -38,7 +37,7 @@
                     </div>
                     <div class="Follow-info__leftSide__FollowDetail">
                       <div class="Follow-info__leftSide__FollowDetail__username">
-                        <p><%= link_to user.name, "/users/#{user.id}", class:"Follow-info__leftSide__FollowDetail__username__name" %></p>
+                        <%= link_to user.name, "/users/#{user.id}", class:"Follow-info__leftSide__FollowDetail__username__name" %>
                       </div>
                       <div class="Follow-info__leftSide__FollowDetail__Prefecture">
                         <i class="fas fa-map-marker-alt"></i>
@@ -75,8 +74,7 @@
                   <div class="Follow-info__leftSide">
                     <div class="Follow-info__leftSide__Image">
                     <% if @user.image.url.present? %>
-                      <div class='image' style="background-image: url(<%= user.image %>);">
-                      </div>
+                      <%= image_tag user.image.url, class:'image' %>
                     <% else %>
                       <div class="NoImage">
                         <i class="fas fa-user-alt"></i>
@@ -111,6 +109,8 @@
                   </div>
                 </div>
               <% end %>
+            <% else %>
+              <p>フォロワーがいません</p>
             <% end %>
           </li>
         </ul>

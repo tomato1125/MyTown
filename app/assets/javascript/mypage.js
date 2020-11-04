@@ -16,21 +16,21 @@ $(function() {
 });
 
 //follow・followerモーダル画面//=================================================================
-// $(function() {
-//   let tabs = $(".follow-nav");
+$(function() {
+  let tabs = $(".follow-nav");
 
-//   function tabSwitch() {
-//     $(".active").removeClass("active");
+  function tabSwitch() {
+    $(".active").removeClass("active");
 
-//     $(this).addClass("active");
+    $(this).addClass("active");
 
-//     const index = tabs.index(this);
+    const index = tabs.index(this);
 
-//     $(".FollowPage").removeClass("show").eq(index).addClass("show");
-//   }
+    $(".FollowPage").removeClass("show").eq(index).addClass("show");
+  }
 
-//   tabs.click(tabSwitch);
-// });
+  tabs.click(tabSwitch);
+});
 
 // カテゴリー別投稿数のグラフ====================================================================================
 $(function() {
