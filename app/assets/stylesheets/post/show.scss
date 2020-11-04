@@ -261,13 +261,13 @@
   }
 }
 
-.DeleteModalButton {
+.deleteModalButton {
   width: 500px;
   height: 2vh;
   display: flex;
   justify-content: center;
 }
-.delete-btn {
+.deleteBtn {
   display: inline-block;
   text-align: center;
   align-items: center;
@@ -288,17 +288,17 @@
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.delete-btn:hover {
+.deleteBtn:hover {
   text-decoration: none;
   color: #ffffff;
   background-color: rgba($color: #ff0000, $alpha: 0.5);
 }
 
-.ReturnBtn {
+.returnBtn {
   color: #4682b4;
   cursor: pointer;
 }
-.ReturnBtn:hover {
+.returnBtn:hover {
   color: #1e90ff;
 }
 
@@ -332,7 +332,7 @@
     width: 100%;
   }
 
-  .CategoryIndexFavorite {
+  .categoryIndexFavorite {
     position: absolute;
     top: 5px;
     right: 5px;
@@ -347,14 +347,14 @@
     width: 4vw;
     margin: 5px 0 0 5px;
   }
-  .ClipedCount {
+  .clipedCount {
     margin-left: 1vw;
   }
-  .ClipButton {
+  .clipButton {
     width: 0;
   }
 
-  .PostImagesShow {
+  .postImagesShow {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -367,11 +367,11 @@
     }
   }
 
-  .PostDescription {
+  .postDescription {
     width: 100%;
   }
 
-  .bookmark-btn {
+  .bookmarkBtn {
     display: flex;
     justify-content: flex-end;
   }
@@ -384,14 +384,14 @@
     }
   }
 
-  .GoogleMapShow {
+  .googleMapShow {
     padding: 0;
   }
   .maptitleName {
     font-size: 20px;
   }
 
-  .CommentForm {
+  .commentForm {
     &__textbox {
       width: 100vw;
     }
