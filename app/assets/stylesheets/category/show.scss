@@ -1,4 +1,4 @@
-.NewPostMessage {
+.newPostMessage {
   background-color: #222222;
   height: 50px;
   display: flex;
@@ -13,7 +13,7 @@
   }
 }
 
-.CategoryPostIndex {
+.categoryPostIndex {
   width: 100%;
   padding: 50px 50px;
   display: flex;
@@ -24,21 +24,21 @@
   background-position: center center;
 }
 
-.CategoryNewPost {
+.categoryNewPost {
   height: 60vh;
   width: 50vw;
   padding: 50px 50px;
   margin: 5vh auto;
   display: flex;
   flex-direction: column;
-  border: 1px solid #4682B4;
+  border: 1px solid #4682b4;
   border-radius: 10px;
   position: relative;
   &:hover {
     border-radius: 10px;
-    border: 1px solid #00BFFF;
+    border: 1px solid #00bfff;
     background-color: rgba($color: #fff, $alpha: 0.05);
-    transition: all  0.3s ease;
+    transition: all 0.3s ease;
   }
   .showlink {
     position: absolute;
@@ -50,14 +50,14 @@
   }
 }
 
-.IndexUserInfomation {
+.indexUserInfomation {
   height: auto;
   width: auto;
   display: flex;
   align-items: center;
   text-align: center;
   a {
-    color: #4682B4;
+    color: #4682b4;
   }
   &__userAvater {
     height: 50px;
@@ -76,32 +76,32 @@
   &__username {
     width: auto;
     font-size: 2.5vh;
-    color: #4682B4;
+    color: #4682b4;
     margin-left: 5px;
     display: inline-block;
     z-index: 3;
-    :hover{
-      color: #00BFFF;
-      transition: all  0.3s ease;
+    :hover {
+      color: #00bfff;
+      transition: all 0.3s ease;
     }
   }
   &__date {
     width: auto;
     font-size: 12px;
-    color: #4682B4;
+    color: #4682b4;
     margin-left: 20px;
     display: inline-block;
   }
 }
 
-.CategoryPostTitle {
+.categoryPostTitle {
   width: auto;
   font-size: 20px;
-  margin: 1.0vh;
+  margin: 1vh;
   color: #ffffff;
 }
 
-.CategoryPostImage {
+.categoryPostImage {
   border: 1px solid #000000;
   height: 100%;
   width: 100%;
@@ -111,17 +111,17 @@
   z-index: 1;
 }
 
-.CategoryPostImage:hover + .CategoryPostIndex{
+.categoryPostImage:hover + .CategoryPostIndex {
   border-radius: 10px;
-  border: 1px solid #00BFFF;
-  transition: all  0.3s ease;
+  border: 1px solid #00bfff;
+  transition: all 0.3s ease;
 }
 
-.CategoryAreaInfomation {
+.categoryAreaInfomation {
   position: absolute;
   top: 5px;
   left: 5px;
-  background-color: rgba($color: #000000, $alpha: 0.40);
+  background-color: rgba($color: #000000, $alpha: 0.4);
   border: #ffffff;
   border-radius: 20px;
   color: #ffffff;
@@ -133,21 +133,21 @@
   margin: 5px 0 0 5px;
 }
 
-.CategoryUserIcon {
+.categoryUserIcon {
   font-size: 2vh;
   color: #ffffff;
 }
 
-.CategoryAreaName {
+.categoryAreaName {
   font-size: 1.5vh;
   margin-left: 6px;
 }
 
-.CategoryIndexFavorite {
+.categoryIndexFavorite {
   position: absolute;
   top: 5px;
   right: 5px;
-  background-color: rgba($color: #000000, $alpha: 0.40);
+  background-color: rgba($color: #000000, $alpha: 0.4);
   border: #ffffff;
   border-radius: 20px;
   color: #ffffff;
@@ -159,18 +159,17 @@
   margin: 5px 0 0 5px;
 }
 
-.ClipedCount {
+.clipedCount {
   margin-left: 0.5vw;
 }
 
-.ClipButton {
+.clipButton {
   width: 0;
 }
 
-
-//レスポンシブ対応//
+////////////////////////////////レスポンシブ対応//////////////////////////////
 @media (max-width: 700px) {
-  .NewPostMessage {
+  .newPostMessage {
     font-size: 2vh;
     background-color: #222222;
     display: flex;
@@ -178,11 +177,11 @@
     align-items: center;
     &__heading {
       font-size: 2vh;
-      color: #FFFFFF;
+      color: #ffffff;
     }
   }
-  
-  .CategoryPostIndex {
+
+  .categoryPostIndex {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -190,21 +189,21 @@
     background-color: #222222;
     padding: 1vh 1vw;
   }
-  
-  .CategoryNewPost {
+
+  .categoryNewPost {
     height: 50vh;
     width: auto;
     display: flex;
     flex-direction: column;
-    border: 1px solid #4682B4;
+    border: 1px solid #4682b4;
     background-color: #222222;
     border-radius: 10px;
     margin: 2vh 0;
     &:hover {
       border-radius: 10px;
-      border: 1px solid #00BFFF;
+      border: 1px solid #00bfff;
       background-color: rgba($color: #fff, $alpha: 0.05);
-      transition: all  0.3s ease;
+      transition: all 0.3s ease;
     }
     .showlink {
       position: absolute;
@@ -215,22 +214,21 @@
       z-index: 2;
     }
   }
-  
-  .IndexUserInfomation {
+
+  .indexUserInfomation {
     height: auto;
     width: auto;
     display: flex;
     align-items: center;
     text-align: center;
     a {
-      color: #4682B4;
+      color: #4682b4;
     }
     &__userAvater {
       height: 50px;
       width: auto;
       font-size: 40px;
       color: #ffffff;
-      background-color: #222222;
       display: inline-block;
       .Avater {
         height: 50px;
@@ -240,31 +238,30 @@
     }
     &__username {
       width: auto;
-      font-size: 25px;
-      color: #4682B4;
+      font-size: 15px;
+      color: #4682b4;
       margin-left: 5px;
       display: inline-block;
-      :hover{
-        color: #00BFFF;
-        transition: all  0.3s ease;
+      :hover {
+        color: #00bfff;
+        transition: all 0.3s ease;
       }
     }
     &__date {
       width: auto;
       font-size: 12px;
-      color: #4682B4;
+      color: #4682b4;
       margin-left: 20px;
       display: inline-block;
     }
   }
-  
-  .CategoryPostTitle {
+
+  .categoryPostTitle {
     width: auto;
     font-size: 2vh;
-    background-color: #222222;
     color: #ffffff;
   }
-  .CategoryPostImage {
+  .categoryPostImage {
     border: 1px solid #000000;
     height: 100%;
     width: 100%;
@@ -274,17 +271,17 @@
     background-position: center center;
     position: relative;
   }
-  .CategoryPostImage:hover + .CategoryPostIndex{
+  .categoryPostImage:hover + .categoryPostIndex {
     border-radius: 10px;
-    border: 1px solid #00BFFF;
-    transition: all  0.3s ease;
+    border: 1px solid #00bfff;
+    transition: all 0.3s ease;
   }
-  
-  .CategoryAreaInfomation {
+
+  .categoryAreaInfomation {
     position: absolute;
     top: 5px;
     left: 5px;
-    background-color: rgba($color: #000000, $alpha: 0.40);
+    background-color: rgba($color: #000000, $alpha: 0.4);
     border: #ffffff;
     border-radius: 20px;
     color: #ffffff;
@@ -295,22 +292,22 @@
     width: 15vw;
     margin: 5px 0 0 5px;
   }
-  
-  .CategoryUserIcon {
+
+  .categoryUserIcon {
     font-size: 2vh;
     color: #ffffff;
   }
-  
-  .CategoryAreaName {
+
+  .categoryAreaName {
     font-size: 1vh;
     margin-left: 6px;
   }
-  
-  .CategoryIndexFavorite {
+
+  .categoryIndexFavorite {
     position: absolute;
     top: 5px;
     right: 5px;
-    background-color: rgba($color: #000000, $alpha: 0.40);
+    background-color: rgba($color: #000000, $alpha: 0.4);
     border: #ffffff;
     border-radius: 20px;
     color: #ffffff;

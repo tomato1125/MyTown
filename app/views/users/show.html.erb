@@ -172,26 +172,26 @@
               <% @posts.each do |post| %>
                 <div class='mypage-NewPost'>
                 <%= link_to '', post_path(post.id), class: "showlink", method: :get %>
-                  <div class="CategoryPostTitle">
+                  <div class="categoryPostTitle">
                     <span>~ <%= post.title %> ~</span>
-                    <div class='CategoryPostDate'>
+                    <div class='categoryPostDate'>
                       <i class="far fa-clock"></i>
                       <span class="postTime"><%= time_ago_in_words(post.created_at) %>前</span>
                     </div>
                   </div>
-                  <div class='CategoryPostImage' style="background-image: url(<%= post.images[0].image %>);">
+                  <div class='categoryPostImage' style="background-image: url(<%= post.images[0].image %>);">
         
-                    <div class="CategoryAreaInfomation">
-                      <div class="CategoryAreaIcon">
+                    <div class="categoryAreaInfomation">
+                      <div class="categoryAreaIcon">
                         <i class="fas fa-map-marker-alt"></i>
                       </div>
-                      <div class="CategoryAreaName">
+                      <div class="categoryAreaName">
                         <%= post.prefecture.name if post.prefecture_id? %>
                       </div>
                     </div>
-                    <div class="CateogryIndexFavorite">
+                    <div class="cateogryIndexFavorite">
                       <i class="far fa-bookmark"></i>
-                      <div class="ClipedCount">
+                      <div class="clipedCount">
                         <%= post.cliped_users.count %>
                       </div>
                     </div>
@@ -201,6 +201,7 @@
             </div>
           <% end %>
         </li>
+        <%# Bookmarkページ %>
         <li class="page">
           <% if @user.cliped_posts.length == 0 %>
             <div class="post-page__sentence">
@@ -214,35 +215,35 @@
               <% @user.cliped_posts.each do |post| %>
                 <div class='mypage-NewPost'>
                 <%= link_to '', post_path(post.id), class: "showlink", method: :get %>
-                  <div class='IndexUserInfomation'>
-                    <div class='IndexUserInfomation__userAvater'>
+                  <div class='indexUserInfomation'>
+                    <div class='indexUserInfomation__userAvater'>
                       <%= image_tag post.user.image.url, class: "avater" %>
                     </div>
-                    <span class='IndexUserInfomation__username'>
+                    <span class='indexUserInfomation__username'>
                       <a href="/users/<%= post.user.id %>">
                         <%= post.user.name %>
                       </a>
                     </span>
-                    <div class='IndexUserInfomation__date'>
+                    <div class='indexUserInfomation__date'>
                       <i class="far fa-clock"></i>
                       <span><%= time_ago_in_words(post.created_at) %>前</span>
                     </div>
                   </div>
-                  <div class="CategoryPostTitle">
+                  <div class="categoryPostTitle">
                     <span>~ <%= post.title %> ~</span>
                   </div>
-                  <div class='CategoryPostImage' style="background-image: url(<%= post.images[0].image %>);">
-                    <div class="CategoryAreaInfomation">
-                      <div class="CategoryAreaIcon">
+                  <div class='categoryPostImage' style="background-image: url(<%= post.images[0].image %>);">
+                    <div class="categoryAreaInfomation">
+                      <div class="categoryAreaIcon">
                         <i class="fas fa-map-marker-alt"></i>
                       </div>
-                      <div class="CategoryAreaName">
+                      <div class="categoryAreaName">
                         <%= post.prefecture.name if post.prefecture_id? %>
                       </div>
                     </div>
-                    <div class="CategoryIndexFavorite">
+                    <div class="categoryIndexFavorite">
                       <i class="far fa-bookmark"></i>
-                      <div class="ClipedCount">
+                      <div class="clipedCount">
                         <%= post.clips.count %>
                       </div>
                     </div>

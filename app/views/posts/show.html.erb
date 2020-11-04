@@ -59,11 +59,11 @@
     <div class='bookmarkBtn'>
       <% if current_user.already_cliped?(@post) %>
         <%= link_to post_clip_path(@post), method: :delete do%>
-          <i class="fas fa-bookmark"></i> Bookmarkを解除
+          <i class="fas fa-bookmark showBookmarkIcon1">Bookmarkを解除</i>
         <% end %>
       <% else %>
         <%= link_to post_clips_path(@post), method: :post do%>
-          <i class="far fa-bookmark"> Bookmarkに登録</i>
+          <i class="far fa-bookmark showBookmarkIcon2"> Bookmarkに登録</i>
         <% end %>
       <% end %>
     </div>

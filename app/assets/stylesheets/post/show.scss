@@ -108,15 +108,13 @@
 //投稿の編集・削除ボタン（投稿者のみ表示）=======================================
 .showButtons {
   display: flex;
-  // justify-content: space-around;
-  // width: 100vw;
   margin-bottom: 1vh;
 }
 
 .showPostEditBtn {
   color: #ffffff;
-  height: 20px;
-  width: 10vw;
+  height: 25px;
+  width: 70px;
   margin: 0.5vh 0;
   border-radius: 20px;
   background-color: #4682b4;
@@ -139,8 +137,8 @@
 // 削除ボタン //
 .showPostDeleteBtn {
   color: #ffffff;
-  height: 20px;
-  width: 90px;
+  height: 25px;
+  width: 70px;
   margin: 0.5vh 0;
   border-radius: 20px;
   background-color: #cc0000;
@@ -161,9 +159,21 @@
 .bookmarkBtn {
   color: #ffffff;
   border-radius: 10%;
-  .bookmarkBtn:hover {
-    color: #00bfff;
-  }
+  margin-top: 2vh;
+}
+
+.showBookmarkIcon1 {
+  font-size: 20px;
+}
+.showBookmarkIcon1:hover {
+  color: #00bfff;
+}
+
+.showBookmarkIcon2 {
+  font-size: 20px;
+}
+.showBookmarkIcon2:hover {
+  color: #00bfff;
 }
 
 // SNSシェアボタン============================================================
