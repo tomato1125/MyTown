@@ -35,7 +35,7 @@ ul.follow-nav-bar li .active {
 }
 
 .followpages {
-  width: 45vw;
+  width: 85vw;
   background-color: rgba($color: #222222, $alpha: 0.4);
   padding: 2vh;
 }
@@ -78,9 +78,12 @@ ul.follow-nav-bar li .active {
   }
   &__leftSide {
     display: flex;
-    width: 80%;
+    // width: 80%;
     height: 100%;
     &__Image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       .image {
         width: 100px;
         height: 100px;
@@ -114,7 +117,7 @@ ul.follow-nav-bar li .active {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 5vw;
+        width: auto;
         margin-right: 1vw;
         p {
           color: #ffffff;
@@ -125,7 +128,7 @@ ul.follow-nav-bar li .active {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 10vw;
+        width: auto;
         p {
           color: #ffffff;
           font-size: 1.5vh;
@@ -140,20 +143,6 @@ ul.follow-nav-bar li .active {
     height: auto;
     font-size: 1vw;
     z-index: 10;
-    .Rerationship-Off {
-      color: #ffffff;
-      height: 2vh;
-      width: 7vw;
-      border-radius: 20px;
-      background-color: #ee0000;
-      border: none;
-      box-shadow: 0 0 8px gray;
-      font-size: 1vh;
-      -webkit-transition: all 0.3s ease;
-      -moz-transition: all 0.3s ease;
-      -o-transition: all 0.3s ease;
-      transition: all 0.3s ease;
-    }
     .Rerationship-On {
       color: #ffffff;
       height: 2.5vh;
@@ -172,16 +161,12 @@ ul.follow-nav-bar li .active {
   }
 }
 
-.Follow-info__rightSide__Rerationship-Off:hover {
-  background-color: rgba($color: #ee0000, $alpha: 0.6);
-}
-
-.Follow-info__rightSide__Rerationship-On:hover {
+.Rerationship-On:hover {
   background-color: rgba($color: #00bfff, $alpha: 0.6);
 }
 
 .Follow-info__leftSide__FollowDetail__username__name:hover {
-  color: #1e90ff;
+  color: #00bfff;
   text-decoration: none;
 }
 
@@ -194,27 +179,75 @@ ul.follow-nav-bar li .active {
     padding: 2vh;
   }
 
-  .Follow-info__leftSide {
+  // .Follow-info__leftSide {
+  //   display: flex;
+  //   width: auto;
+  //   height: 100%;
+  // }
+
+  // .Follow-info__leftSide__Image {
+  //   width: 80px;
+  //   height: 80px;
+  // }
+
+  // .image {
+  //   width: 50px;
+  //   height: 50px;
+  //   padding: 3%;
+  //   border: 1px solid #999999;
+  //   border-radius: 5%;
+  //   background-color: rgba($color: #ffffff, $alpha: 0.4);
+  //   box-shadow: 0 0 12px gray;
+  //   background-size: cover;
+  //   background-position: center center;
+  // }
+
+  .Follow-info {
     display: flex;
-    width: auto;
-    height: 100%;
-  }
-
-  .Follow-info__leftSide__Image {
-    width: 80px;
-    height: 80px;
-  }
-
-  .image {
-    width: 50px;
-    height: 50px;
-    padding: 3%;
-    border: 1px solid #999999;
-    border-radius: 5%;
-    background-color: rgba($color: #ffffff, $alpha: 0.4);
-    box-shadow: 0 0 12px gray;
-    background-size: cover;
-    background-position: center center;
+    justify-content: space-between;
+    align-items: center;
+    height: 12vh;
+    width: 100%;
+    border: 1px solid #4682b4;
+    border-radius: 8px;
+    padding: 1vh 1vw;
+    margin: 2vh 0;
+    position: relative;
+    &:hover {
+      border-radius: 8px;
+      border: 1px solid #00bfff;
+      background-color: rgba($color: #fff, $alpha: 0.06);
+      transition: all 0.3s ease;
+    }
+    .followslink {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 3;
+    }
+    &__leftSide {
+      display: flex;
+      width: 80%;
+      height: 100%;
+      &__Image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .image {
+          width: 60px;
+          height: 60px;
+          padding: 3%;
+          border: 1px solid #999999;
+          border-radius: 5%;
+          background-color: rgba($color: #ffffff, $alpha: 0.4);
+          box-shadow: 0 0 12px gray;
+          background-size: cover;
+          background-position: center center;
+        }
+      }
+    }
   }
 
   .Follow-info__leftSide__FollowDetail {

@@ -1,9 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :set_user
-  # before_action :user_params
-
-  # def index
-  # end
+  before_action :move_to_index
 
   def show
     @user = User.find(params[:id])
@@ -174,6 +170,13 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:name, :email, :image, :introduce, :prefecture_id)
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to :root
+      flash[:alert] = "ログイン・新規登録してご利用ください"
+    end
   end
 
 end
