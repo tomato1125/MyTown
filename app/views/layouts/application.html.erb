@@ -19,14 +19,14 @@
 
   <body>
     <header class="header">
-      <%# フラッシュメッセージ %>
-      <%= render 'layouts/notifications' %>
       <%# トップページとその他のページでヘッダー表示を変更する %>
       <% if request.path == '/' %>
         <%= render partial: "layouts/root_header" %>
       <% else %>
         <%= render partial: "layouts/header" %>
       <% end %>
+      <%# フラッシュメッセージ %>
+      <%= render 'layouts/notifications' %>
     </header>
 
     <%= yield %>
