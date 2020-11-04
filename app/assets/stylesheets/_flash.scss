@@ -1,15 +1,16 @@
 #notification {
   width: 100vw;
-  height: 1vh;
+  height: 1.25vh;
   z-index: 9999;
   .notice {
-    background-color: #38AEF0;
+    background-color: #38aef0;
     color: #fff;
+    font-size: 0.4em;
     text-align: center;
   }
 
   .alert {
-    background-color: #F35500;
+    background-color: #f35500;
     color: #fff;
     text-align: center;
     margin: 0;
