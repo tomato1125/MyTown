@@ -312,6 +312,11 @@
     margin-top: 50px;
     height: auto;
   }
+  .formArea {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
   .inputArea {
     height: auto;
     flex-direction: column;

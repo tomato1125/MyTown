@@ -31,11 +31,50 @@ class PostsController < ApplicationController
     @lng = @post.spot.longitude
     gon.lat = @lat
     gon.lng = @lng
+    if current_user.id !=@post.user_id
+      flash.now[:alert] = "編集は投稿者しかできません"
+      render :show
+    end
   end
+
+  # def update
+  #   post = Post.find(params[:id])
+  #   post.update(post_params)
+  # end
+
+  # def edit
+  #   @item = Item.find(params[:id])
+  #   set_category_sellector
+  #   if current_user.id != @item.seller_id
+  #     flash.now[:alert] = "編集は出品者しかできません"
+  #     set_category
+  #     render :show
+  #   end
+  # end
 
   def update
     post = Post.find(params[:id])
-    post.update(post_params)
+    if current_user.id != post.user_id
+      flash.now[:alert] = "編集は出品者しかできません"
+      render :edit and return
+    end
+    length = post.images.length
+    i = 0
+    while i < length do
+      if  post_update_params[:images_attributes]["#{i}"]["_destroy"] == "0"
+        post.update(post_update_params)
+        redirect_to post_path(post.id), notice: "編集が完了しました"
+        return
+      else
+        i += 1
+      end
+    end
+    if post_update_params[:images_attributes]["#{i}"]
+      post.update(post_update_params)
+      redirect_to post_path(post.id), notice: "編集が完了しました"
+    end
+    redirect_to edit_post_path(post.id), alert: "画像は１枚以上挿入してください"
+    return
   end
 
   def show
@@ -69,11 +108,9 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :content, :prefecture_id, :category_id, spot_attributes: [:id, :address, :latitude, :longitude], images_attributes: [:id, :image, :_destroy]).merge(user_id: current_user.id)
   end
 
-  # def set_post_info
-  #   if params[:id].present? 
-  #     @post = Post.find(params[:id])
-  #   end
-  # end
+  def post_update_params
+    params.require(:post).permit(:title, :content, :prefecture_id, :category_id, spot_attributes: [:id, :address, :latitude, :longitude], images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
+  end
 
   def move_to_index
     unless user_signed_in?
