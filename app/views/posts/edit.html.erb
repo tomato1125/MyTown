@@ -19,12 +19,39 @@
               <label class="labelName" for="titleSpace">Title：</label>
               <%= form.text_field :title, class: 'title__input', placeholder: "タイトルを入力してください" %>
             </li>
-            <li class='image'>
-              <label class="labelName" for="imageSpace">Photo：</label>
-              <%= form.file_field :image, class: 'image_input', placeholder: "写真を選択してください" %>
-            </li>
-              <div class="prevImageBox">
-              </div>
+            <li class="newImage">
+              <label class="imageLabelName" for="imageSpace">Photo：</label>
+              <div class="prevContent">
+              <% @post.images.each_with_index do |image, i| %>
+                <div class="previewBox">
+                  <div class="upperBox">
+                    <%= image_tag image.image.url %>
+                  </div>
+                  <div class="lowerBox">
+                    <div class="deleteBox">
+                      <%# <div class="imageDeleteBtn" data-delete-id= ${id}>削除</div> %>
+                      <div class="imageDeleteBtn", data-delete-id= <%= i %>>削除</div>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+            <div class="labelContent">
+              <label for="images_attributes_<%= @post.images.length %>_image", class="labelBox" %>
+                <div class="labelBox__text-visible">
+                  クリックしてファイルをアップロード（最大５枚）
+                </div>
+              </label>
+            </div>
+            <div class="hiddenContent">
+              <% form.fields_for :images do |i| %>
+                <%= i.file_field :image, class:"hiddenField" %>
+                <%= i.check_box :_destroy, class:"hiddenField" %>
+              <% end %>
+              <% @post.images.length.upto(4) do |i| %>
+                <input class="hiddenField" id="post_images_attributes_<%= i %>_image" name="post[images_attributes][<%= i %>][image]" type="file">
+              <% end %>
+            </div>
             <li class='content'>
               <label class="labelName" for="contentSpace">Content：</label>
               <%= form.text_area :content, class: 'content__input', placeholder: "コメントを入力してください" %>
