@@ -68,7 +68,7 @@
       <div id="bargermenu-btn" class="bargermenu-closebtn">
         <i class="far fa-times-circle"></i>
       </div>
-      <%# ログイン時のメニュー一覧 %>
+      <%# スマートフォン時のバーガーメニューログイン時のメニュー一覧 %>
       <% if user_signed_in? %>
         <div class="menus">
           <div class="loginUser">
@@ -89,6 +89,15 @@
             <li>
               <i class="fas fa-plus-square"></i>
               <%= link_to  "投稿する", new_post_path, class: "menuItem" %>
+            </li>
+            <li>
+              <i class="fas fa-bell"></i>
+              <%= link_to  "お知らせ", notifications_path, class: "menuItem" %>
+              <% if unchecked_notifications.any? %>
+                <span class="headerBellIcon__stack-count">
+                  <%= unchecked_notifications.count %>
+                </span>
+              <% end %>
             </li>
             <li>
               <i class="fas fa-sign-out-alt"></i>
