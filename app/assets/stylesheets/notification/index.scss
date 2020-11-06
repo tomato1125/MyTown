@@ -34,8 +34,8 @@
 }
 
 .notificationAvater {
-  height: 3vh;
-  width: 3vw;
+  height: 35px;
+  width: 35px;
   border-radius: 50%;
 }
 
@@ -51,7 +51,7 @@
 
 @media screen and (max-width: 900px) {
   .roomsTitle {
-    font-size: 2vw;
+    font-size: 25px;
   }
   .notifications {
     width: 100vw;
