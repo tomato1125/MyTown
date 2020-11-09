@@ -25,7 +25,6 @@
   border: 1px solid #000000;
   margin-top: 10px;
   height: 40vh;
-  color: #000000;
   border-radius: 20px;
   background-size: cover;
   background-position: center center;
@@ -83,13 +82,15 @@
 }
 
 // 投稿画像一覧（横並びで最大５枚まで表示）=======================================
-.postImagesShow {
+.subImagesShow {
   display: flex;
   height: 10vh;
-  width: 20vw;
+  // width: 20vw;
   .subImage {
-    width: 8vw;
+    width: 10vw;
     height: 10vh;
+    background-size: cover;
+    background-position: center center;
   }
 }
 
@@ -327,7 +328,7 @@
 
 // /////////////////////////レスポンシブ対応//////////////////////////////////////////
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1100px) {
   .postShow {
     display: flex;
     flex-direction: column;
@@ -364,7 +365,7 @@
     width: 0;
   }
 
-  .postImagesShow {
+  .subImagesShow {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -390,8 +391,18 @@
     display: flex;
     justify-content: flex-end;
     &__btn {
-      margin: 0 1vw;
+      margin: 1vh 3vw;
     }
+  }
+
+  .sns1 {
+    color: #005fff;
+  }
+  .sns2 {
+    color: #0099ff;
+  }
+  .sns3 {
+    color: #00ff33;
   }
 
   .googleMapShow {
