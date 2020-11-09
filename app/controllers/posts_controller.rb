@@ -79,6 +79,9 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @postImages = @post.images
+    @images = []
+    @images << @postImages
     @clip = Clip.new
     @lat = @post.spot.latitude
     @lng = @post.spot.longitude
