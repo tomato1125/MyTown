@@ -6,6 +6,7 @@
     </div>
     <%# 投稿トップ画像 %>
     <div class='showPostImage', id='change_image', style="background-image: url(<%= @post.images[0].image%>);">
+    <%# <%= image_tag @post.images[0].image, class:"showPostImage", id:"mainImage"%>
       <%# 都道府県名とアイコン %>
       <div class="showAreaInfomation">
         <div class="showUserIcon">
@@ -39,9 +40,8 @@
     <%# 投稿画像一覧（最大５枚） %>
     <ul class="postImagesShow">
       <% @post.images.each_with_index do |image, i| %>
-        <li>
-          <%= image_tag image.image.url, class: "subImage"%>
-        <li>
+        
+        <div class='subImage', style="background-image: url(<%= @post.images[i].image%>);">
       <% end %>
     </ul>
     <%# 投稿のコメント部分 %>
