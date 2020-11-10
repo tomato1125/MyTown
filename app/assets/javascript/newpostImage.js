@@ -99,3 +99,14 @@ $(function(){
     setLabel(count);
   });
 });
+
+
+// 送信中のloading画面の機能============================================================================
+
+$(function() {
+  $("form").on('submit', function(){
+      $.LoadingOverlay("show", {
+        text :"Sending..."
+      });
+  });
+});

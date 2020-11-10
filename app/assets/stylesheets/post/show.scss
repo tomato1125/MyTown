@@ -14,6 +14,13 @@
   flex-direction: column;
 }
 
+.showPostContainer {
+  width: 50vw;
+  padding: 50px 50px;
+  display: flex;
+  flex-direction: column;
+}
+
 // 投稿タイトル=============================================================
 .showPostTitle {
   font-size: 20px;
@@ -21,7 +28,7 @@
 }
 
 // 投稿トップ画像===========================================================
-.showPostImage {
+.imagesContainer {
   border: 1px solid #000000;
   margin-top: 10px;
   height: 40vh;
@@ -77,12 +84,8 @@
   margin-left: 0.5vw;
 }
 
-.clipButton {
-  width: 0;
-}
-
 // 投稿画像一覧（横並びで最大５枚まで表示）=======================================
-.subImagesShow {
+.subImagesContainer {
   display: flex;
   height: 10vh;
   .subImage {
@@ -364,7 +367,7 @@
     width: 0;
   }
 
-  .subImagesShow {
+  .subImagesContainer {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
