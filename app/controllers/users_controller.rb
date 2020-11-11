@@ -6,13 +6,13 @@ class UsersController < ApplicationController
     @relationship = current_user.relationships.find_by(follow_id: @user.id)  
     @set_relationship = current_user.relationships.new
     @name = @user.name
-    # @posts = @user.posts.order("created_at DESC").limit(5)
     @posts = @user.posts.page(params[:page]).per(5).order("created_at DESC")
+    @bookmarks = @user.cliped_posts.page(params[:page]).per(5).order("created_at DESC")
     respond_to do |format|
       format.html
       format.js
     end
-    @favorite = @posts.where(category_id: 0).count
+    # @favorite = @posts.where(category_id: 0).count
     @image = @user.image
     @introduce = @user.introduce
     @prefecture = @user.prefecture.name
