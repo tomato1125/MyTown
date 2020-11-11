@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
+  # ゲストログイン用の記述
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
   end
@@ -12,6 +13,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :new, :edit, :create, :update] do
     get :followings, on: :member
     get :followers, on: :member
+    get :mypagePosts, on: :collection
   end
 
   resources :relationships, only: [:create, :destroy]

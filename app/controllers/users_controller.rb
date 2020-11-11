@@ -6,7 +6,12 @@ class UsersController < ApplicationController
     @relationship = current_user.relationships.find_by(follow_id: @user.id)  
     @set_relationship = current_user.relationships.new
     @name = @user.name
-    @posts = @user.posts.order("created_at DESC")
+    # @posts = @user.posts.order("created_at DESC").limit(5)
+    @posts = @user.posts.page(params[:page]).per(5).order("created_at DESC")
+    respond_to do |format|
+      format.html
+      format.js
+    end
     @favorite = @posts.where(category_id: 0).count
     @image = @user.image
     @introduce = @user.introduce
@@ -33,7 +38,7 @@ class UsersController < ApplicationController
       end
     end
     
-    # チャートグラフ(カテゴリー別）用のインスタンス
+    # チャートグラフ(カテゴリー別）用データのインスタンス
     @favorite = @posts.where(category_id: 0).count
     @food = @posts.where(category_id: 1).count
     @shopping = @posts.where(category_id: 2).count
@@ -138,8 +143,6 @@ class UsersController < ApplicationController
     gon.prefecture44 = @prefecture44
     gon.prefecture45 = @prefecture45
     gon.prefecture46 = @prefecture46
-
-    
   end
 
   def edit
