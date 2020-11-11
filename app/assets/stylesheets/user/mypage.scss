@@ -413,9 +413,15 @@ ul.user-nav-bar li .active {
 }
 
 // 各投稿の枠
+#mypostPagenate {
+  width: 100%;
+}
+#mybookmarkPagenate {
+  width: 100%;
+}
 .mypage-NewPost {
   height: 50vh;
-  width: 50vw;
+  width: 100%;
   padding: 5vh 5vw;
   margin: 5vh auto;
   display: flex;
@@ -512,7 +518,7 @@ ul.user-nav-bar li .active {
   justify-content: center;
   align-items: center;
   height: 3vh;
-  width: 10vw;
+  width: 5vw;
   margin: 5px 0 0 5px;
 }
 
