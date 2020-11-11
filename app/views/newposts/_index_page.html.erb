@@ -1,0 +1,39 @@
+<div class="PostIndex">
+  <% @posts.each do |post| %>
+    <div class='CategoryNewPost'>
+    <%= link_to '', post_path(post.id), class: "showlink", method: :get %>
+      <div class='IndexUserInfomation'>
+        <div class='IndexUserInfomation__userAvater'>
+          <%= image_tag post.user.image.url, class: "avater" %>
+        </div>
+        <span class='IndexUserInfomation__username'>
+          <a href="/users/<%= post.user.id %>">
+            <%= post.user.name %>
+          </a>
+        </span>
+        <div class='IndexUserInfomation__date'>
+          <span><%= time_ago_in_words(post.created_at) %>前</span>
+        </div>
+      </div>
+      <div class="CategoryPostTitle">
+        <span>~ <%= post.title %> ~</span>
+      </div>
+      <div class='CategoryPostImage' style="background-image: url(<%= post.images[0].image %>);">
+        <div class="AreaInfomation">
+          <div class="UserIcon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="AreaName">
+            <%= post.prefecture.name if post.prefecture_id? %>
+          </div>
+        </div>
+        <div class="indexFavorite">
+          <i class="far fa-bookmark"></i>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <div class="showpagenate">
+    <%= paginate @posts, remote: true %>
+  </div>
+</div>

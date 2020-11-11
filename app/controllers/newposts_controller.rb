@@ -1,7 +1,11 @@
 class NewpostsController < ApplicationController
-  PER = 3
   
   def index
-    @posts = Post.page(params[:page]).per(PER).order("created_at DESC")
+    @posts = Post.page(params[:page]).per(5).order("created_at DESC")
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 end
