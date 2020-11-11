@@ -10,7 +10,7 @@
     </div>
   <% else %>
     <div class="categoryPostIndex">
-      <% @prefectures.each do |post| %>
+      <% @prefecturePosts.each do |post| %>
         <div class='categoryNewPost'>
         <%= link_to '', post_path(post.id), class: "showLink", method: :get %>
           <div class='indexUserInfomation'>
@@ -48,6 +48,9 @@
           </div>
         </div>
       <% end %>
+      <div class="showpagenate">
+        <%= paginate @prefecturePosts %>
+      </div>
     </div>
   <% end %>
 </div>
