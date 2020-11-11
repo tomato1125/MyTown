@@ -105,8 +105,8 @@ $(function(){
 
 $(function() {
   $("form").on('submit', function(){
-      $.LoadingOverlay("show", {
-        text :"Sending..."
-      });
+    $.LoadingOverlay("show", {
+      text :"Sending..."
+    });
   });
 });
