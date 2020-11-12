@@ -188,11 +188,17 @@
   margin-right: 0.5vw;
 }
 
+.messageUserName {
+  width: auto;
+}
 .messageUserName:hover {
   color: #00bfff;
   text-decoration: none;
 }
-
+.messageText {
+  width: 70%;
+  margin-left: 5px;
+}
 .message span {
   margin-left: 1vw;
 }
@@ -253,7 +259,7 @@
       box-shadow: 0 0 12px gray;
     }
     &__name {
-      font-size: 1.5vh;
+      font-size: 20px;
     }
   }
 

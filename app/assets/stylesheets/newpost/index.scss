@@ -1,4 +1,4 @@
-.NewPostMessage {
+.newPostMessage {
   background-color: #222222;
   height: 50px;
   display: flex;
@@ -13,7 +13,7 @@
   }
 }
 
-.PostIndex {
+.postIndex {
   width: 100%;
   padding: 50px 50px;
   display: flex;
@@ -24,23 +24,23 @@
   background-position: center center;
 }
 
-.CategoryNewPost {
+.categoryNewPost {
   height: 60vh;
   width: 50vw;
   padding: 50px 50px;
   margin: 5vh auto;
   display: flex;
   flex-direction: column;
-  border: 1px solid #4682B4;
+  border: 1px solid #4682b4;
   border-radius: 10px;
   position: relative;
   &:hover {
     border-radius: 10px;
-    border: 1px solid #00BFFF;
+    border: 1px solid #00bfff;
     background-color: rgba($color: #fff, $alpha: 0.05);
-    transition: all  0.3s ease;
+    transition: all 0.3s ease;
   }
-  .showlink {
+  .showLink {
     position: absolute;
     top: 0;
     left: 0;
@@ -50,7 +50,7 @@
   }
 }
 
-.IndexUserInfomation {
+.indexUserInfomation {
   // background-color: #222222;
   height: auto;
   width: auto;
@@ -58,7 +58,7 @@
   align-items: center;
   text-align: center;
   a {
-    color: #4682B4;
+    color: #4682b4;
   }
   &__userAvater {
     height: 50px;
@@ -78,7 +78,7 @@
   &__username {
     width: auto;
     font-size: 25px;
-    color: #4682B4;
+    color: #4682b4;
     margin-left: 5px;
     display: inline-block;
     z-index: 3;
@@ -86,20 +86,20 @@
   &__date {
     width: auto;
     font-size: 12px;
-    color: #4682B4;
+    color: #4682b4;
     margin-left: 20px;
     display: inline-block;
   }
 }
 
-.CategoryPostTitle {
+.categoryPostTitle {
   width: auto;
   font-size: 20px;
-  margin: 1.0vh;
+  margin: 1vh;
   // background-color: #222222;
   color: #ffffff;
 }
-.CategoryPostImage {
+.categoryPostImage {
   border: 1px solid #000000;
   height: 100%;
   width: 100%;
@@ -110,17 +110,17 @@
   background-position: center center;
   z-index: 1;
 }
-.PostImage:hover + .PostIndex{
+.categoryPostImage:hover + .categoryPostIndex {
   border-radius: 10px;
-  border: 1px solid #00BFFF;
-  transition: all  0.3s ease;
+  border: 1px solid #00bfff;
+  transition: all 0.3s ease;
 }
 
-.AreaInfomation {
+.areaInfomation {
   position: absolute;
   top: 5px;
   left: 5px;
-  background-color: rgba($color: #000000, $alpha: 0.40);
+  background-color: rgba($color: #000000, $alpha: 0.4);
   border: #ffffff;
   border-radius: 20px;
   color: #ffffff;
@@ -132,11 +132,11 @@
   size: 11px;
   margin: 5px 0 0 5px;
 }
-.indexFavorite {
+.categoryIndexFavorite {
   position: absolute;
   top: 5px;
   right: 5px;
-  background-color: rgba($color: #000000, $alpha: 0.40);
+  background-color: rgba($color: #000000, $alpha: 0.4);
   border: #ffffff;
   border-radius: 20px;
   color: #ffffff;
@@ -149,20 +149,14 @@
   margin: 5px 0 0 5px;
 }
 
-.UserIcon {
+.cattegoryuserIcon {
   font-size: 20px;
   color: #ffffff;
 }
 
-.AreaName {
+.categoryAreaName {
   font-size: 15px;
   margin-left: 6px;
-}
-.PostDescription {
-  height: 70px;
-  width: 600px;
-  border: 1px solid #000000;
-  margin-top: 5px;
 }
 
 .showpagenate {

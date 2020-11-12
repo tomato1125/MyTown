@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5vw;
+  font-size: 20px;
 }
 
 .follow-nav-bar {
@@ -143,22 +143,23 @@ ul.follow-nav-bar li .active {
     height: auto;
     font-size: 1vw;
     z-index: 10;
-    .Rerationship-On {
-      color: #ffffff;
-      height: 2.5vh;
-      width: 80px;
-      border-radius: 20px;
-      background-color: #00bfff;
-      border: none;
-      box-shadow: 0 0 8px gray;
-      font-size: 0.7vw;
-      -webkit-transition: all 0.3s ease;
-      -moz-transition: all 0.3s ease;
-      -o-transition: all 0.3s ease;
-      transition: all 0.3s ease;
-      z-index: 20;
-    }
   }
+}
+
+.Rerationship-On {
+  color: #ffffff;
+  height: 30px;
+  width: 150px;
+  border-radius: 20px;
+  background-color: #00bfff;
+  border: none;
+  box-shadow: 0 0 8px gray;
+  font-size: 15px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  z-index: 20;
 }
 
 .Rerationship-On:hover {
@@ -173,34 +174,14 @@ ul.follow-nav-bar li .active {
 /////////////////////////レスポンシブ対応///////////////////////////////////////
 
 @media (max-width: 700px) {
+  .followModalTop {
+    font-size: 15px;
+  }
   .followpages {
     width: 100vw;
     background-color: rgba($color: #222222, $alpha: 0.4);
     padding: 2vh;
   }
-
-  // .Follow-info__leftSide {
-  //   display: flex;
-  //   width: auto;
-  //   height: 100%;
-  // }
-
-  // .Follow-info__leftSide__Image {
-  //   width: 80px;
-  //   height: 80px;
-  // }
-
-  // .image {
-  //   width: 50px;
-  //   height: 50px;
-  //   padding: 3%;
-  //   border: 1px solid #999999;
-  //   border-radius: 5%;
-  //   background-color: rgba($color: #ffffff, $alpha: 0.4);
-  //   box-shadow: 0 0 12px gray;
-  //   background-size: cover;
-  //   background-position: center center;
-  // }
 
   .Follow-info {
     display: flex;
@@ -282,33 +263,28 @@ ul.follow-nav-bar li .active {
 
   .Rerationship-On {
     color: #ffffff;
-    height: 2.5vh;
-    width: 7vw;
-    // margin: 0.5vh 0;
+    height: 25px;
+    width: 70px;
     border-radius: 20px;
     background-color: #00bfff;
     border: none;
     box-shadow: 0 0 8px gray;
-    // line-height: 1.5;
-    font-size: 0.7vw;
+    font-size: 5px;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    // position: absolute;
     z-index: 20;
   }
   .Rerationship-Off {
     color: #ffffff;
-    height: 2vh;
-    width: 7vw;
-    // margin: 0.5vh 0;
+    height: 25px;
+    width: 40px;
     border-radius: 20px;
     background-color: #ee0000;
     border: none;
     box-shadow: 0 0 8px gray;
-    // line-height: 1.5;
-    font-size: 1vh;
+    font-size: 5px;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;

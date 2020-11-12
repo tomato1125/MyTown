@@ -18,7 +18,10 @@
             <%= @name %> さんのマイページ
           </span>
           <% if user_signed_in? && current_user.id == @user.id %>
-            <%= link_to 'マイページ編集', edit_user_registration_path(current_user), class: "MypageEdit", method: :get %>
+            <%= link_to edit_user_registration_path(current_user), class: "mypageEdit", method: :get do %>
+              <i class="fas fa-user-edit mypageEditIcon"></i>
+              <span>マイページ編集</span>
+            <% end %>
           <% end %>
 
           <%= link_to followings_user_path(@user.id), class:"followFollowerViews" do %>
@@ -42,7 +45,7 @@
           <% if @user.id == current_user.id %>
           <% else %>
             <% if @isRoom == true %>
-              <p>
+              <p class="chatLink">
                 <i class="fas fa-envelope"></i>
                 <a class="chatRoomLink", href="/rooms/<%= @roomId %>">チャットへ</a>
               </p>
@@ -51,7 +54,9 @@
                 <%= fields_for @entry do |e| %>
                   <%= e.hidden_field :user_id, :value=> @user.id %>
                 <% end %>
-                <%= f.submit "チャットを始める" %>
+                  <div class="newChatLink">
+                    <%= f.submit "チャットを始める" %>
+                  </div>
               <% end %>
             <% end %>
           <% end %>
@@ -202,7 +207,7 @@
                           <%= post.prefecture.name if post.prefecture_id? %>
                         </div>
                       </div>
-                      <div class="cateogryIndexFavorite">
+                      <div class="categoryIndexFavorite">
                         <i class="far fa-bookmark"></i>
                         <div class="clipedCount">
                           <%= post.cliped_users.count %>
@@ -304,11 +309,9 @@
                     </div>
                     <span class="lastMessage">
                       <%= Message.find_by(id: e.room.message_ids.last).message %>
-                      <span class='lastMessageUserName'>
-                        by <%= Message.find_by(id: e.room.message_ids.last).user.name %>
-                      </span>
                     </span>
                     <span class="lastMessageDate">
+                      by <%= Message.find_by(id: e.room.message_ids.last).user.name %>
                       <%= Message.find_by(id: e.room.message_ids.last).created_at.strftime("%Y-%m-%d %H:%M") %>
                     </span>
                   </div>
