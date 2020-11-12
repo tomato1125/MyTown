@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       format.html
       format.js
     end
-    # @favorite = @posts.where(category_id: 0).count
+
     @image = @user.image
     @introduce = @user.introduce
     @prefecture = @user.prefecture.name
