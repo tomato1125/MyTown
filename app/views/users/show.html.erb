@@ -307,7 +307,7 @@
                     </div>
                     <span class="lastMessage">
                       <%# <%= Message.find_by(id: e.room.message_ids.last).message %>
-                      <%= e.room.message_ids.last.message%>
+                      <%# <%= e.room.message_ids.last.message%>
                     </span>
                     <span class="lastMessageDate">
                       by <%= Message.find_by(id: e.room.message_ids.last).user.name %>
