@@ -113,13 +113,20 @@
 
 // ユーザー名==============================================================
 .myPageBoxInformation-Name {
-  font-size: 2vh;
+  font-size: 1.2em;
   color: #fff;
 }
 
 // ユーザーマイページ編集リンク===============================================
-.MypageEdit {
-  font-size: 1.3vh;
+.mypageEdit {
+  display: flex;
+  align-items: center;
+  &__link {
+    font-size: 10px;
+  }
+}
+.mypageEditIcon {
+  size: 10px;
 }
 
 .MypageEdit:hover {
@@ -130,7 +137,7 @@
 // フォロー・フォロワー一覧リンク===============================================
 .followFollowerViews {
   font-size: 1em;
-  padding: 1.5vh 0;
+  margin: 1vh;
 }
 .followFollowerViews:hover {
   color: #00bfff;
@@ -145,15 +152,15 @@
 
 .rerationshipOn {
   color: #ffffff;
-  height: 20px;
-  width: 100px;
-  margin: 0.5vh 0;
+  height: 25px;
+  width: 150px;
+  margin-bottom: 1vh;
   border-radius: 20px;
   background-color: #00bfff;
   border: none;
   box-shadow: 0 0 8px gray;
   line-height: 1.5;
-  font-size: 1.3vh;
+  font-size: 15px;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
@@ -165,15 +172,15 @@
 
 .rerationshipOff {
   color: #ffffff;
-  height: 23px;
+  height: 25px;
   width: 150px;
-  margin: 0.5vh 0;
+  margin-bottom: 1vh;
   border-radius: 20px;
   background-color: #ee0000;
   border: none;
   box-shadow: 0 0 8px gray;
   line-height: 1.5;
-  font-size: 1.3vh;
+  font-size: 15px;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
@@ -184,8 +191,11 @@
 }
 
 // チャットページへのリンク===================================================
+.chatLink {
+  margin: 15px;
+}
 .chatRoomLink {
-  font-size: 1.1em;
+  font-size: 15px;
 }
 .chatRoomLink:hover {
   color: #00bfff;
@@ -210,15 +220,20 @@
     font-size: 2vh;
   }
 }
-
 ul.user-nav-bar li .active {
   color: #ffffff;
   text-decoration: none;
 }
-
 .user-nav:hover {
   color: #00bfff;
   text-decoration: none;
+}
+
+// /////////////////////////レスポンシブ化///////////////////////////////////////////////////////
+@media screen and (max-width: 1000px) {
+  .user-nav-bar {
+    margin: 0;
+  }
 }
 
 // TOP・POST・Bookmark各ページのアウトライン==================================
@@ -629,12 +644,10 @@ ul.user-nav-bar li .active {
   width: 100%;
 }
 .notification {
-  // height: 60vh;
   overflow: scroll;
 }
 .dmUserBox {
   height: 10vh;
-  // background-color: #222222;
   background-color: rgba($color: #222222, $alpha: 0.8);
   padding: 20px 20px;
   display: flex;
@@ -688,8 +701,12 @@ ul.user-nav-bar li .active {
   text-decoration: none;
 }
 .lastMessage {
-  font-size: 25px;
+  font-size: 15px;
   margin-left: 5vw;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 .lastMessageUserName {
   font-size: 1.5vh;
@@ -703,6 +720,87 @@ ul.user-nav-bar li .active {
   right: 5%;
   bottom: 10%;
 }
+
+///////////////////////////MESSAGEページのレスポンシブ対応////////////////////////
+@media (max-width: 700px) {
+  .dmUserBox {
+    height: 10vh;
+    background-color: rgba($color: #222222, $alpha: 0.8);
+    padding: 20px 20px;
+    margin: 3px 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    .showlink {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .dmUserBox:hover {
+    border: 1px solid #00bfff;
+  }
+  .dmUserInfomation {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    a {
+      color: #4682b4;
+    }
+    &__userAvater {
+      height: 50px;
+      width: auto;
+      font-size: 40px;
+      color: #ffffff;
+      border-radius: 3px;
+      box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+      display: inline-block;
+      .avater {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+      }
+    }
+    &__username {
+      width: auto;
+      color: #4682b4;
+      margin-left: 5px;
+      display: inline-block;
+      z-index: 3;
+    }
+  }
+  .dmUserName {
+    font-size: 15px;
+  }
+  .dmUserName:hover {
+    color: #00bfff;
+    text-decoration: none;
+  }
+  .lastMessage {
+    font-size: 10px;
+    margin-left: 10px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  .lastMessageUserName {
+    font-size: 5px;
+    color: #999999;
+    margin-left: 1vw;
+  }
+  .lastMessageDate {
+    font-size: 1.2vh;
+    margin: 0 5px;
+    color: #999999;
+    position: absolute;
+    right: 5%;
+    bottom: 10%;
+  }
+}
+
 // グラフ===============================================================================
 .canvasContainer {
   width: 30vw;

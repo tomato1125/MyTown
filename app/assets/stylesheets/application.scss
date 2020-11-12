@@ -199,7 +199,7 @@
   border: none; /*枠線をなくす*/
   color: #4682b4; /*文字の色を変える*/
   background-color: #222222;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 /* 表示しているページ番号のデザイン */
@@ -211,6 +211,16 @@
 /*ホバー時のデザイン*/
 .pagination > li > a:hover {
   // border-radius: 15px; /*角を丸くする*/
+}
+
+////////////////////////////////ページネーションのレスポンシブ対応//////////////////////////////////////
+@media screen and (max-width: 700px) {
+  .pagination > li > a {
+    border: none; /*枠線をなくす*/
+    color: #4682b4; /*文字の色を変える*/
+    background-color: #222222;
+    font-size: 5px;
+  }
 }
 
 /////////////////////////////////レスポンシブ対応////////////////////////////
