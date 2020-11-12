@@ -310,8 +310,8 @@
                       <%# <%= e.room.message_ids.last.message%>
                     </span>
                     <span class="lastMessageDate">
-                      by <%= Message.find_by(id: e.room.message_ids.last).user.name %>
-                      <%= Message.find_by(id: e.room.message_ids.last).created_at.strftime("%Y-%m-%d %H:%M") %>
+                      <%# by <%= Message.find_by(id: e.room.message_ids.last).user.name %>
+                      <%# <%= Message.find_by(id: e.room.message_ids.last).created_at.strftime("%Y-%m-%d %H:%M") %>
                     </span>
                   </div>
                 <% end %>
