@@ -6,7 +6,7 @@
       </h4>
       <%# ユーザーのアイコンと名前表示 %>
       <div class="roomsUsers">
-        <% @entries.each do |e| %>
+        <% @entries.each_with_index do |e, i| %>
           <div class="roomsUsersInfo">
             <div class="roomsUsersNav">
             <%= link_to '', user_path(e.user_id), class: "roomUserLink", method: :get %>
