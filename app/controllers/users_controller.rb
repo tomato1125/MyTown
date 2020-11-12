@@ -143,6 +143,22 @@ class UsersController < ApplicationController
     gon.prefecture44 = @prefecture44
     gon.prefecture45 = @prefecture45
     gon.prefecture46 = @prefecture46
+
+
+    # messageページのルーム表示用記述
+    @current_user = current_user
+    @current_entries = @current_user.entries
+    myroom = []
+
+    # current_userのroom.idを格納
+    @current_entries.each do |entry|
+      myroom << entry.room.id
+    end
+
+    # current_userと相手側のユーザーが格納されているレコードを探す処理
+    @another_entries = Entry.where(room_id: myroom).where.not(user_id: @current_user.id)
+    @new_entries = @another_entries.order(created_at: :desc)
+    
   end
 
   def edit

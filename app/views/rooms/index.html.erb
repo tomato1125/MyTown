@@ -1,0 +1,23 @@
+<div class="userPostIndex">
+  <h6 class="blockquote follow"> 
+    <blockquote>
+      メッセージ一覧
+    </blockquote>
+  </h6>
+  <% @new_entries.each do |e| %>
+    <%= link_to room_path(e.room.id) do %>
+      <div class='mypage-NewPost'>
+        <div class='indexUserInfomation'>
+          <div class='indexUserInfomation__userAvater'>
+            <%= image_tag e.user.image.url, class: "avater" %>
+          </div>
+          <span class='indexUserInfomation__username'>
+            <a href="/users/<%= e.user.id %>">
+              <%= e.user.name %>
+            </a>
+          </span>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

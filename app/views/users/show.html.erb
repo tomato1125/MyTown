@@ -77,6 +77,13 @@
             Bookmark
           </a>
         </li>
+        <% if user_signed_in? && current_user.id == @user.id %>
+          <li>
+            <a href="#" id="post", class='user-nav'>
+              message
+            </a>
+          </li>
+        <% end %>
       </ul>
       <ul class="pages">
         <li class="page show">
@@ -122,7 +129,7 @@
                     <%= @user.followers.count %> 人
                   </li>
                   <li class="top-page__status__sentence__counts__content">
-                    <%= @posts.length %> 件
+                    <%= @user.posts.all.count %> 件
                   </li>
                   <li class="top-page__status__sentence__counts__content">
                     <%= @user.cliped_posts.length %> 件
@@ -165,10 +172,15 @@
               投稿がまだありません。
             </div>
           <% else %>
+            <h4>
+              <blockquote>
+                <i class="fas fa-pen"></i>
+                <span class="userPostIndex__postCount">
+                  POST :  <%= @user.posts.all.count %> 件
+                </span>
+              </blockquote>
+            </h4>
             <div class="userPostIndex">
-              <div class="userPostIndex__postCount">
-                POST :  <%= @user.posts.all.count %> 件
-              </div>
               <div id="mypostPagenate">
                 <% @posts.each do |post| %>
                   <div class='mypage-NewPost'>
@@ -213,10 +225,15 @@
               Bookmarkした投稿がまだありません。
             </div>
           <% else %>
+            <h4>
+              <blockquote>
+                <i class="fas fa-bookmark"></i>
+                <span class="userPostIndex__postCount">
+                  Bookmark :  <%= @user.cliped_posts.all.count %> 件
+                </span>
+              </blockquote>
+            </h4>
             <div class="userPostIndex">
-              <div class="userPostIndex__postCount">
-                Bookmark :  <%= @user.cliped_posts.all.count %> 件
-              </div>
               <div id="mybookmarkPagenate">
                 <% @bookmarks.each do |post| %>
                   <div class='mypage-NewPost'>
@@ -262,6 +279,43 @@
               </div>
             </div>
           <% end %>
+        </li>
+        <%# messageページ %>
+        <li class="page">
+          <div class="userPostIndex">
+            <div class="directMessageUsers">
+              <div class="notification">
+                <h6 class="blockquote follow"> 
+                  <blockquote>
+                    <i class="fas fa-envelope"></i>
+                    メッセージ一覧
+                  </blockquote>
+                </h6>
+                <% @new_entries.each do |e| %>
+                  <div class="dmUserBox">
+                    <%= link_to '', room_path(e.room.id), class: "showlink", method: :get %>
+                    <div class='dmUserInfomation'>
+                      <div class='dmUserInfomation__userAvater'>
+                        <%= image_tag e.user.image.url, class: "avater" %>
+                      </div>
+                      <span class='dmUserInfomation__username'>
+                        <%= link_to e.user.name, user_path(e.user_id), class: "dmUserName" %>
+                      </span>
+                    </div>
+                    <span class="lastMessage">
+                      <%= Message.find_by(id: e.room.message_ids.last).message %>
+                      <span class='lastMessageUserName'>
+                        by <%= Message.find_by(id: e.room.message_ids.last).user.name %>
+                      </span>
+                    </span>
+                    <span class="lastMessageDate">
+                      <%= Message.find_by(id: e.room.message_ids.last).created_at.strftime("%Y-%m-%d %H:%M") %>
+                    </span>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
         </li>
       </ul>
     </div>
