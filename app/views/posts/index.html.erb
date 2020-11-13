@@ -2,16 +2,16 @@
   <%# TOP(検索バー)部分 %>
   <div class='searchSection' id="0">
     <div class='searchBackgroundImage' style="background-image: url(<%= asset_path "TopPageImage.jpg" %>);">
-      <h2 class='applicationIntroduction1'>〜故郷の良さを再発見〜
-      </h2>
-      <h4 class='applicationIntroduction2'>ここは故郷・今住んでいる場所のお気に入りスポットなどを投稿して共有するためのサイトです
-      </h4>
-      <h3 class='searchHeading'>Keyword
-      </h3>
+      <div class='applicationIntroduction1'>〜故郷の良さを再発見〜
+      </div>
+      <div class='applicationIntroduction2'>ここは故郷・今住んでいる場所のお気に入りスポットなどを投稿して共有するためのサイトです
+      </div>
+      <p class='searchHeading'>Keyword
+      </p>
       <div class='searchSpace'>
-        <%= form_with(url: search_posts_path, local: true, method: :get, class: "searchForm") do |form| %>
-          <%= form.text_field :keyword, placeholder: "キーワード検索する", id: 'Search_Form', class: "searchForm__content" %>
-          <%= form.submit "検索", class: "searchForm__bottum" %>
+        <%= form_with(url: search_posts_path, local: true, method: :get, class: "rootpageSearchForm") do |form| %>
+          <%= form.text_field :keyword, placeholder: "キーワードを入力", id: 'Search_Form', class: "rootpageSearchForm__content" %>
+          <%= form.submit "検索", class: "rootpageSearchForm__bottum" %>
         <% end %>
       </div>
       <div id="UserSearchResult">

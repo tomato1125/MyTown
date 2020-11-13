@@ -1,4 +1,44 @@
-<% form_with(url: search_posts_path, local: true, method: :get, class: "SearchForm") do |form| %>
-  <% form.text_field :keyword, placeholder: "キーワード検索する", class: "SearchForm__content" %>
-  <% form.submit "検索", class: "SearchForm__bottum" %>
-<% end %>
+<div class='newPostMessage'>
+  <h2 class='newPostMessage__heading'>
+    検索結果
+  </h2>
+</div>
+<div class="categoryPostIndex">
+  <% @posts.each do |post| %>
+    <div class='categoryNewPost'>
+    <%= link_to '', post_path(post.id), class: "showLink", method: :get %>
+      <div class='indexUserInfomation'>
+        <div class='indexUserInfomation__userAvater'>
+          <%= image_tag post.user.image.url, class: "avater" %>
+        </div>
+        <span class='indexUserInfomation__username'>
+          <a href="/users/<%= post.user.id %>">
+            <%= post.user.name %>
+          </a>
+        </span>
+        <div class='indexUserInfomation__date'>
+          <span><%= time_ago_in_words(post.created_at) %>前</span>
+        </div>
+      </div>
+      <div class="categoryPostTitle">
+        <span>~ <%= post.title %> ~</span>
+      </div>
+      <div class='categoryPostImage' style="background-image: url(<%= post.images[0].image %>);">
+        <div class="categoryAreaInfomation">
+          <div class="categoryUserIcon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="categoryAreaName">
+            <%= post.prefecture.name if post.prefecture_id? %>
+          </div>
+        </div>
+        <div class="categoryIndexFavorite">
+          <i class="fas fa-bookmark"></i>
+          <div class="clipedCount">
+            <%= post.cliped_users.count %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

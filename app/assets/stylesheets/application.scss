@@ -194,6 +194,33 @@
   z-index: 1;
 }
 
+// ルートページ以外の検索バー====================================================
+.searchSpace {
+  margin-left: 30px;
+}
+.searchForm {
+  width: auto;
+  &__label {
+    font-size: 15px;
+    color: #ffffff;
+  }
+  &__content {
+    width: 40vw;
+    height: 40px;
+    color: #000000;
+    border-radius: 5px;
+    border-color: #008bbb;
+  }
+  &__bottum {
+    margin-left: 0.5vw;
+    height: 40px;
+    width: 100px;
+    color: #000000;
+    background-color: #fffafa;
+    border-radius: 15px;
+  }
+}
+
 //ページネーションに関するCSS===================================================
 .pagination > li > a {
   border: none; /*枠線をなくす*/
@@ -390,5 +417,35 @@
   .bargermenu.is-active {
     transform: translateX(0);
     padding: 16px 16px;
+  }
+
+  /* 検索バー*/
+  .searchSpace {
+    margin-left: 10px;
+  }
+  .searchForm {
+    width: auto;
+    &__label {
+      font-size: 10px;
+      color: #ffffff;
+    }
+    &__content {
+      width: 40vw;
+      height: 3vh;
+      color: #000000;
+      border-radius: 5px;
+      border-color: #008bbb;
+    }
+    &__bottum {
+      margin-left: 0.5vw;
+      height: 3vh;
+      width: 50px;
+      color: #000000;
+      background-color: #fffafa;
+      border-radius: 15px;
+    }
+  }
+  .serchBar {
+    display: flex;
   }
 }
