@@ -15,10 +15,6 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     if @post.save
       redirect_to root_path, notice: "投稿が完了しました"
-      # respond_to do |format|
-      #   format.html{redirect_to root_path}, notice: "投稿が完了しました"
-      #   format.json
-      # end
     else
       flash.now[:alert] = "必須項目を入力してください"
       @post.images.build
