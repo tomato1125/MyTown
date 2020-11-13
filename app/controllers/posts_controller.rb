@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :move_to_index, except: [:index, :search]
+  before_action :move_to_index, except: [:index]
 
   def index
     @posts = Post.includes(:user).order("created_at DESC")
@@ -14,10 +14,11 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      respond_to do |format|
-        format.html{redirect_to root_path}
-        format.json
-      end
+      redirect_to root_path, notice: "投稿が完了しました"
+      # respond_to do |format|
+      #   format.html{redirect_to root_path}, notice: "投稿が完了しました"
+      #   format.json
+      # end
     else
       flash.now[:alert] = "必須項目を入力してください"
       @post.images.build
