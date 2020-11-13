@@ -211,7 +211,7 @@
   display: flex;
   justify-content: right;
   width: 20vw;
-  margin: 0 0 0 5vw;
+  margin: 0 0 0 1.5vw;
   a {
     color: rgba($color: #ffffff, $alpha: 0.3);
     a:hover {
@@ -236,7 +236,7 @@ ul.user-nav-bar li .active {
 // /////////////////////////レスポンシブ化///////////////////////////////////////////////////////
 @media screen and (max-width: 1000px) {
   .user-nav-bar {
-    margin: 0;
+    margin: 0 1vw;
   }
 }
 
