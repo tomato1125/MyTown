@@ -41,18 +41,27 @@
   width: auto;
   &__content {
     width: 40vw;
-    height: 40px;
+    height: 30px;
     color: #000000;
     border-radius: 5px;
     border-color: #008bbb;
   }
   &__bottum {
     margin-left: 0.5vw;
-    height: 40px;
+    height: 30px;
     width: 150px;
-    color: #000000;
-    background-color: #fffafa;
-    border-radius: 15px;
+    border-radius: 20px;
+    background-color: #87cefa;
+    border: none;
+    box-shadow: 0 0 8px gray;
+    color: #ffffff;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .rootpageSearchForm__bottum:hover {
+    background-color: #00bfff;
   }
 }
 
@@ -79,7 +88,7 @@
     flex-direction: column;
     &__content {
       width: 70vw;
-      height: 30px;
+      height: 20px;
       color: #000000;
       border-radius: 5px;
       border-color: #008bbb;
@@ -87,11 +96,17 @@
     }
     &__bottum {
       margin-left: 0.5vw;
-      height: 30px;
+      height: 20px;
       width: 60px;
-      color: #000000;
-      background-color: #fffafa;
-      border-radius: 15px;
+      border-radius: 20px;
+      background-color: #00bfff;
+      border: none;
+      box-shadow: 0 0 8px gray;
+      color: #ffffff;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
     }
   }
 }

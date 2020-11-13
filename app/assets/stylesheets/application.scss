@@ -196,7 +196,7 @@
 
 // ルートページ以外の検索バー====================================================
 .searchSpace {
-  margin-left: 30px;
+  margin-left: 3vw;
 }
 .searchForm {
   width: auto;
@@ -206,18 +206,28 @@
   }
   &__content {
     width: 40vw;
-    height: 40px;
+    height: 30px;
     color: #000000;
     border-radius: 5px;
     border-color: #008bbb;
   }
   &__bottum {
     margin-left: 0.5vw;
-    height: 40px;
+    font-size: 20px;
+    height: 30px;
     width: 100px;
-    color: #000000;
-    background-color: #fffafa;
-    border-radius: 15px;
+    border-radius: 20px;
+    background-color: #87cefa;
+    border: none;
+    box-shadow: 0 0 8px gray;
+    color: #ffffff;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .searchForm__bottum:hover {
+    background-color: #00bfff;
   }
 }
 
@@ -421,7 +431,7 @@
 
   /* 検索バー*/
   .searchSpace {
-    margin-left: 10px;
+    margin-left: 3vw;
   }
   .searchForm {
     width: auto;
@@ -437,12 +447,19 @@
       border-color: #008bbb;
     }
     &__bottum {
+      font-size: 15px;
       margin-left: 0.5vw;
       height: 3vh;
       width: 50px;
-      color: #000000;
-      background-color: #fffafa;
-      border-radius: 15px;
+      border-radius: 20px;
+      background-color: #00bfff;
+      border: none;
+      box-shadow: 0 0 8px gray;
+      color: #ffffff;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
     }
   }
   .serchBar {
