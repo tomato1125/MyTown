@@ -5,6 +5,15 @@
       <div class="loginedMenus">
         <%= link_to "Top Page", root_path, class:"loginMenu" %>
       </div>
+      <div class='searchSpace'>
+        <%= form_with(url: search_posts_path, local: true, method: :get, class: "searchForm") do |form| %>
+          <div class="searchForm__label" for="serch">投稿を検索：</div>
+          <div class='serchBar'>
+            <%= form.text_field :keyword, placeholder: "キーワードを入力", id: 'Search_Form', class: "searchForm__content" %>
+            <%= form.submit "検索", class: "searchForm__bottum" %>
+          </div>
+        <% end %>
+      </div>
     <% else %>
       <div class="beforeLoginMenus">
         <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: 'beforeLoginMenu' %>

@@ -35,25 +35,64 @@
 }
 .searchHeading {
   font-size: 3vh;
-  font-weight: bold;
   margin-top: 4vh;
 }
-.searchForm {
+.rootpageSearchForm {
   width: auto;
   &__content {
     width: 40vw;
-    height: 3vh;
+    height: 40px;
     color: #000000;
     border-radius: 5px;
     border-color: #008bbb;
   }
   &__bottum {
     margin-left: 0.5vw;
-    height: 3vh;
-    width: 10vw;
+    height: 40px;
+    width: 150px;
     color: #000000;
     background-color: #fffafa;
-    border-radius: 10px;
+    border-radius: 15px;
+  }
+}
+
+// ////////////////////////////////searchSectionレスポンシブ//////////////////////////////////////////////
+@media (max-width: 700px) {
+  .applicationIntroduction1 {
+    font-size: 25px;
+    margin-top: 3vh;
+  }
+  .ApplicationIntroduction2 {
+    font-size: 5px;
+    text-align: center;
+  }
+  .searchHeading {
+    font-size: 2.5vh;
+    color: #ffffff;
+    margin-top: 4vh;
+  }
+  .rootpageSearchForm {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &__content {
+      width: 70vw;
+      height: 30px;
+      color: #000000;
+      border-radius: 5px;
+      border-color: #008bbb;
+      margin-bottom: 10px;
+    }
+    &__bottum {
+      margin-left: 0.5vw;
+      height: 30px;
+      width: 60px;
+      color: #000000;
+      background-color: #fffafa;
+      border-radius: 15px;
+    }
   }
 }
 

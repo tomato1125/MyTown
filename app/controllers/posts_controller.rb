@@ -37,21 +37,6 @@ class PostsController < ApplicationController
     end
   end
 
-  # def update
-  #   post = Post.find(params[:id])
-  #   post.update(post_params)
-  # end
-
-  # def edit
-  #   @item = Item.find(params[:id])
-  #   set_category_sellector
-  #   if current_user.id != @item.seller_id
-  #     flash.now[:alert] = "編集は出品者しかできません"
-  #     set_category
-  #     render :show
-  #   end
-  # end
-
   def update
     post = Post.find(params[:id])
     if current_user.id != post.user_id
@@ -94,13 +79,7 @@ class PostsController < ApplicationController
   end
   
   def search
-    keyword = params[:keyword]
-    return nil if params[:keyword] == ""
-    @posts = Post.where(['name LIKE ?', "%#{params[:keyword]}%"] )
-    respond_to do |format|
-      format.html
-      format.json
-    end
+    @posts = Post.search(params[:keyword]).order(created_at: :desc)
   end
 
   private

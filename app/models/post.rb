@@ -21,6 +21,15 @@ class Post < ApplicationRecord
 
   # mount_uploader :image, ImageUploader
 
+  def self.search(search)
+    if search != ""
+      Post.joins(:prefecture).where('content LIKE(?) OR title LIKE(?) OR prefectures.name LIKE(?)', "%#{search}%", "%#{search}%", "%#{search}%")
+    else
+      Post.all
+    end
+  end
+
+
   def create_notification_clip!(current_user)
     # すでに「いいね」されているか検索
     temp = Notification.where(["visitor_id = ? and visited_id = ? and post_id = ? and action = ? ", current_user.id, user_id, id, 'clip'])
