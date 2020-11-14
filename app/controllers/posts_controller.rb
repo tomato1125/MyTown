@@ -17,7 +17,7 @@ class PostsController < ApplicationController
       redirect_to root_path, notice: "投稿が完了しました"
     else
       flash.now[:alert] = "必須項目を入力してください"
-      @post.images.build
+      @post.images.build()
       render :new
     end
   end

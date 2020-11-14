@@ -1,18 +1,18 @@
 <%= form_with(model: @post, local: true, multipart: true) do |form| %>
   <div class='formArea'>
     <div class='inputArea'>
-      <ul class='formSpace'>
+      <ul class='formSpace', id='formSpace'>
         <li class="prefecture">
           <label class="labelName" for="Prefecture">Prefecture：</label>
-          <%= form.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: '選択してください'}, {class: "prefecture__input"} %>
+          <%= form.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: '選択してください'}, {class: "prefecture__input", id: 'input01'} %>
         </li>
         <li class="category">
           <label class="labelname" for="category">Category：</label>
-          <%= form.collection_select :category_id, Category.all, :id, :name, {include_blank: '選択してください'}, {class: "category__input"} %>
+          <%= form.collection_select :category_id, Category.all, :id, :name, {include_blank: '選択してください'}, {class: "category__input", id: 'input02'} %>
         </li>
         <li class="title">
           <label class="titleLabelName" for="titleSpace">Title：</label>
-          <%= form.text_field :title, class: 'title__input', placeholder: "タイトルを入力してください" %>
+          <%= form.text_field :title, class: 'title__input', id: "input03", placeholder: "タイトルを入力してください" %>
         </li>
         <li class='newImage'>
           <label class="imageLabelName" for="imageSpace">Photo：</label>
@@ -26,7 +26,7 @@
             </label>
           </div>
           <div class="hiddenContent">
-            <%= form.fields_for :images do |i| %>
+            <%= form.fields_for :images, id: "input04" do |i| %>
               <%= i.file_field :image, class: "hiddenField", id: "post_images_attributes_0_image", name: "post[images_attributes][0][image]", type: "file" %>
               <%= i.file_field :image, class: "hiddenField", id: "post_images_attributes_1_image", name: "post[images_attributes][1][image]", type: "file" %>
               <%= i.file_field :image, class: "hiddenField", id: "post_images_attributes_2_image", name: "post[images_attributes][2][image]", type: "file" %>
@@ -37,7 +37,7 @@
         </li>
         <li class='content'>
           <label class="labelName" for="contentSpace">Content：</label>
-          <%= form.text_area :content, class: 'content__input', placeholder: "コメントを入力してください" %>
+          <%= form.text_area :content, class: 'content__input', id: "input05", placeholder: "コメントを入力してください" %>
         </li>
       </ul>
       <%# googleMap %>
@@ -49,7 +49,7 @@
           <div class="address">
             <%= spot.label :address, "レビュー場所（ googleMapで検索）", class: 'address__label' %>
             <%= spot.text_field :address, placeholder: "スポット名・住所を入力", id: "address", class: 'address__input' %>
-            <input type="button" value="検索" onclick="codeAddress()" class="address__btn">
+            <input type="button" value="検索" onclick="codeAddress()" class="address__btn", id="input06">
           </div>
         <div class="map", id="map">
         </div>
