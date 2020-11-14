@@ -285,6 +285,10 @@
   :hover {
     background-color: #00bfff;
   }
+  .send[disabled] {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
 }
 
 //SENDボタンここまで========================================================================
