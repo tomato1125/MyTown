@@ -114,19 +114,20 @@ $(function() {
 
 // 必須項目入力するまで送信ボタンが押せないようにする=============================================
 $(function() {
+// $(document).on('change', "[id^= input]", function() {
   //始めにjQueryで送信ボタンを無効化する
   $('#sending').prop("disabled", true);
   
   //idに「input」と設定している入力欄の操作時
-  $("[id^= input]").change(function () {
+  $("[id^= input],#post_images_attributes_0_image").change(function () {
       //必須項目が空かどうかフラグ
       let flag = true;
       //必須項目をひとつずつチェック
-      $("[id^= input]").each(function(e) {
-          //もし必須項目が空なら
-          if ($("[id^= input]").eq(e).val() === "") {
-              flag = true;
-          }
+      $("[id^= input],#post_images_attributes_0_image").each(function(e) {
+        //もし必須項目が空なら
+        if ($("[id^= input],#post_images_attributes_0_image").eq(e).val() === "") {
+          flag = false;
+        }
       });
       //全て埋まっていたら
       if (flag) {
@@ -139,4 +140,5 @@ $(function() {
       }
   });
 });
+
 

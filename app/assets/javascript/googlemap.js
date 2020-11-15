@@ -25,7 +25,7 @@ function initMap(){ //コールバック関数
 }
 
 function codeAddress(){ //コールバック関数
-  let inputAddress = document.getElementById('address').value; //'address'というidの値（value）を取得
+  let inputAddress = document.getElementById('input06').value; //'address'というidの値（value）を取得
 
   geocoder.geocode( { 'address': inputAddress}, function(results, status) { //ジオコードしたい住所を引数として渡す
     if (status == 'OK') {
