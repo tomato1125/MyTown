@@ -1,7 +1,7 @@
 <%= form_with(model: @post, local: true, multipart: true) do |form| %>
   <div class='formArea'>
     <div class='inputArea'>
-      <ul class='formSpace', id='formSpace'>
+      <ul class='formSpace'>
         <li class="prefecture">
           <label class="labelName" for="Prefecture">Prefecture：</label>
           <%= form.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: '選択してください'}, {class: "prefecture__input", id: 'input01'} %>
@@ -62,3 +62,5 @@
     <input type='submit' id='sending' class='send__btn' value='投稿する'>
   </div>
 <% end %>
+
+

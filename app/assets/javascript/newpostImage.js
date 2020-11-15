@@ -112,33 +112,31 @@ $(function() {
 });
 
 
-// 必須項目入力するまで送信ボタンが押せないようにする=============================================
+// フォームを入力・選択するまで送信ボタンが押せないようにする=============================================
 $(function() {
-// $(document).on('change', "[id^= input]", function() {
-  //始めにjQueryで送信ボタンを無効化する
+  //最初に送信ボタンを無効にする
   $('#sending').prop("disabled", true);
   
-  //idに「input」と設定している入力欄の操作時
+  //idに「input」と設定している入力欄に入力・選択した＆画像を選択した時にイベントが発火する
   $("[id^= input],#post_images_attributes_0_image").change(function () {
-      //必須項目が空かどうかフラグ
-      let flag = true;
-      //必須項目をひとつずつチェック
-      $("[id^= input],#post_images_attributes_0_image").each(function(e) {
-        //もし必須項目が空なら
-        if ($("[id^= input],#post_images_attributes_0_image").eq(e).val() === "") {
-          flag = false;
+      //入力欄が空かどうか判定を定義するために、sendという変数を使ってフォームの中身の状態管理を行う。
+      let send = true;
+      //id=input~と指定している入力欄をひとつずつチェック&画像（インデックス番号が０番の画像）をチェックする
+      $("[id^= input],#post_images_attributes_0_image").each(function(index) {
+        //フォームの中身（値）を順番に確認し、もしフォームの値が空の時はsend = false とする
+        if ($("[id^= input],#post_images_attributes_0_image").eq(index).val() === "") {
+          send = false;
         }
       });
-      //全て埋まっていたら
-      if (flag) {
-          //送信ボタンを復活
+      //フォームが全て埋まっていたら(send = trueの場合)
+      if (send) {
+          //送信ボタンを有効にする
           $('#sending').prop("disabled", false);
       }
+      // フォームが一つでも空だったら(send = falseの場合)
       else {
-          //送信ボタンを閉じる
+          //送信ボタンを無効にする
           $('#sending').prop("disabled", true);
       }
   });
 });
-
-
