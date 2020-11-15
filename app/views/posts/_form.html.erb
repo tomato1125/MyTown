@@ -26,7 +26,7 @@
             </label>
           </div>
           <div class="hiddenContent">
-            <%= form.fields_for :images, id: "input04" do |i| %>
+            <%= form.fields_for :images do |i| %>
               <%= i.file_field :image, class: "hiddenField", id: "post_images_attributes_0_image", name: "post[images_attributes][0][image]", type: "file" %>
               <%= i.file_field :image, class: "hiddenField", id: "post_images_attributes_1_image", name: "post[images_attributes][1][image]", type: "file" %>
               <%= i.file_field :image, class: "hiddenField", id: "post_images_attributes_2_image", name: "post[images_attributes][2][image]", type: "file" %>
@@ -48,8 +48,8 @@
         <%= form.fields_for :spot do |spot| %>
           <div class="address">
             <%= spot.label :address, "レビュー場所（ googleMapで検索）", class: 'address__label' %>
-            <%= spot.text_field :address, placeholder: "スポット名・住所を入力", id: "address", class: 'address__input' %>
-            <input type="button" value="検索" onclick="codeAddress()" class="address__btn", id="input06">
+            <%= spot.text_field :address, placeholder: "スポット名・住所を入力", id: "input06", class: 'address__input' %>
+            <input type="button" value="検索" onclick="codeAddress()" class="address__btn", id="input07">
           </div>
         <div class="map", id="map">
         </div>
