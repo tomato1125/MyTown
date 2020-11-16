@@ -104,7 +104,7 @@ $(function(){
 // 送信中のloading画面の機能============================================================================
 
 $(function() {
-  $("form").on('submit', function(){
+  $("#sending").click(function(){
     $.LoadingOverlay("show", {
       text :"Sending..."
     });

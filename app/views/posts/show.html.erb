@@ -95,7 +95,7 @@
   <%# コメントフォームと送信ボタン %>
   <% if current_user %>
     <div class="commentForm">
-      <%= form_with(model: [@post, @comment], local: true) do |form| %>
+      <%= form_with(model: [@post, @comment], local: true, id: "new_comment") do |form| %>
         <%= form.text_area :text, placeholder: "コメントする", rows: "2", class: "commentForm__textbox" %>
         <%= form.submit "SEND", class: "commentForm__btn" %>
       <% end %>
@@ -105,8 +105,8 @@
   <% end %>
   <%# コメント一覧 %>
   <div id="commentsArea">
-    <div class="comments">
-      <h4>＜コメント一覧＞</h4>
+    <h4>＜コメント一覧＞</h4>
+      <div class="comments">
       <% if @comments.length == 0 %>
         <h4>コメントがまだありません</h4>
       <% else %>
