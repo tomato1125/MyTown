@@ -42,6 +42,10 @@
   .commentForm__btn:hover {
     background-color: #00bfff;
   }
+  .commentForm__btn[disabled] {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
 }
 
 .commentArea h3 {
@@ -54,8 +58,10 @@
 
 .comments {
   padding: 5px;
+  height: 31vh;
   width: 30vw;
   margin: 0 auto;
+  overflow: scroll;
 }
 
 .comment {
