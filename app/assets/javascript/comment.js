@@ -1,7 +1,7 @@
 $(function() {
   function buildHTML(comment) {
     let html = `<div class="comment">
-                  <img src = '${comment.user_image}', class="CommentAvater">
+                  <img src = '${comment.user_image}', class="commentAvater">
                   <strong>
                     <a href=/users/${comment.user_id}>${comment.user_name}</a>：
                   </strong>
@@ -24,9 +24,9 @@ $(function() {
     })
     .done(function(data){
       let html = buildHTML(data);
-      $('.comments').append(html);
-      $('.CommentForm__textbox').val('');
-      $('.CommentForm__btn').prop('disabled', false);
+      $('.comments').prepend(html);
+      $('.commentForm__textbox').val('');
+      $('.commentForm__btn').prop('disabled', false);
     })
     .fail(function(){
       alert('error');

@@ -1,14 +1,20 @@
 class CommentsController < ApplicationController
   def create
-    @comment = Comment.new(comment_params)
-    @post = @comment.post
-    if @comment.save
-      @post.create_notification_comment!(current_user, @comment.id)
-      flash[:notice] = 'コメントを投稿しました'
-      redirect_back(fallback_location: @post_path)
-    else
-      render 'posts/show'
+    @comment = Comment.create(comment_params)
+    respond_to do |format|
+      format.html { redirect_to post_path(params[:post_id])  }
+      format.json
     end
+    @post = @comment.post
+
+    @post.create_notification_comment!(current_user, @comment.id)
+      # flash[:notice] = 'コメントを投稿しました'
+      # redirect_back(fallback_location: @post_path)
+    # else
+    #   # render 'posts/show'
+    #   flash[:alert] = "メッセージ送信に失敗しました。"
+    # end
+    # render 'posts/show'
   end
 
   private
