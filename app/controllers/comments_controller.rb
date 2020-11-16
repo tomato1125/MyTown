@@ -8,13 +8,7 @@ class CommentsController < ApplicationController
     @post = @comment.post
 
     @post.create_notification_comment!(current_user, @comment.id)
-      # flash[:notice] = 'コメントを投稿しました'
-      # redirect_back(fallback_location: @post_path)
-    # else
-    #   # render 'posts/show'
-    #   flash[:alert] = "メッセージ送信に失敗しました。"
-    # end
-    # render 'posts/show'
+ 
   end
 
   private
