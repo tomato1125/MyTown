@@ -114,8 +114,18 @@
   width: 100%;
   font-size: 16px;
   padding: 10px 16px 8px;
+  background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+.userImagePreview {
+  width: 300px;
+}
+
+#previewImage {
+  height: 100%;
+  width: 100%;
 }
 
 .actions {
@@ -123,13 +133,15 @@
   justify-content: center;
   .next_btn {
     margin-bottom: 24px;
-    background-color: #1e90ff;
-    border: 1px solid #1e90ff;
+    background-color: #00bfff;
+    border: 1px solid #00bfff;
+    border: none;
+    box-shadow: 0 0 15px gray;
     font-size: 2vh;
     color: #fff;
     height: 4vh;
     width: 100%;
-    border-radius: 8%;
+    border-radius: 20px;
   }
 }
 
@@ -147,4 +159,13 @@
     border: 1px solid #ccc;
     border-radius: 4px;
   }
+}
+
+#error_explanation {
+  background-color: #f35500;
+  color: #fff;
+  padding: 5px 10px;
+  border: 1px solid #999999;
+  border-radius: 10px;
+  box-shadow: 0 0 12px gray;
 }

@@ -15,8 +15,9 @@
         <%= f.label :image %>
       </div>
       <div class='formField__input--normal'>
-        <%= f.file_field :image, multipart: true, class: "field", placeholder: "イメージを選択してください"%>
+        <%= f.file_field :image, multipart: true, class: "field", placeholder: "イメージを選択してください", onChange: "imgPreView(event)"%>
       </div>
+      <div class="userImagePreview", id="userImagePreview"></div>
     </div>
     <div class="formField">
       <div class='formField__lavel--normal'>
